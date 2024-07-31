@@ -1,5 +1,5 @@
-import { defineConfig, type Options } from 'tsup'
-import pkg from './package.json';
+import { type Options, defineConfig } from 'tsup'
+import pkg from './package.json'
 
 const banner = `/**
  * ${pkg.name}
@@ -8,9 +8,9 @@ const banner = `/**
  * @author: ${pkg.author}
  * @license: ${pkg.license}
  **/
-`;
+`
 
-export default defineConfig(options => {
+export default defineConfig((options) => {
   const commonOptions: Partial<Options> = {
     entry: ['src/index.ts'],
     splitting: false,
@@ -42,6 +42,6 @@ export default defineConfig(options => {
       format: ['cjs'],
       outDir: './dist/cjs/',
       outExtension: () => ({ js: '.cjs' }),
-    }
+    },
   ]
 })

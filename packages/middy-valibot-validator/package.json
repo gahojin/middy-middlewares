@@ -9,9 +9,7 @@
     "url": "https://github.com/gahojin/middy-middlewares.git",
     "directory": "packages/middy-valibot-validator"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "keywords": [],
   "publishConfig": {
     "access": "public"
@@ -20,7 +18,7 @@
     "clean": "rimraf dist",
     "build": "tsup",
     "prepublish": "pnpm run build",
-    "lint": "biome check --write src",
+    "lint": "biome check --write .",
     "check": "tsc --noEmit",
     "test": "vitest --watch",
     "test:unit": "vitest --passWithNoTests --run --coverage",
