@@ -21,7 +21,7 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@fast-check/vitest": "0.1.2",
-    "@types/node": "20.14.13",
+    "@types/node": "22.0.0",
     "@vitest/coverage-v8": "2.0.4",
     "husky": "9.1.4",
     "jest-extended": "4.0.2",
