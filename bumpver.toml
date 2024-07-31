@@ -1,0 +1,16 @@
+[bumpver]
+current_version = "v2024.7.0"
+version_pattern = "vYYYY.MM.INC0"
+commit_message = "chore: bump version {old_version_pep440} -> {new_version_pep440}"
+tag_message = "release {new_version_pep440}"
+tag_scope = "default"
+pre_commit_hook = ""
+post_commit_hook = ""
+commit = true
+tag = true
+push = false
+
+[bumpver.file_patterns]
+"packages/middy-valibot-validator/package.json" = [
+    '"version": "{pep440_version}"',
+]

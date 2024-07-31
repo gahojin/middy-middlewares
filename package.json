@@ -1,0 +1,45 @@
+{
+  "name": "middy-middlewares",
+  "author": "GAHOJIN, Inc.",
+  "license": "Apache-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahojin/middy-middlewares.git"
+  },
+  "scripts": {
+    "preinstall": "pnpm dlx only-allow pnpm",
+    "prepare": "husky",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "check": "turbo run check",
+    "test": "turbo run test:unit",
+    "clean": "pnpm -r --parallel exec rimraf dist .turbo *.log",
+    "ncu": "npm-check-updates -u && turbo run ncu"
+  },
+  "dependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@commitlint/cli": "19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@fast-check/vitest": "0.1.2",
+    "@types/node": "20.14.13",
+    "@vitest/coverage-v8": "2.0.4",
+    "husky": "9.1.4",
+    "jest-extended": "4.0.2",
+    "npm-check-updates": "16.14.20",
+    "rimraf": "6.0.1",
+    "terser": "5.31.3",
+    "tsup": "8.2.3",
+    "turbo": "2.0.10",
+    "typescript": "5.5.4",
+    "vite-tsconfig-paths": "4.3.2",
+    "vitest": "2.0.4"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "engines": {
+    "node": ">=18.x",
+    "npm": "use pnpm",
+    "pnpm": ">=9.x",
+    "yarn": "use pnpm"
+  }
+}

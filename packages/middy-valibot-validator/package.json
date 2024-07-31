@@ -1,0 +1,52 @@
+{
+  "name": "@gahojin-inc/middy-valibot-validator",
+  "version": "2024.7.0",
+  "description": "Middy valibot validator",
+  "author": "GAHOJIN, Inc.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahojin/middy-middlewares.git",
+    "directory": "packages/middy-valibot-validator"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup",
+    "prepublish": "pnpm run build",
+    "lint": "biome check --write src",
+    "check": "tsc --noEmit",
+    "test": "vitest --watch",
+    "test:unit": "vitest --passWithNoTests --run --coverage",
+    "ncu": "ncu -u"
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "dependencies": {
+    "@middy/core": "5.4.5",
+    "@middy/util": "5.4.5",
+    "valibot": "0.37.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.142",
+    "@valibot/i18n": "0.17.0",
+    "rimraf": "6.0.1"
+  },
+  "peerDependencies": {
+    "@middy/core": "^5",
+    "@middy/util": "^5",
+    "valibot": "^0"
+  }
+}
