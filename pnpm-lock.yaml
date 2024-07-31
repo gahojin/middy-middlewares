@@ -75,9 +75,6 @@ importers:
       '@valibot/i18n':
         specifier: 0.17.0
         version: 0.17.0(valibot@0.37.0(typescript@5.5.4))
-      rimraf:
-        specifier: 6.0.1
-        version: 6.0.1
 
 packages:
 
