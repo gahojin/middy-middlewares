@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"],
+      "dependsOn": ["^build"]
+    },
+    "check": {
+      "cache": false,
+      "dependsOn": ["^check"]
+    },
+    "lint": {
+      "cache": false,
+      "dependsOn": ["^lint"]
+    },
+    "test:unit": {
+      "cache": true,
+      "dependsOn": ["^test:unit"]
+    },
+    "ncu": {
+      "cache": false,
+      "dependsOn": ["^ncu"]
+    }
+  },
+  "globalDependencies": ["tsconfig.base.json"]
+}
