@@ -13,6 +13,9 @@
     "dist"
   ],
   "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rimraf dist",
     "build": "tsup",
