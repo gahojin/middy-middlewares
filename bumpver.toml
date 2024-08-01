@@ -14,3 +14,6 @@ push = false
 "packages/middy-valibot-validator/package.json" = [
     '"version": "{pep440_version}"',
 ]
+"packages/middy-dynamodb-partial-batch-failure/package.json" = [
+    '"version": "{pep440_version}"',
+]
