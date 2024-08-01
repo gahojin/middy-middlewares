@@ -1,0 +1,44 @@
+{
+  "name": "@gahojin-inc/middy-dynamodb-partial-batch-failure",
+  "version": "2024.7.0",
+  "description": "Middy dynamodb partial batch failure",
+  "author": "GAHOJIN, Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahojin/middy-middlewares.git",
+    "directory": "packages/middy-dynamodb-partial-batch-failure"
+  },
+  "files": ["dist"],
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup",
+    "prepublish": "pnpm run build",
+    "lint": "biome check --write .",
+    "check": "tsc --noEmit",
+    "test": "vitest --watch",
+    "test:unit": "vitest --passWithNoTests --run --coverage",
+    "ncu": "ncu -u"
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.mts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "devDependencies": {
+    "@middy/core": "5.4.5",
+    "@serverless/event-mocks": "^1.1.1",
+    "@types/aws-lambda": "8.10.142"
+  }
+}

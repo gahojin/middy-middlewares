@@ -57,18 +57,27 @@ importers:
         specifier: 2.0.4
         version: 2.0.4(@types/node@20.14.13)(terser@5.31.3)
 
-  packages/middy-valibot-validator:
-    dependencies:
+  packages/middy-dynamodb-partial-batch-failure:
+    devDependencies:
       '@middy/core':
         specifier: 5.4.5
         version: 5.4.5
-      '@middy/util':
-        specifier: 5.4.5
-        version: 5.4.5
+      '@serverless/event-mocks':
+        specifier: ^1.1.1
+        version: 1.1.1
+      '@types/aws-lambda':
+        specifier: 8.10.142
+        version: 8.10.142
+
+  packages/middy-valibot-validator:
+    dependencies:
       valibot:
         specifier: 0.37.0
         version: 0.37.0(typescript@5.5.4)
     devDependencies:
+      '@middy/core':
+        specifier: 5.4.5
+        version: 5.4.5
       '@types/aws-lambda':
         specifier: 8.10.142
         version: 8.10.142
@@ -567,10 +576,6 @@ packages:
     resolution: {integrity: sha512-SnCplyrjp97YWeo1TzlnnBuqXZ4iA8jlXBVNmXSwa5w9KOh6LurSMgEKTi3ktJnt0Cm71vGa+8EumVcwSEKMtQ==}
     engines: {node: '>=18'}
 
-  '@middy/util@5.4.5':
-    resolution: {integrity: sha512-9EnuVnoMVNsleIy6/kbc7oRJIqLEwgs09J7gTsoeV3FluTCp7I0VIR8aTTwEbXhvrpLIJ3h1YipVYRagSIy5tg==}
-    engines: {node: '>=18'}
-
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -713,6 +718,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@serverless/event-mocks@1.1.1':
+    resolution: {integrity: sha512-YAV5V/y+XIOfd+HEVeXfPWZb8C6QLruFk9tBivoX2roQLWVq145s4uxf8D0QioCueuRzkukHUS4JIj+KVoS34A==}
+
   '@sigstore/bundle@1.1.0':
     resolution: {integrity: sha512-PFutXEy0SmQxYI4texPw3dd2KewuNqv7OuK1ZFtY2fM754yhvG2KdgwIhRnoEE2uHdtdGNQ8s0lb94dW9sELog==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
@@ -763,6 +771,9 @@ packages:
 
   '@types/http-cache-semantics@4.0.4':
     resolution: {integrity: sha512-1m0bIFVc7eJWyve9S0RnuRgcQqF/Xd5QsUZAZeQFr1Q3/p9JWoQQEqmVy+DPTNpGXwhgIetAoYF8JSc33q29QA==}
+
+  '@types/lodash@4.17.7':
+    resolution: {integrity: sha512-8wTvZawATi/lsmNu10/j2hk1KEP0IvjubqPE3cu1Xz7xfXXt5oCq3SNUz4fMIP4XGF9Ky+Ue2tBA3hcS7LSBlA==}
 
   '@types/node@20.14.13':
     resolution: {integrity: sha512-+bHoGiZb8UiQ0+WEtmph2IWQCjIqg8MDZMAV+ppRRhUZnquF5mQkP/9vpSwJClEiSM/C7fZZExPzfU0vJTyp8w==}
@@ -3068,8 +3079,6 @@ snapshots:
     dependencies:
       '@datastream/core': 0.0.36
 
-  '@middy/util@5.4.5': {}
-
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
       '@nodelib/fs.stat': 2.0.5
@@ -3194,6 +3203,11 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.19.1':
     optional: true
 
+  '@serverless/event-mocks@1.1.1':
+    dependencies:
+      '@types/lodash': 4.17.7
+      lodash: 4.17.21
+
   '@sigstore/bundle@1.1.0':
     dependencies:
       '@sigstore/protobuf-specs': 0.2.1
@@ -3241,6 +3255,8 @@ snapshots:
   '@types/estree@1.0.5': {}
 
   '@types/http-cache-semantics@4.0.4': {}
+
+  '@types/lodash@4.17.7': {}
 
   '@types/node@20.14.13':
     dependencies:
