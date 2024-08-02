@@ -1,5 +1,5 @@
 import { AppSyncError } from '@/error'
-import appSync from '@/index'
+import appSync, { type AppSyncResolverEvents } from '@/index'
 import middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
 import mockContext from 'aws-lambda-mock-context'
@@ -9,7 +9,7 @@ type TestAppSyncArgument = {
   field2: number
 }
 
-const dummyEvent: AppSyncResolverEvent<TestAppSyncArgument> = {
+const dummyEvent: AppSyncResolverEvents<TestAppSyncArgument> = {
   arguments: {
     field1: 'test',
     field2: 123,
@@ -39,7 +39,7 @@ const lambdaBaseHandler = (event: AppSyncResolverEvent<TestAppSyncArgument>) => 
   }
   return event.arguments
 }
-const lambdaHandler = (event: AppSyncResolverEvent<TestAppSyncArgument> | AppSyncResolverEvent<TestAppSyncArgument>[]) => {
+const lambdaHandler = (event: AppSyncResolverEvents<TestAppSyncArgument>) => {
   if (Array.isArray(event)) {
     return event.map(lambdaBaseHandler)
   }
@@ -48,7 +48,7 @@ const lambdaHandler = (event: AppSyncResolverEvent<TestAppSyncArgument> | AppSyn
 
 describe('middleware', () => {
   it('レスポンスがdataフィールドに格納されること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler(dummyEvent, mockContext())
     expect(response).toEqual({
@@ -60,7 +60,7 @@ describe('middleware', () => {
   })
 
   it('レスポンスがAppSyncErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler({ ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 123 } }, mockContext())
     expect(response).toEqual({
@@ -75,7 +75,7 @@ describe('middleware', () => {
       .before(() => {
         throw new AppSyncError('before', 'ERROR', { dummy: 'test' })
       })
-      .use(appSync<TestAppSyncArgument>())
+      .use(appSync())
 
     const response = await handler(dummyEvent, mockContext())
     expect(response).toEqual({
@@ -86,7 +86,7 @@ describe('middleware', () => {
   })
 
   it('レスポンスがErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 123 } }, mockContext())
     expect(response).toEqual({
@@ -100,7 +100,7 @@ describe('middleware', () => {
       .before(() => {
         throw new Error('before')
       })
-      .use(appSync<TestAppSyncArgument>())
+      .use(appSync())
 
     const response = await handler(dummyEvent, mockContext())
     expect(response).toEqual({
@@ -110,7 +110,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスが、dataフィールドに格納され、配列になること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'dummy', field2: 456 } }], mockContext())
     expect(response).toEqual([
@@ -134,7 +134,7 @@ describe('middleware', () => {
       .before(() => {
         throw new AppSyncError('before', 'ERROR', { dummy: 'test' })
       })
-      .use(appSync<TestAppSyncArgument>())
+      .use(appSync())
 
     const response = await handler([dummyEvent, dummyEvent], mockContext())
     expect(response).toEqual([
@@ -152,7 +152,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスがAppSyncErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 456 } }], mockContext())
     expect(response).toEqual([
@@ -175,7 +175,7 @@ describe('middleware', () => {
       .before(() => {
         throw new Error('before')
       })
-      .use(appSync<TestAppSyncArgument>())
+      .use(appSync())
 
     const response = await handler([dummyEvent, dummyEvent], mockContext())
     expect(response).toEqual([
@@ -191,7 +191,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスがErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy(lambdaHandler).use(appSync<TestAppSyncArgument>())
+    const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'reject', field2: 456 } }], mockContext())
     expect(response).toEqual([

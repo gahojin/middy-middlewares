@@ -8,17 +8,15 @@ type AppSyncResponse = {
   errorType?: string
 }
 
-type AppSyncMiddlewareObj<TArguments, TSource> = middy.MiddlewareObj<
-  AppSyncResolverEvent<TArguments, TSource> | AppSyncResolverEvent<TArguments, TSource>[],
-  AppSyncResponse | AppSyncResponse[]
->
+type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | null> =
+  | AppSyncResolverEvent<TArguments, TSource>
+  | AppSyncResolverEvent<TArguments, TSource>[]
 
-type AppSyncMiddlewareFn<TArguments, TSource> = middy.MiddlewareFn<
-  AppSyncResolverEvent<TArguments, TSource> | AppSyncResolverEvent<TArguments, TSource>[],
-  AppSyncResponse | AppSyncResponse[]
->
+type AppSyncMiddlewareObj = middy.MiddlewareObj<AppSyncResolverEvents<unknown, unknown>, AppSyncResponse | AppSyncResponse[]>
 
-const buildResponse = <TResult>(response: TResult): AppSyncResponse => {
+type AppSyncMiddlewareFn = middy.MiddlewareFn<AppSyncResolverEvents<unknown, unknown>, AppSyncResponse | AppSyncResponse[]>
+
+const buildResponse = (response: unknown): AppSyncResponse => {
   if (response instanceof AppSyncError) {
     return {
       data: response.data,
@@ -37,8 +35,8 @@ const buildResponse = <TResult>(response: TResult): AppSyncResponse => {
   }
 }
 
-const appSyncMiddleware = <TArguments, TSource = Record<string, any> | null>(): AppSyncMiddlewareObj<TArguments, TSource> => {
-  const afterFn: AppSyncMiddlewareFn<TArguments, TSource> = (request) => {
+const appSyncMiddleware = (): AppSyncMiddlewareObj => {
+  const afterFn: AppSyncMiddlewareFn = (request) => {
     const { event, response } = request
 
     if (Array.isArray(event)) {
@@ -52,7 +50,7 @@ const appSyncMiddleware = <TArguments, TSource = Record<string, any> | null>(): 
     }
   }
 
-  const onErrorFn: AppSyncMiddlewareFn<TArguments, TSource> = (request) => {
+  const onErrorFn: AppSyncMiddlewareFn = (request) => {
     const { event, error, response } = request
 
     if (response !== undefined) {
@@ -76,4 +74,5 @@ const appSyncMiddleware = <TArguments, TSource = Record<string, any> | null>(): 
   }
 }
 
+export type { AppSyncResponse, AppSyncResolverEvents }
 export default appSyncMiddleware
