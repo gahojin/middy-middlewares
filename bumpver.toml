@@ -11,9 +11,12 @@ tag = true
 push = false
 
 [bumpver.file_patterns]
-"packages/middy-valibot-validator/package.json" = [
+"packages/middy-appsync/package.json" = [
     '"version": "{pep440_version}"',
 ]
 "packages/middy-dynamodb-partial-batch-failure/package.json" = [
+    '"version": "{pep440_version}"',
+]
+"packages/middy-valibot-validator/package.json" = [
     '"version": "{pep440_version}"',
 ]
