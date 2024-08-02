@@ -41,12 +41,17 @@ const dynamodbPartialBatchFailureMiddleware = (options: Options = {}): middy.Mid
   }
 
   const onErrorFn: middy.MiddlewareFn<DynamoDBStreamEvent, PromiseSettledResult<void>[] | DynamoDBBatchResponse> = async (request) => {
-    if (request.response !== undefined) {
+    const {
+      event: { Records },
+      response,
+    } = request
+
+    if (response !== undefined) {
       return
     }
 
     // 全てエラー扱いにする
-    const recordPromises = request.event.Records.map(() => Promise.reject(request.error))
+    const recordPromises = Records.map(() => Promise.reject(request.error))
     request.response = await Promise.allSettled(recordPromises)
 
     await afterFn(request)
