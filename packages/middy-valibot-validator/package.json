@@ -42,7 +42,8 @@
   "devDependencies": {
     "@middy/core": "5.4.5",
     "@types/aws-lambda": "8.10.142",
-    "@valibot/i18n": "0.17.0"
+    "@valibot/i18n": "0.17.0",
+    "aws-lambda-mock-context": "3.2.1"
   },
   "peerDependencies": {
     "valibot": "^0"

@@ -2,23 +2,7 @@ import validatorMiddleware from '@/index'
 import middy from '@middy/core'
 import '@valibot/i18n/ja'
 import * as v from 'valibot'
-
-const context = {
-  getRemainingTimeInMillis: () => 1000,
-  callbackWaitsForEmptyEventLoop: true,
-  functionVersion: '$LATEST',
-  functionName: 'lambda',
-  memoryLimitInMB: '128',
-  logGroupName: '/aws/lambda/lambda',
-  logStreamName: 'yyyy/mm/dd/[$LATEST]xxxxxxxxxxxxxxxxxxxxxx',
-  clientContext: undefined,
-  identity: undefined,
-  invokedFunctionArn: 'arn:aws:lambda:ca-central-1:000000000000:function:lambda',
-  awsRequestId: '00000000-0000-0000-0000-0000000000000',
-  done: () => {},
-  fail: () => {},
-  succeed: () => {},
-}
+import mockContext from 'aws-lambda-mock-context'
 
 const contextSchema = v.object({
   getRemainingTimeInMillis: v.custom((input) => typeof input === 'function'),
@@ -90,7 +74,7 @@ describe('validator', () => {
       },
     }
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toBeUndefined()
   })
 
@@ -125,7 +109,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ eventSchema: schema }))
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toBeUndefined()
   })
 
@@ -144,7 +128,7 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body)).toEqual({
       message: 'Event object failed validation',
@@ -181,7 +165,7 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body)).toEqual({
       message: 'Event object failed validation',
@@ -210,7 +194,7 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body)).toEqual({
       message: 'Event object failed validation',
@@ -230,7 +214,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ contextSchema: contextSchema }))
 
-    const response = await handler({}, context)
+    const response = await handler({}, mockContext())
     expect(response).toBeUndefined()
   })
 
@@ -243,7 +227,7 @@ describe('validator', () => {
       })
       .use(validatorMiddleware({ contextSchema: contextSchema }))
 
-    const response = await handler({}, context)
+    const response = await handler({}, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body)).toEqual({
       message: 'Context object failed validation',
@@ -273,7 +257,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ responseSchema: schema }))
 
-    const response = await handler({}, context)
+    const response = await handler({}, mockContext())
     expect(response.statusCode).toEqual(200)
     expect(response.body).toEqual('Hello world')
   })
@@ -290,7 +274,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ responseSchema: schema }))
 
-    const response = await handler({}, context)
+    const response = await handler({}, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body as string)).toEqual({
       message: 'Response object failed validation',
@@ -318,7 +302,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ eventSchema: schema }))
 
-    const response = await handler({ email: 'abc@abc' }, context)
+    const response = await handler({ email: 'abc@abc' }, mockContext())
     expect(response.statusCode).toEqual(400)
     expect(JSON.parse(response.body as string)).toEqual({
       message: 'Event object failed validation',
@@ -339,7 +323,7 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ eventSchema: schema }))
 
-    await handler({ test: 'test' }, context)
-    await handler([{ test: 'test' }, { test: 'test2' }, { test: 'test3' }], context)
+    await handler({ test: 'test' }, mockContext())
+    await handler([{ test: 'test' }, { test: 'test2' }, { test: 'test3' }], mockContext())
   })
 })

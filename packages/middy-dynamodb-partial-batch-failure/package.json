@@ -38,7 +38,8 @@
   },
   "devDependencies": {
     "@middy/core": "5.4.5",
-    "@serverless/event-mocks": "^1.1.1",
-    "@types/aws-lambda": "8.10.142"
+    "@serverless/event-mocks": "1.1.1",
+    "@types/aws-lambda": "8.10.142",
+    "aws-lambda-mock-context": "3.2.1"
   }
 }

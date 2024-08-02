@@ -2,6 +2,7 @@ import dynamodbPartialBatchFailure from '@/index'
 import middy from '@middy/core'
 import createEvent from '@serverless/event-mocks'
 import type { DynamoDBStreamEvent } from 'aws-lambda'
+import mockContext from 'aws-lambda-mock-context'
 
 const lambdaHandler = async (event: DynamoDBStreamEvent) => {
   // biome-ignore lint/suspicious/useAwait:
@@ -12,23 +13,6 @@ const lambdaHandler = async (event: DynamoDBStreamEvent) => {
     throw new Error('record')
   })
   return await Promise.allSettled(processedRecords)
-}
-
-const context = {
-  getRemainingTimeInMillis: () => 1000,
-  callbackWaitsForEmptyEventLoop: true,
-  functionVersion: '$LATEST',
-  functionName: 'lambda',
-  memoryLimitInMB: '128',
-  logGroupName: '/aws/lambda/lambda',
-  logStreamName: 'yyyy/mm/dd/[$LATEST]xxxxxxxxxxxxxxxxxxxxxx',
-  clientContext: undefined,
-  identity: undefined,
-  invokedFunctionArn: 'arn:aws:lambda:ca-central-1:000000000000:function:lambda',
-  awsRequestId: '00000000-0000-0000-0000-0000000000000',
-  done: () => {},
-  fail: () => {},
-  succeed: () => {},
 }
 
 describe('middleware', () => {
@@ -49,7 +33,7 @@ describe('middleware', () => {
 
     const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }],
     })
@@ -73,7 +57,7 @@ describe('middleware', () => {
 
     const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toEqual({ batchItemFailures: [] })
     expect(logger).not.toBeCalled()
   })
@@ -103,7 +87,7 @@ describe('middleware', () => {
 
     const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }],
     })
@@ -139,7 +123,7 @@ describe('middleware', () => {
       })
       .use(dynamodbPartialBatchFailure({ logger }))
 
-    const response = await handler(event, context)
+    const response = await handler(event, mockContext())
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }, { itemIdentifier: '222' }],
     })
