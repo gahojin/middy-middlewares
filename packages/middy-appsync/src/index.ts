@@ -2,7 +2,7 @@ import type middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
 import { AppSyncError } from './error.js'
 
-type AppSyncResponse = {
+type AppSyncBatchResponse = {
   data: unknown | null
   errorMessage?: string
   errorType?: string
@@ -12,30 +12,41 @@ type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | null> =
   | AppSyncResolverEvent<TArguments, TSource>
   | AppSyncResolverEvent<TArguments, TSource>[]
 
-type AppSyncMiddlewareObj = middy.MiddlewareObj<AppSyncResolverEvents<unknown, unknown>, AppSyncResponse | AppSyncResponse[]>
+type AppSyncMiddlewareObj = middy.MiddlewareObj<AppSyncResolverEvents<unknown, unknown>, unknown | AppSyncBatchResponse[]>
 
-type AppSyncMiddlewareFn = middy.MiddlewareFn<AppSyncResolverEvents<unknown, unknown>, AppSyncResponse | AppSyncResponse[]>
+type AppSyncMiddlewareFn = middy.MiddlewareFn<AppSyncResolverEvents<unknown, unknown>, unknown | AppSyncBatchResponse[]>
 
-const buildResponse = (response: unknown): AppSyncResponse => {
-  if (response instanceof AppSyncError) {
-    return {
-      data: response.data,
-      errorMessage: response.message,
-      errorType: response.type,
-    }
-  }
-  if (response instanceof Error) {
-    return {
-      data: null,
-      errorMessage: response.message,
-    }
-  }
-  return {
-    data: response,
-  }
+type BuildResponseFn = <RESPONSE = unknown>(response: RESPONSE | Error, batchInvoke: boolean) => RESPONSE | AppSyncBatchResponse | Error
+
+type Options = {
+  buildResponse?: BuildResponseFn
 }
 
-const appSyncMiddleware = (): AppSyncMiddlewareObj => {
+const defaultBuildResponse: BuildResponseFn = <RESPONSE>(response: RESPONSE | Error, batchInvoke: boolean) => {
+  if (batchInvoke) {
+    if (response instanceof AppSyncError) {
+      return {
+        data: null,
+        errorMessage: response.message,
+        errorType: response.type,
+      }
+    }
+    if (response instanceof Error) {
+      return {
+        data: null,
+        errorMessage: response.message,
+      }
+    }
+    return {
+      data: response,
+    }
+  }
+  return response
+}
+
+const appSyncMiddleware = (opts: Options = {}): AppSyncMiddlewareObj => {
+  const buildResponse = opts.buildResponse ?? defaultBuildResponse
+
   const afterFn: AppSyncMiddlewareFn = (request) => {
     const { event, response } = request
 
@@ -44,9 +55,13 @@ const appSyncMiddleware = (): AppSyncMiddlewareObj => {
       if (!Array.isArray(response) || event.length !== response.length) {
         throw new Error('BatchInvoke: The response does not match the request payload')
       }
-      request.response = response.map(buildResponse)
+      request.response = response.map((r) => buildResponse(r, true))
     } else {
-      request.response = buildResponse(response)
+      const resp = buildResponse(response, false)
+      if (resp instanceof Error) {
+        throw resp
+      }
+      request.response = resp
     }
   }
 
@@ -57,13 +72,13 @@ const appSyncMiddleware = (): AppSyncMiddlewareObj => {
       return
     }
 
-    // 全てエラー扱いにする
-    const resp = buildResponse(error)
-    if (Array.isArray(event)) {
-      // for BatchInvoke
+    const isBatchInvoke = Array.isArray(event)
+    const resp = buildResponse(error, isBatchInvoke)
+    if (isBatchInvoke) {
+      // 全てエラー扱いにする
       const tmp = new Array(event.length)
       request.response = tmp.fill(resp)
-    } else {
+    } else if (!(resp instanceof Error)) {
       request.response = resp
     }
   }
@@ -74,5 +89,5 @@ const appSyncMiddleware = (): AppSyncMiddlewareObj => {
   }
 }
 
-export type { AppSyncResponse, AppSyncResolverEvents }
+export type { AppSyncBatchResponse, BuildResponseFn, AppSyncResolverEvents }
 export default appSyncMiddleware

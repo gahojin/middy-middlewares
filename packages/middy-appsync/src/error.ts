@@ -1,10 +1,8 @@
 class AppSyncError extends Error {
-  readonly data: unknown
   readonly type: string
 
-  constructor(message: string, type = 'UnknownError', data: unknown = null) {
+  constructor(message: string, type = 'UnknownError') {
     super(message)
-    this.data = data
     this.type = type
   }
 }

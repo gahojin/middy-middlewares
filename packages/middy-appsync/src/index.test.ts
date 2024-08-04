@@ -1,5 +1,5 @@
 import { AppSyncError } from '@/error'
-import appSync, { type AppSyncResolverEvents } from '@/index'
+import appSync, { type BuildResponseFn, type AppSyncResolverEvents } from '@/index'
 import middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
 import mockContext from 'aws-lambda-mock-context'
@@ -32,7 +32,7 @@ const dummyEvent: AppSyncResolverEvents<TestAppSyncArgument> = {
 
 const lambdaBaseHandler = (event: AppSyncResolverEvent<TestAppSyncArgument>) => {
   if (event.arguments.field1 === 'rejectAppSync') {
-    return new AppSyncError('appsyncError', 'type', { value: 'dummy' })
+    return new AppSyncError('appsyncError', 'type')
   }
   if (event.arguments.field1 === 'reject') {
     return new Error('reject')
@@ -47,66 +47,54 @@ const lambdaHandler = (event: AppSyncResolverEvents<TestAppSyncArgument>) => {
 }
 
 describe('middleware', () => {
-  it('レスポンスがdataフィールドに格納されること', async () => {
+  it('レスポンスにデータがそのまま格納されること', async () => {
     const handler = middy(lambdaHandler).use(appSync())
 
     const response = await handler(dummyEvent, mockContext())
     expect(response).toEqual({
-      data: {
-        field1: 'test',
-        field2: 123,
-      },
+      field1: 'test',
+      field2: 123,
     })
   })
 
-  it('レスポンスがAppSyncErrorの時は、エラーフィールドが格納されること', async () => {
+  it('レスポンスがAppSyncErrorの時は、例外が派生すること', async () => {
     const handler = middy(lambdaHandler).use(appSync())
 
-    const response = await handler({ ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 123 } }, mockContext())
-    expect(response).toEqual({
-      data: { value: 'dummy' },
-      errorMessage: 'appsyncError',
-      errorType: 'type',
-    })
+    await expect(async () => {
+      await handler({ ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 123 } }, mockContext())
+    }).rejects.toThrowError('appsyncError')
   })
 
-  it('レスポンスがAppSyncError例外発生時は、エラーフィールドが格納されること', async () => {
+  it('レスポンスがAppSyncError例外発生時は、例外が派生すること', async () => {
     const handler = middy(lambdaHandler)
       .before(() => {
-        throw new AppSyncError('before', 'ERROR', { dummy: 'test' })
+        throw new AppSyncError('before', 'ERROR')
       })
       .use(appSync())
 
-    const response = await handler(dummyEvent, mockContext())
-    expect(response).toEqual({
-      data: { dummy: 'test' },
-      errorMessage: 'before',
-      errorType: 'ERROR',
-    })
+    await expect(async () => {
+      await handler(dummyEvent, mockContext())
+    }).rejects.toThrowError('before')
   })
 
-  it('レスポンスがErrorの時は、エラーフィールドが格納されること', async () => {
+  it('レスポンスがErrorの時は、例外が派生すること', async () => {
     const handler = middy(lambdaHandler).use(appSync())
 
-    const response = await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 123 } }, mockContext())
-    expect(response).toEqual({
-      data: null,
-      errorMessage: 'reject',
-    })
+    await expect(async () => {
+      await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 123 } }, mockContext())
+    }).rejects.toThrowError('reject')
   })
 
-  it('レスポンスが例外発生時は、エラーフィールドが格納されること', async () => {
+  it('レスポンスが例外発生時は、例外が派生すること', async () => {
     const handler = middy(lambdaHandler)
       .before(() => {
         throw new Error('before')
       })
       .use(appSync())
 
-    const response = await handler(dummyEvent, mockContext())
-    expect(response).toEqual({
-      data: null,
-      errorMessage: 'before',
-    })
+    await expect(async () => {
+      await handler(dummyEvent, mockContext())
+    }).rejects.toThrowError('before')
   })
 
   it('バッチイベント時のレスポンスが、dataフィールドに格納され、配列になること', async () => {
@@ -132,19 +120,19 @@ describe('middleware', () => {
   it('バッチイベント時のレスポンスがAppSyncError例外発生時は、エラーフィールドが格納されること', async () => {
     const handler = middy(lambdaHandler)
       .before(() => {
-        throw new AppSyncError('before', 'ERROR', { dummy: 'test' })
+        throw new AppSyncError('before', 'ERROR')
       })
       .use(appSync())
 
     const response = await handler([dummyEvent, dummyEvent], mockContext())
     expect(response).toEqual([
       {
-        data: { dummy: 'test' },
+        data: null,
         errorMessage: 'before',
         errorType: 'ERROR',
       },
       {
-        data: { dummy: 'test' },
+        data: null,
         errorMessage: 'before',
         errorType: 'ERROR',
       },
@@ -163,7 +151,7 @@ describe('middleware', () => {
         },
       },
       {
-        data: { value: 'dummy' },
+        data: null,
         errorMessage: 'appsyncError',
         errorType: 'type',
       },
@@ -207,4 +195,72 @@ describe('middleware', () => {
       },
     ])
   })
+
+  it('buildResponseカスタム', async () => {
+    const handler = middy(lambdaHandler).use(
+      appSync({
+        // 常にdataフィールドに格納するカスタム関数
+        buildResponse: customBuildResponseFn,
+      }),
+    )
+
+    let response = await handler(dummyEvent, mockContext())
+    expect(response).toEqual({
+      data: {
+        field1: 'test',
+        field2: 123,
+      },
+    })
+
+    response = await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 456 } }, mockContext())
+    expect(response).toEqual({
+      data: null,
+      errorMessage: 'reject',
+    })
+  })
+
+  it('buildResponseカスタム バッチイベント', async () => {
+    const handler = middy(lambdaHandler).use(
+      appSync({
+        // 常にdataフィールドに格納するカスタム関数
+        buildResponse: customBuildResponseFn,
+      }),
+    )
+
+    const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'reject', field2: 456 } }], mockContext())
+    expect(response).toEqual([
+      {
+        data: {
+          field1: 'test',
+          field2: 123,
+        },
+      },
+      {
+        data: null,
+        errorMessage: 'reject',
+      },
+    ])
+  })
 })
+
+const customBuildResponseFn: BuildResponseFn = (response) => {
+  if (response instanceof AppSyncError) {
+    return {
+      data: {
+        field1: 'test',
+        field2: 123,
+      },
+      errorMessage: response.message,
+      errorType: response.type,
+    }
+  }
+  if (response instanceof Error) {
+    return {
+      data: null,
+      errorMessage: response.message,
+    }
+  }
+  return {
+    data: response,
+  }
+}
