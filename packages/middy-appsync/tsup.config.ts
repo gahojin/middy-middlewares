@@ -12,16 +12,9 @@ const banner = `/**
 
 export default defineConfig((options) => {
   const commonOptions: Partial<Options> = {
-    entry: ['src/index.ts', 'src/error.ts'],
+    entry: ['src/index.ts'],
     splitting: false,
     sourcemap: true,
-    minify: options.watch ? false : 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        passes: 5,
-      },
-    },
     treeshake: 'recommended',
     banner: {
       js: banner,

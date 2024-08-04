@@ -1,6 +1,14 @@
 import type middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
-import { AppSyncError } from './error.js'
+
+class AppSyncError extends Error {
+  readonly type: string
+
+  constructor(message: string, type = 'UnknownError') {
+    super(message)
+    this.type = type
+  }
+}
 
 type AppSyncBatchResponse = {
   data: unknown | null
@@ -90,4 +98,4 @@ const appSyncMiddleware = (opts: Options = {}): AppSyncMiddlewareObj => {
 }
 
 export type { AppSyncBatchResponse, BuildResponseFn, AppSyncResolverEvents }
-export default appSyncMiddleware
+export { appSyncMiddleware as appSync, AppSyncError }

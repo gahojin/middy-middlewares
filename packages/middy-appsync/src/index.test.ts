@@ -1,5 +1,4 @@
-import { AppSyncError } from '@/error'
-import appSync, { type BuildResponseFn, type AppSyncResolverEvents } from '@/index'
+import { AppSyncError, type AppSyncResolverEvents, type BuildResponseFn, appSync } from '@/index'
 import middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
 import mockContext from 'aws-lambda-mock-context'

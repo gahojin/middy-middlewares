@@ -1,8 +1,8 @@
 import validatorMiddleware from '@/index'
 import middy from '@middy/core'
 import '@valibot/i18n/ja'
-import * as v from 'valibot'
 import mockContext from 'aws-lambda-mock-context'
+import * as v from 'valibot'
 
 const contextSchema = v.object({
   getRemainingTimeInMillis: v.custom((input) => typeof input === 'function'),

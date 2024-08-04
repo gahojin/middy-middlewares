@@ -15,13 +15,6 @@ export default defineConfig((options) => {
     entry: ['src/index.ts'],
     splitting: false,
     sourcemap: true,
-    minify: options.watch ? false : 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        passes: 5,
-      },
-    },
     treeshake: 'recommended',
     banner: {
       js: banner,
