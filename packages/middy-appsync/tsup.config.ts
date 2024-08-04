@@ -12,7 +12,7 @@ const banner = `/**
 
 export default defineConfig((options) => {
   const commonOptions: Partial<Options> = {
-    entry: ['src/index.ts'],
+    entry: ['src/index.ts', 'src/error.ts'],
     splitting: false,
     sourcemap: true,
     minify: options.watch ? false : 'terser',

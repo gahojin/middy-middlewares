@@ -22,6 +22,7 @@
       "nursery": {
         "all": true,
         "noConsole": "off",
+        "noExportedImports": "off",
         "noUndeclaredDependencies": "off",
         "useImportExtensions": "off"
       },
