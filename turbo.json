@@ -16,10 +16,6 @@
     "test:unit": {
       "cache": true,
       "dependsOn": ["^test:unit"]
-    },
-    "ncu": {
-      "cache": false,
-      "dependsOn": ["^ncu"]
     }
   },
   "globalDependencies": ["tsconfig.base.json"]
