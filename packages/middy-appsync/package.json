@@ -34,11 +34,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/cjs/index.cjs"
-    },
-    "./error": {
-      "types": "./dist/error.d.ts",
-      "import": "./dist/error.mjs",
-      "require": "./dist/cjs/error.cjs"
     }
   },
   "devDependencies": {
