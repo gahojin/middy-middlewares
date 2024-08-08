@@ -54,7 +54,7 @@ const dynamodbPartialBatchFailureMiddleware = (options: Options = {}): middy.Mid
     const recordPromises = Records.map(() => Promise.reject(request.error))
     request.response = await Promise.allSettled(recordPromises)
 
-    await afterFn(request)
+    afterFn(request)
   }
 
   return {
