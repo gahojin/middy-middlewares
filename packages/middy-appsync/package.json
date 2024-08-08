@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@middy/core": "5.4.5",
-    "@types/aws-lambda": "8.10.142",
+    "@types/aws-lambda": "8.10.143",
     "aws-lambda-mock-context": "3.2.1"
   }
 }
