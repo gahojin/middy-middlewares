@@ -57,8 +57,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@middy/core':
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.4.6
+        version: 5.4.6
       '@types/aws-lambda':
         specifier: 8.10.143
         version: 8.10.143
@@ -69,8 +69,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@middy/core':
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.4.6
+        version: 5.4.6
       '@serverless/event-mocks':
         specifier: 1.1.1
         version: 1.1.1
@@ -88,8 +88,8 @@ importers:
         version: 0.37.0(typescript@5.5.4)
     devDependencies:
       '@middy/core':
-        specifier: 5.4.5
-        version: 5.4.5
+        specifier: 5.4.6
+        version: 5.4.6
       '@types/aws-lambda':
         specifier: 8.10.143
         version: 8.10.143
@@ -580,8 +580,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@middy/core@5.4.5':
-    resolution: {integrity: sha512-SnCplyrjp97YWeo1TzlnnBuqXZ4iA8jlXBVNmXSwa5w9KOh6LurSMgEKTi3ktJnt0Cm71vGa+8EumVcwSEKMtQ==}
+  '@middy/core@5.4.6':
+    resolution: {integrity: sha512-N/SAyXh01nV+UBnmYzbDmJbElVRvd82kf6ImRwoFZTxyv3CSSDizUuooCfzyrVXLsX1mex6EzW3RaPTmBGU3VA==}
     engines: {node: '>=18'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2252,7 +2252,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@middy/core@5.4.5':
+  '@middy/core@5.4.6':
     dependencies:
       '@datastream/core': 0.0.36
 

@@ -36,7 +36,7 @@
     }
   },
   "devDependencies": {
-    "@middy/core": "5.4.5",
+    "@middy/core": "5.4.6",
     "@serverless/event-mocks": "1.1.1",
     "@types/aws-lambda": "8.10.143",
     "aws-lambda-mock-context": "3.2.1"
