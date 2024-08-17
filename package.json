@@ -22,7 +22,7 @@
     "@commitlint/cli": "19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@fast-check/vitest": "0.1.2",
-    "@types/node": "20.14.15",
+    "@types/node": "20.15.0",
     "@vitest/coverage-v8": "2.0.5",
     "husky": "9.1.4",
     "jest-extended": "4.0.2",
@@ -34,7 +34,7 @@
     "vite-tsconfig-paths": "5.0.1",
     "vitest": "2.0.5"
   },
-  "packageManager": "pnpm@9.7.0",
+  "packageManager": "pnpm@9.7.1",
   "engines": {
     "node": ">=18.x",
     "npm": "use pnpm",
