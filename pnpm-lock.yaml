@@ -84,8 +84,8 @@ importers:
   packages/middy-valibot-validator:
     dependencies:
       valibot:
-        specifier: 0.37.0
-        version: 0.37.0(typescript@5.5.4)
+        specifier: 0.38.0
+        version: 0.38.0(typescript@5.5.4)
     devDependencies:
       '@middy/core':
         specifier: 5.4.6
@@ -95,7 +95,7 @@ importers:
         version: 8.10.143
       '@valibot/i18n':
         specifier: 0.17.0
-        version: 0.17.0(valibot@0.37.0(typescript@5.5.4))
+        version: 0.17.0(valibot@0.38.0(typescript@5.5.4))
       aws-lambda-mock-context:
         specifier: 3.2.1
         version: 3.2.1
@@ -1761,8 +1761,8 @@ packages:
     deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
 
-  valibot@0.37.0:
-    resolution: {integrity: sha512-FQz52I8RXgFgOHym3XHYSREbNtkgSjF9prvMFH1nBsRyfL6SfCzoT1GuSDTlbsuPubM7/6Kbw0ZMQb8A+V+VsQ==}
+  valibot@0.38.0:
+    resolution: {integrity: sha512-RCJa0fetnzp+h+KN9BdgYOgtsMAG9bfoJ9JSjIhFHobKWVWyzM3jjaeNTdpFK9tQtf3q1sguXeERJ/LcmdFE7w==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -2340,9 +2340,9 @@ snapshots:
     dependencies:
       undici-types: 6.19.6
 
-  '@valibot/i18n@0.17.0(valibot@0.37.0(typescript@5.5.4))':
+  '@valibot/i18n@0.17.0(valibot@0.38.0(typescript@5.5.4))':
     dependencies:
-      valibot: 0.37.0(typescript@5.5.4)
+      valibot: 0.38.0(typescript@5.5.4)
 
   '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.1)(terser@5.31.3))':
     dependencies:
@@ -3360,7 +3360,7 @@ snapshots:
 
   uuid@3.4.0: {}
 
-  valibot@0.37.0(typescript@5.5.4):
+  valibot@0.38.0(typescript@5.5.4):
     optionalDependencies:
       typescript: 5.5.4
 
