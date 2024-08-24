@@ -1,6 +1,7 @@
 # middy-middlewares
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![NPM Version](https://img.shields.io/npm/v/%40gahojin-inc%2Fmiddy-valibot-validator?activeTab=versions)](https://www.npmjs.com/package/@gahojin-inc/middy-valibot-validator)
 
 middy ミドルウェアライブラリ群
 
