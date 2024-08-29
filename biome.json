@@ -15,6 +15,7 @@
       },
       "correctness": {
         "all": true,
+        "noNodejsModules": "off",
         "noUnusedImports": "error",
         "noUndeclaredVariables": "off",
         "noSwitchDeclarations": "off"

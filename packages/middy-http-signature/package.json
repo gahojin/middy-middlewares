@@ -1,0 +1,45 @@
+{
+  "name": "@gahojin-inc/middy-http-signature",
+  "version": "2024.8.7",
+  "description": "Middy http signature",
+  "author": "GAHOJIN, Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahojin/middy-middlewares.git",
+    "directory": "packages/middy-http-signature"
+  },
+  "files": ["dist"],
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup",
+    "prepublish": "pnpm run build",
+    "lint": "biome check --write .",
+    "check": "tsc --noEmit",
+    "test": "vitest --watch",
+    "test:unit": "vitest --passWithNoTests --run --coverage"
+  },
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@middy/core": "5.4.6",
+    "@middy/util": "5.4.6",
+    "@types/aws-lambda": "8.10.145",
+    "aws-lambda-mock-context": "3.2.1"
+  }
+}

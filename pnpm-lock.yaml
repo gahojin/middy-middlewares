@@ -81,6 +81,21 @@ importers:
         specifier: 3.2.1
         version: 3.2.1
 
+  packages/middy-http-signature:
+    devDependencies:
+      '@middy/core':
+        specifier: 5.4.6
+        version: 5.4.6
+      '@middy/util':
+        specifier: 5.4.6
+        version: 5.4.6
+      '@types/aws-lambda':
+        specifier: 8.10.145
+        version: 8.10.145
+      aws-lambda-mock-context:
+        specifier: 3.2.1
+        version: 3.2.1
+
   packages/middy-valibot-validator:
     dependencies:
       valibot:
