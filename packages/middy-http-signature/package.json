@@ -35,11 +35,15 @@
       "require": "./dist/cjs/index.cjs"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@middy/util": "5.4.6"
+  },
   "devDependencies": {
     "@middy/core": "5.4.6",
-    "@middy/util": "5.4.6",
     "@types/aws-lambda": "8.10.145",
     "aws-lambda-mock-context": "3.2.1"
+  },
+  "peerDependencies": {
+    "@middy/util": "^5"
   }
 }

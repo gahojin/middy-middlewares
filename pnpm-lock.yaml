@@ -82,11 +82,12 @@ importers:
         version: 3.2.1
 
   packages/middy-http-signature:
-    devDependencies:
-      '@middy/core':
+    dependencies:
+      '@middy/util':
         specifier: 5.4.6
         version: 5.4.6
-      '@middy/util':
+    devDependencies:
+      '@middy/core':
         specifier: 5.4.6
         version: 5.4.6
       '@types/aws-lambda':
