@@ -128,21 +128,25 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body)).toEqual({
-      message: 'Event object failed validation',
-      error: [
-        expect.objectContaining({
-          type: 'string',
-          expected: 'string',
-          received: 'undefined',
-          message: 'Invalid type: Expected string but received undefined',
-          path: [expect.objectContaining({ key: 'foo' })],
-          lang: 'en',
-        }),
-      ],
-    })
+    await expect(() => handler(event, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              type: 'string',
+              expected: 'string',
+              received: 'undefined',
+              message: 'Invalid type: Expected string but received undefined',
+              path: [expect.objectContaining({ key: 'foo' })],
+              lang: 'en',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   const cases: Record<string, string> = {
@@ -165,18 +169,22 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body)).toEqual({
-      message: 'Event object failed validation',
-      error: [
-        expect.objectContaining({
-          message: cases[lang],
-          path: [expect.objectContaining({ key: 'foo' })],
-          type: 'string',
-        }),
-      ],
-    })
+    await expect(() => handler(event, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              message: cases[lang],
+              path: [expect.objectContaining({ key: 'foo' })],
+              type: 'string',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   it('スキーマ不一致の場合、BadRequestとなること (言語設定なし)', async () => {
@@ -194,19 +202,23 @@ describe('validator', () => {
       body: JSON.stringify({ something: 'somethingelse' }),
     }
 
-    const response = await handler(event, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body)).toEqual({
-      message: 'Event object failed validation',
-      error: [
-        expect.objectContaining({
-          // valibotのデフォルト言語となる
-          message: 'Invalid type: Expected string but received undefined',
-          path: [expect.objectContaining({ key: 'foo' })],
-          type: 'string',
-        }),
-      ],
-    })
+    await expect(() => handler(event, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              // valibotのデフォルト言語となる
+              message: 'Invalid type: Expected string but received undefined',
+              path: [expect.objectContaining({ key: 'foo' })],
+              type: 'string',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   it('contextオブジェクトのバリデーションが動作すること', async () => {
@@ -227,19 +239,23 @@ describe('validator', () => {
       })
       .use(validatorMiddleware({ contextSchema: contextSchema }))
 
-    const response = await handler({}, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body)).toEqual({
-      message: 'Context object failed validation',
-      error: [
-        expect.objectContaining({
-          // valibotのデフォルト言語となる
-          message: 'Invalid type: Expected boolean but received "fail"',
-          path: [expect.objectContaining({ key: 'callbackWaitsForEmptyEventLoop' })],
-          type: 'boolean',
-        }),
-      ],
-    })
+    await expect(() => handler({}, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Context object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              // valibotのデフォルト言語となる
+              message: 'Invalid type: Expected boolean but received "fail"',
+              path: [expect.objectContaining({ key: 'callbackWaitsForEmptyEventLoop' })],
+              type: 'boolean',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   it('レスポンスオブジェクトのバリデーションが動作すること', async () => {
@@ -274,23 +290,27 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ responseSchema: schema }))
 
-    const response = await handler({}, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body as string)).toEqual({
-      message: 'Response object failed validation',
-      error: [
-        expect.objectContaining({
-          message: 'Invalid type: Expected Object but received undefined',
-          path: [expect.objectContaining({ key: 'body' })],
-          type: 'object',
-        }),
-        expect.objectContaining({
-          message: 'Invalid type: Expected number but received undefined',
-          path: [expect.objectContaining({ key: 'statusCode' })],
-          type: 'number',
-        }),
-      ],
-    })
+    await expect(() => handler({}, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Response object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              message: 'Invalid type: Expected Object but received undefined',
+              path: [expect.objectContaining({ key: 'body' })],
+              type: 'object',
+            }),
+            expect.objectContaining({
+              message: 'Invalid type: Expected number but received undefined',
+              path: [expect.objectContaining({ key: 'statusCode' })],
+              type: 'number',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   it('誤ったメールフォーマットは許可されないこと', async () => {
@@ -302,18 +322,22 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ eventSchema: schema }))
 
-    const response = await handler({ email: 'abc@abc' }, mockContext())
-    expect(response.statusCode).toEqual(400)
-    expect(JSON.parse(response.body as string)).toEqual({
-      message: 'Event object failed validation',
-      error: [
-        expect.objectContaining({
-          message: 'Invalid email: Received "abc@abc"',
-          path: [expect.objectContaining({ key: 'email' })],
-          type: 'email',
-        }),
-      ],
-    })
+    await expect(() => handler({ email: 'abc@abc' }, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              message: 'Invalid email: Received "abc@abc"',
+              path: [expect.objectContaining({ key: 'email' })],
+              type: 'email',
+            }),
+          ],
+        },
+      }),
+    )
   })
 
   it('配列のバリデーションが動作すること', async () => {

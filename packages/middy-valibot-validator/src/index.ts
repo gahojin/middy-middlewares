@@ -1,4 +1,5 @@
 import type middy from '@middy/core'
+import { createError } from '@middy/util'
 import * as v from 'valibot'
 import type { GenericSchema } from 'valibot'
 
@@ -21,14 +22,12 @@ const validatorMiddleware = (options: Options = {}): middy.MiddlewareObj => {
   const errorResponse =
     opts.errorResponse ??
     ((statusCode, message, issues) => {
-      console.error({
-        message,
-        error: JSON.stringify(issues),
+      throw createError(statusCode, message, {
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: issues,
+        },
       })
-      return {
-        statusCode,
-        body: JSON.stringify({ message, error: issues }),
-      }
     })
 
   const beforeFn: middy.MiddlewareFn = async (request) => {

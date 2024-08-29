@@ -90,6 +90,9 @@ importers:
       '@middy/core':
         specifier: 5.4.6
         version: 5.4.6
+      '@middy/util':
+        specifier: 5.4.6
+        version: 5.4.6
       '@types/aws-lambda':
         specifier: 8.10.145
         version: 8.10.145
@@ -582,6 +585,10 @@ packages:
 
   '@middy/core@5.4.6':
     resolution: {integrity: sha512-N/SAyXh01nV+UBnmYzbDmJbElVRvd82kf6ImRwoFZTxyv3CSSDizUuooCfzyrVXLsX1mex6EzW3RaPTmBGU3VA==}
+    engines: {node: '>=18'}
+
+  '@middy/util@5.4.6':
+    resolution: {integrity: sha512-heQbrBbTidBofc5g3+SECdyyHMvm0OedLnsYy4SvsR3Ebxc3noeJQmbFxx7ipK7Ag9uEuUdgECiTL+EJAQ1U1w==}
     engines: {node: '>=18'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -2255,6 +2262,8 @@ snapshots:
   '@middy/core@5.4.6':
     dependencies:
       '@datastream/core': 0.0.36
+
+  '@middy/util@5.4.6': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
