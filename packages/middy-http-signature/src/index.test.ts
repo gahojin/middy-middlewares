@@ -107,4 +107,55 @@ describe('httpSignature', () => {
       headers: {},
     })
   })
+
+  it('署名キーが関数の場合', async () => {
+    const body = 'Middy Response data'
+    const mac = calcMessageMAC('sha256', 'secret key', body)
+
+    const handler = middy().use(
+      httpSignatureMiddleware({
+        input: {
+          algorithm: 'sha256',
+          key: (request) => {
+            const { headers } = request.event
+            return `${headers.type} key`
+          },
+          headerName: 'signature',
+        },
+      }),
+    )
+    await handler(
+      {
+        headers: { signature: mac, type: 'secret' },
+        body,
+      },
+      mockContext(),
+    )
+  })
+
+  it('署名キーがPromise関数の場合', async () => {
+    const body = 'Middy Response data'
+    const mac = calcMessageMAC('sha256', 'secret key', body)
+
+    const handler = middy().use(
+      httpSignatureMiddleware({
+        input: {
+          algorithm: 'sha256',
+          // biome-ignore lint/suspicious/useAwait: <explanation>
+          key: async (request) => {
+            const { headers } = request.event
+            return `${headers.type} key`
+          },
+          headerName: 'signature',
+        },
+      }),
+    )
+    await handler(
+      {
+        headers: { signature: mac, type: 'secret' },
+        body,
+      },
+      mockContext(),
+    )
+  })
 })
