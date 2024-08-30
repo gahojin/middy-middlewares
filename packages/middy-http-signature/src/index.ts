@@ -3,10 +3,12 @@ import { calcMessageMAC } from '@/mac'
 import type middy from '@middy/core'
 import { createError, normalizeHttpResponse } from '@middy/util'
 
+type KeyType = crypto.BinaryLike | crypto.KeyObject
+
 type SignatureOption = {
   headerName: string
   algorithm: string
-  key: crypto.BinaryLike | crypto.KeyObject
+  key: KeyType | ((request: middy.Request) => KeyType | PromiseLike<KeyType>)
 }
 
 type Options = {
@@ -14,19 +16,29 @@ type Options = {
   output?: SignatureOption
 }
 
+const generateKey = async (request: middy.Request, key: SignatureOption['key']): Promise<KeyType> => {
+  return typeof key === 'function' ? await key(request) : key
+}
+
 const httpSignatureMiddleware = (options: Options): middy.MiddlewareObj => {
   const { input, output } = options
 
-  const beforeFn: middy.MiddlewareFn = (request) => {
+  const beforeFn: middy.MiddlewareFn = async (request) => {
     if (!input) {
       return
     }
     const { algorithm, key, headerName } = input
     const { headers, body } = request.event
 
+    // Base64エンコードされている場合、デコードする
+    const data = request.event.isBase64Encoded ? Buffer.from(body, 'base64').toString() : body
+    request.event.body = data
+    request.event.isBase64Encoded = false
+
     const signature = headers[headerName]
     if (signature) {
-      const mac = calcMessageMAC(algorithm, key, body)
+      const macKey = await generateKey(request, key)
+      const mac = calcMessageMAC(algorithm, macKey, data)
       if (mac !== signature) {
         throw createError(400, 'Bad signature', {
           cause: {
@@ -37,7 +49,7 @@ const httpSignatureMiddleware = (options: Options): middy.MiddlewareObj => {
     }
   }
 
-  const afterFn: middy.MiddlewareFn = (request) => {
+  const afterFn: middy.MiddlewareFn = async (request) => {
     if (!output) {
       return
     }
@@ -48,7 +60,8 @@ const httpSignatureMiddleware = (options: Options): middy.MiddlewareObj => {
     if (typeof body !== 'string') {
       return
     }
-    request.response.headers[headerName] = calcMessageMAC(algorithm, key, body)
+    const macKey = await generateKey(request, key)
+    request.response.headers[headerName] = calcMessageMAC(algorithm, macKey, body)
   }
   return {
     before: input ? beforeFn : undefined,
