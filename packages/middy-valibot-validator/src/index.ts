@@ -61,7 +61,7 @@ const validatorMiddleware = (options: Options = {}): middy.MiddlewareObj => {
     }
   }
   return {
-    before: eventSchema ?? contextSchema ? beforeFn : undefined,
+    before: (eventSchema ?? contextSchema) ? beforeFn : undefined,
     after: responseSchema ? afterFn : undefined,
   }
 }
