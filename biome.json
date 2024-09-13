@@ -24,7 +24,8 @@
       },
       "nursery": {
         "all": true,
-        "noExportedImports": "off"
+        "noExportedImports": "off",
+        "noSecrets": "off"
       },
       "style": {
         "all": true,
