@@ -1,6 +1,6 @@
 {
   "name": "@gahojin-inc/middy-http-signature",
-  "version": "2024.9.2",
+  "version": "2024.9.3",
   "description": "Middy http signature",
   "author": "GAHOJIN, Inc.",
   "license": "Apache-2.0",
