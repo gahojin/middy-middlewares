@@ -18,7 +18,7 @@
     "ncu": "npm-check-updates --workspaces -u"
   },
   "dependencies": {
-    "@biomejs/biome": "1.9.2",
+    "@biomejs/biome": "1.9.3",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@fast-check/vitest": "0.1.3",
