@@ -11,7 +11,7 @@
     "directory": "packages/middy-valibot-validator"
   },
   "files": ["dist"],
-  "keywords": [],
+  "keywords": ["middy", "valibot", "lambda", "aws"],
   "publishConfig": {
     "access": "public",
     "provenance": true

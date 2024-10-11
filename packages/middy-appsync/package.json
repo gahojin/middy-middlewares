@@ -11,7 +11,7 @@
     "directory": "packages/middy-appsync"
   },
   "files": ["dist"],
-  "keywords": [],
+  "keywords": ["middy", "appsync", "lambda", "aws"],
   "publishConfig": {
     "access": "public",
     "provenance": true

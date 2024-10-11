@@ -11,7 +11,7 @@
     "directory": "packages/middy-dynamodb-partial-batch-failure"
   },
   "files": ["dist"],
-  "keywords": [],
+  "keywords": ["middy", "dynamodb", "lambda", "aws"],
   "publishConfig": {
     "access": "public",
     "provenance": true
