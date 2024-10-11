@@ -25,7 +25,8 @@
       "nursery": {
         "all": true,
         "noExportedImports": "off",
-        "noSecrets": "off"
+        "noSecrets": "off",
+        "useExplicitFunctionReturnType": "off"
       },
       "style": {
         "all": true,
