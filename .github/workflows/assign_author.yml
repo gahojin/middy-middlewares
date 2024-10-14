@@ -1,7 +1,12 @@
+name: Assign author
+
 on:
   pull_request:
     types: [opened]
-name: Assign author
+
+permissions:
+  pull-requests: write
+
 jobs:
   assignAuthor:
     name: Assign author to PR
