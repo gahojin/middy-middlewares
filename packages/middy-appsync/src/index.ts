@@ -10,8 +10,8 @@ class AppSyncError extends Error {
   }
 }
 
-type AppSyncBatchResponse = {
-  data: unknown | null
+type AppSyncBatchResponse<TData = any> = {
+  data: TData | null
   errorMessage?: string
   errorType?: string
 }
@@ -20,17 +20,13 @@ type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | null> =
   | AppSyncResolverEvent<TArguments, TSource>
   | AppSyncResolverEvent<TArguments, TSource>[]
 
-type AppSyncMiddlewareObj = middy.MiddlewareObj<AppSyncResolverEvents<unknown, unknown>, unknown | AppSyncBatchResponse[]>
-
-type AppSyncMiddlewareFn = middy.MiddlewareFn<AppSyncResolverEvents<unknown, unknown>, unknown | AppSyncBatchResponse[]>
-
-type BuildResponseFn = <RESPONSE = unknown>(response: RESPONSE | Error, batchInvoke: boolean) => RESPONSE | AppSyncBatchResponse | Error
+type BuildResponseFn<TResponse = any> = (response: TResponse | Error, batchInvoke: boolean) => TResponse | AppSyncBatchResponse<TResponse> | Error
 
 type Options = {
   buildResponse?: BuildResponseFn
 }
 
-const defaultBuildResponse: BuildResponseFn = <RESPONSE>(response: RESPONSE | Error, batchInvoke: boolean) => {
+const defaultBuildResponse: BuildResponseFn = <TResponse>(response: TResponse | Error, batchInvoke: boolean) => {
   if (batchInvoke) {
     if (response instanceof AppSyncError) {
       return {
@@ -52,10 +48,10 @@ const defaultBuildResponse: BuildResponseFn = <RESPONSE>(response: RESPONSE | Er
   return response
 }
 
-const appSyncMiddleware = (opts: Options = {}): AppSyncMiddlewareObj => {
+const appSyncMiddleware = (opts: Options = {}): middy.MiddlewareObj => {
   const buildResponse = opts.buildResponse ?? defaultBuildResponse
 
-  const afterFn: AppSyncMiddlewareFn = (request) => {
+  const afterFn: middy.MiddlewareFn = (request) => {
     const { event, response } = request
 
     if (Array.isArray(event)) {
@@ -73,7 +69,7 @@ const appSyncMiddleware = (opts: Options = {}): AppSyncMiddlewareObj => {
     }
   }
 
-  const onErrorFn: AppSyncMiddlewareFn = (request) => {
+  const onErrorFn: middy.MiddlewareFn = (request) => {
     const { event, error, response } = request
 
     if (response !== undefined) {
