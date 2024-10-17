@@ -31,46 +31,41 @@ jobs:
         node-version: ["18", "20", "22"]
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           run_install: false
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - name: Restore cache pnpm-store
-        id: node_modules_cache
-        uses: actions/cache@v4
+
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
         with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-${{ matrix.node-version }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.node-version }}-pnpm-store-
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
       - name: Run biome migrate
         run: pnpm biome migrate --write
+
       - name: Run Build
         run: pnpm run build
+
       - name: Run Linter & Formatter
         run: pnpm run lint
+
       - name: Run Typescript check
         run: pnpm run check
-      - name: Get number of CPU cores
-        id: cpu-cores
-        uses: SimenB/github-actions-cpu-cores@v2
+
       - name: Run Unit tests
-        run: pnpm run test --concurrency ${{ steps.cpu-cores.outputs.count }}
+        run: pnpm run test
+
       - name: Commit changes
         if: ${{ github.event_name == 'pull_request' }}
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_options: '--no-verify --signoff'
-          commit_message: 'ci: apply formatting changes'
-
+          commit_options: "--no-verify --signoff"
+          commit_message: "ci: apply formatting changes"
