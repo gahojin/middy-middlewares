@@ -34,11 +34,11 @@ jobs:
           cache: "pnpm"
           registry-url: "https://registry.npmjs.org/"
           scope: "@gahojin-inc"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Publish
         run: pnpm -r publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
