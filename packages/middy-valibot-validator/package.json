@@ -5,6 +5,7 @@
   "author": "GAHOJIN, Inc.",
   "license": "Apache-2.0",
   "type": "module",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/gahojin/middy-middlewares.git",
