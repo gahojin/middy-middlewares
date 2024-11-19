@@ -27,8 +27,8 @@ importers:
         specifier: 2.1.5
         version: 2.1.5(vitest@2.1.5(@types/node@20.17.6))
       husky:
-        specifier: 9.1.6
-        version: 9.1.6
+        specifier: 9.1.7
+        version: 9.1.7
       jest-extended:
         specifier: 4.0.2
         version: 4.0.2
@@ -57,8 +57,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.10.3
-        version: 2024.10.3(uuid@10.0.0)
+        specifier: 2024.11.0
+        version: 2024.11.0(uuid@10.0.0)
       '@middy/core':
         specifier: 5.5.1
         version: 5.5.1
@@ -69,8 +69,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.10.3
-        version: 2024.10.3(uuid@10.0.0)
+        specifier: 2024.11.0
+        version: 2024.11.0(uuid@10.0.0)
       '@middy/core':
         specifier: 5.5.1
         version: 5.5.1
@@ -88,8 +88,8 @@ importers:
         version: 5.5.1
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.10.3
-        version: 2024.10.3(uuid@10.0.0)
+        specifier: 2024.11.0
+        version: 2024.11.0(uuid@10.0.0)
       '@middy/core':
         specifier: 5.5.1
         version: 5.5.1
@@ -104,8 +104,8 @@ importers:
         version: 0.42.1(typescript@5.6.3)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.10.3
-        version: 2024.10.3(uuid@10.0.0)
+        specifier: 2024.11.0
+        version: 2024.11.0(uuid@10.0.0)
       '@middy/core':
         specifier: 5.5.1
         version: 5.5.1
@@ -566,8 +566,8 @@ packages:
     peerDependencies:
       vitest: '>=0.28.1 <1.0.0 || ^1 || ^2'
 
-  '@gahojin-inc/aws-lambda-mock-context@2024.10.3':
-    resolution: {integrity: sha512-anY3LdlO7CuePNLRhRqrcsAl4eD75iXj+aCVFU1fo9bYHpV3RkLuWrOSyEzEdCawGZtneMhuEF0PZgetFv215g==}
+  '@gahojin-inc/aws-lambda-mock-context@2024.11.0':
+    resolution: {integrity: sha512-1XiE11jJoBokbWXWL0TYVr/QKkybIIiJvAbE5ClJ6wZU4OZbHY2huOLiO/flFYm9Tw87ipd3OE1py4995EbcEA==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
     peerDependencies:
       uuid: '>=8.0.0'
@@ -1165,8 +1165,8 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  husky@9.1.6:
-    resolution: {integrity: sha512-sqbjZKK7kf44hfdE94EoX8MZNk0n7HeW37O4YrVGCF4wzgQjp+akPAkfUK5LZ6KuR/6sqeAVuXHji+RzQgOn5A==}
+  husky@9.1.7:
+    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2154,7 +2154,7 @@ snapshots:
       fast-check: 3.23.1
       vitest: 2.1.5(@types/node@20.17.6)
 
-  '@gahojin-inc/aws-lambda-mock-context@2024.10.3(uuid@10.0.0)':
+  '@gahojin-inc/aws-lambda-mock-context@2024.11.0(uuid@10.0.0)':
     dependencies:
       uuid: 10.0.0
 
@@ -2706,7 +2706,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  husky@9.1.6: {}
+  husky@9.1.7: {}
 
   ieee754@1.2.1: {}
 
