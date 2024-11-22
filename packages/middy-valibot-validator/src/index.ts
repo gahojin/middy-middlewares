@@ -15,7 +15,7 @@ const defaults: Options = {
   language: 'en',
 }
 
-const validatorMiddleware = (options: Options = {}): middy.MiddlewareObj => {
+export default (options: Options = {}): middy.MiddlewareObj => {
   const opts = { ...defaults, ...options }
   const { eventSchema, contextSchema, responseSchema, language } = opts
 
@@ -65,5 +65,3 @@ const validatorMiddleware = (options: Options = {}): middy.MiddlewareObj => {
     after: responseSchema ? afterFn : undefined,
   }
 }
-
-export default validatorMiddleware

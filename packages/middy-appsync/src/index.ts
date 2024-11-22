@@ -1,7 +1,7 @@
 import type middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
 
-class AppSyncError extends Error {
+export class AppSyncError extends Error {
   readonly type: string
 
   constructor(message: string, type = 'UnknownError') {
@@ -10,17 +10,20 @@ class AppSyncError extends Error {
   }
 }
 
-type AppSyncBatchResponse<TData = any> = {
+export type AppSyncBatchResponse<TData = any> = {
   data: TData | null
   errorMessage?: string
   errorType?: string
 }
 
-type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | null> =
+export type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | null> =
   | AppSyncResolverEvent<TArguments, TSource>
   | AppSyncResolverEvent<TArguments, TSource>[]
 
-type BuildResponseFn<TResponse = any> = (response: TResponse | Error, batchInvoke: boolean) => TResponse | AppSyncBatchResponse<TResponse> | Error
+export type BuildResponseFn<TResponse = any> = (
+  response: TResponse | Error,
+  batchInvoke: boolean,
+) => TResponse | AppSyncBatchResponse<TResponse> | Error
 
 type Options = {
   buildResponse?: BuildResponseFn
@@ -48,7 +51,7 @@ const defaultBuildResponse: BuildResponseFn = <TResponse>(response: TResponse | 
   return response
 }
 
-const appSyncMiddleware = (opts: Options = {}): middy.MiddlewareObj => {
+export default (opts: Options = {}): middy.MiddlewareObj => {
   const buildResponse = opts.buildResponse ?? defaultBuildResponse
 
   const afterFn: middy.MiddlewareFn = (request) => {
@@ -92,6 +95,3 @@ const appSyncMiddleware = (opts: Options = {}): middy.MiddlewareObj => {
     onError: onErrorFn,
   }
 }
-
-export type { AppSyncBatchResponse, BuildResponseFn, AppSyncResolverEvents }
-export { appSyncMiddleware as appSync, AppSyncError }

@@ -9,7 +9,7 @@ const defaults: Options = {
   logger: console.error,
 }
 
-const dynamodbPartialBatchFailureMiddleware = (options: Options = {}): middy.MiddlewareObj<DynamoDBStreamEvent, DynamoDBBatchResponse> => {
+export default (options: Options = {}): middy.MiddlewareObj<DynamoDBStreamEvent, DynamoDBBatchResponse> => {
   const { logger } = { ...defaults, ...options }
 
   const afterFn: middy.MiddlewareFn<DynamoDBStreamEvent, PromiseSettledResult<void>[] | DynamoDBBatchResponse> = (request) => {
@@ -62,5 +62,3 @@ const dynamodbPartialBatchFailureMiddleware = (options: Options = {}): middy.Mid
     onError: onErrorFn,
   }
 }
-
-export default dynamodbPartialBatchFailureMiddleware
