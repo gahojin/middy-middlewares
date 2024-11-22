@@ -13,6 +13,7 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "check": "turbo run check",
+    "check:packagejson": "turbo run check:packagejson",
     "test": "turbo run test:unit",
     "clean": "pnpm -r --parallel exec rimraf dist .turbo *.log",
     "ncu": "npm-check-updates --workspaces -u"

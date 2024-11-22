@@ -13,9 +13,9 @@ const banner = `/**
 export default defineConfig((options) => {
   const commonOptions: Partial<Options> = {
     entry: ['src/index.ts'],
-    splitting: false,
     sourcemap: true,
-    treeshake: 'recommended',
+    treeshake: 'smallest',
+    dts: true,
     banner: {
       js: banner,
     },
@@ -27,12 +27,12 @@ export default defineConfig((options) => {
       ...commonOptions,
       format: ['esm'],
       outExtension: () => ({ js: '.mjs' }),
-      dts: true,
       clean: true,
     },
     {
       ...commonOptions,
       format: ['cjs'],
+      cjsInterop: true,
       outDir: './dist/cjs/',
       outExtension: () => ({ js: '.cjs' }),
     },
