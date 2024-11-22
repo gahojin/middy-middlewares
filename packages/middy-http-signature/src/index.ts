@@ -20,7 +20,7 @@ const generateKey = async (request: middy.Request, key: SignatureOption['key']):
   return typeof key === 'function' ? await key(request) : key
 }
 
-const httpSignatureMiddleware = (options: Options): middy.MiddlewareObj => {
+export default (options: Options): middy.MiddlewareObj => {
   const { input, output } = options
 
   const beforeFn: middy.MiddlewareFn = async (request) => {
@@ -68,5 +68,3 @@ const httpSignatureMiddleware = (options: Options): middy.MiddlewareObj => {
     after: output ? afterFn : undefined,
   }
 }
-
-export default httpSignatureMiddleware
