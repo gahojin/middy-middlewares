@@ -23,7 +23,7 @@
     "prepublish": "pnpm run build",
     "lint": "biome check --write .",
     "check": "tsc --noEmit",
-    "check:packagejson": "pnpm dlx @arethetypeswrong/cli --pack .",
+    "check:packagejson": "attw --pack .",
     "test": "vitest --watch",
     "test:unit": "vitest --passWithNoTests --run --coverage"
   },

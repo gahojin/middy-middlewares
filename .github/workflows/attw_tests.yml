@@ -1,0 +1,51 @@
+name: Are the types wrong?
+
+on:
+  push:
+    branches:
+      - "main"
+    paths-ignore:
+      - ".husky/**"
+      - ".vscode/**"
+      - "LICENSE"
+      - "*.md"
+      - "bumpver.toml"
+  pull_request:
+    paths-ignore:
+      - ".husky/**"
+      - ".vscode/**"
+      - "LICENSE"
+      - "*.md"
+      - "bumpver.toml"
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Install Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check package.json
+        run: pnpm run check:packagejson
