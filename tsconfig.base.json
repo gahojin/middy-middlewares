@@ -23,7 +23,6 @@
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": true,
     "newLine": "lf",
     "types": ["@types/node", "vitest/globals", "jest-extended"],
     "paths": {
