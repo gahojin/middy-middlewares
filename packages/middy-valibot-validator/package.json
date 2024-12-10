@@ -53,7 +53,7 @@
     "@valibot/i18n": "0.17.0"
   },
   "peerDependencies": {
-    "valibot": "^0",
+    "valibot": "^0 || ^1",
     "@middy/core": "^5 || ^6",
     "@middy/util": "^5 || ^6"
   }
