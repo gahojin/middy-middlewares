@@ -1,6 +1,6 @@
 {
   "name": "@gahojin-inc/middy-dynamodb-partial-batch-failure",
-  "version": "2024.11.1",
+  "version": "2024.12.0",
   "description": "Middy dynamodb partial batch failure",
   "author": "GAHOJIN, Inc.",
   "license": "Apache-2.0",
