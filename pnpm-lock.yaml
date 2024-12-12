@@ -95,9 +95,6 @@ importers:
       '@middy/util':
         specifier: 6.0.0
         version: 6.0.0
-      '@types/aws-lambda':
-        specifier: 8.10.146
-        version: 8.10.146
 
   packages/middy-valibot-validator:
     dependencies:
@@ -114,9 +111,6 @@ importers:
       '@middy/util':
         specifier: 6.0.0
         version: 6.0.0
-      '@types/aws-lambda':
-        specifier: 8.10.146
-        version: 8.10.146
       '@valibot/i18n':
         specifier: 0.17.0
         version: 0.17.0(valibot@0.42.1(typescript@5.7.2))
