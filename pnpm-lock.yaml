@@ -66,8 +66,8 @@ importers:
         specifier: 6.0.0
         version: 6.0.0
       '@types/aws-lambda':
-        specifier: 8.10.146
-        version: 8.10.146
+        specifier: 8.10.147
+        version: 8.10.147
 
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
@@ -81,8 +81,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1
       '@types/aws-lambda':
-        specifier: 8.10.146
-        version: 8.10.146
+        specifier: 8.10.147
+        version: 8.10.147
 
   packages/middy-http-signature:
     devDependencies:
@@ -808,8 +808,8 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
 
-  '@types/aws-lambda@8.10.146':
-    resolution: {integrity: sha512-3BaDXYTh0e6UCJYL/jwV/3+GRslSc08toAiZSmleYtkAUyV5rtvdPYxrG/88uqvTuT6sb27WE9OS90ZNTIuQ0g==}
+  '@types/aws-lambda@8.10.147':
+    resolution: {integrity: sha512-nD0Z9fNIZcxYX5Mai2CTmFD7wX7UldCkW2ezCF8D1T5hdiLsnTWDGRpfRYntU6VjTdLQjOvyszru7I1c1oCQew==}
 
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
@@ -2379,7 +2379,7 @@ snapshots:
 
   '@sindresorhus/is@4.6.0': {}
 
-  '@types/aws-lambda@8.10.146': {}
+  '@types/aws-lambda@8.10.147': {}
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
