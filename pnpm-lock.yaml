@@ -60,8 +60,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.11.2
-        version: 2024.11.2(uuid@10.0.0)
+        specifier: 2025.1.1
+        version: 2025.1.1(uuid@10.0.0)
       '@middy/core':
         specifier: 6.0.0
         version: 6.0.0
@@ -72,8 +72,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.11.2
-        version: 2024.11.2(uuid@10.0.0)
+        specifier: 2025.1.1
+        version: 2025.1.1(uuid@10.0.0)
       '@middy/core':
         specifier: 6.0.0
         version: 6.0.0
@@ -87,8 +87,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.11.2
-        version: 2024.11.2(uuid@10.0.0)
+        specifier: 2025.1.1
+        version: 2025.1.1(uuid@10.0.0)
       '@middy/core':
         specifier: 6.0.0
         version: 6.0.0
@@ -103,8 +103,8 @@ importers:
         version: 0.42.1(typescript@5.7.3)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2024.11.2
-        version: 2024.11.2(uuid@10.0.0)
+        specifier: 2025.1.1
+        version: 2025.1.1(uuid@10.0.0)
       '@middy/core':
         specifier: 6.0.0
         version: 6.0.0
@@ -439,8 +439,8 @@ packages:
     peerDependencies:
       vitest: '>=0.28.1 <1.0.0 || ^1 || ^2'
 
-  '@gahojin-inc/aws-lambda-mock-context@2024.11.2':
-    resolution: {integrity: sha512-rJi62KoA8Ai7Pi3LcLwFq+seqZb9wktCQKYkuuvrK1cK9mcrrvEf5tbP26vn+I981RsQw3kWwEvJAr1iUGYmZQ==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.1.1':
+    resolution: {integrity: sha512-u4WNkYm126hfx/scCudn2G0hmCx8CoFZrbfiutJx0mBuM6SDwx/R9+GvhwbJJJcdp2ZhoPyMhpHlxlWL1aoE1A==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
     peerDependencies:
       uuid: '>=8.0.0'
@@ -1926,7 +1926,7 @@ snapshots:
       fast-check: 3.23.2
       vitest: 3.0.4(@types/node@20.17.16)(jiti@2.4.2)
 
-  '@gahojin-inc/aws-lambda-mock-context@2024.11.2(uuid@10.0.0)':
+  '@gahojin-inc/aws-lambda-mock-context@2025.1.1(uuid@10.0.0)':
     dependencies:
       uuid: 10.0.0
 
