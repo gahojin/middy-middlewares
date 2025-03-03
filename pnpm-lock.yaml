@@ -66,8 +66,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.2.0
-        version: 2025.2.0
+        specifier: 2025.3.0
+        version: 2025.3.0
       '@middy/core':
         specifier: 6.1.4
         version: 6.1.4
@@ -78,8 +78,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.2.0
-        version: 2025.2.0
+        specifier: 2025.3.0
+        version: 2025.3.0
       '@middy/core':
         specifier: 6.1.4
         version: 6.1.4
@@ -93,8 +93,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.2.0
-        version: 2025.2.0
+        specifier: 2025.3.0
+        version: 2025.3.0
       '@middy/core':
         specifier: 6.1.4
         version: 6.1.4
@@ -109,8 +109,8 @@ importers:
         version: 0.42.1(typescript@5.8.2)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.2.0
-        version: 2025.2.0
+        specifier: 2025.3.0
+        version: 2025.3.0
       '@middy/core':
         specifier: 6.1.4
         version: 6.1.4
@@ -448,8 +448,8 @@ packages:
     peerDependencies:
       vitest: '>=0.28.1 <1.0.0 || ^1 || ^2 || ^3'
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.2.0':
-    resolution: {integrity: sha512-+oNP1d4cfv0VPtCBQ2X14vRzh6Sj/vJMPqq66nTsaQJGsyvSNRWOz+qHob9Fj108W56bLhTsAG3EUSyVOfbgvw==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.3.0':
+    resolution: {integrity: sha512-6pKI3EsL02YFFfOeUVD9c8a+HZgFtjnAdcWB02FZfAGFMZgcOsJmIngwvxs9qTU5gSrrugw3rMliljijzT3zUA==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
 
   '@isaacs/cliui@8.0.2':
@@ -1935,7 +1935,7 @@ snapshots:
       fast-check: 3.23.2
       vitest: 3.0.7(@types/node@20.17.22)(jiti@2.4.2)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.2.0': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.3.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
