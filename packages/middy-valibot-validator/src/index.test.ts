@@ -123,9 +123,10 @@ describe('validator', () => {
 
     handler.use(validatorMiddleware({ eventSchema: schema }))
 
-    // fooプロパティが存在しない
+    // fooプロパティの型不一致
     const event = {
       body: JSON.stringify({ something: 'somethingelse' }),
+      foo: 1,
     }
 
     await expect(() => handler(event, mockContext())).rejects.toThrowError(
@@ -138,8 +139,8 @@ describe('validator', () => {
             expect.objectContaining({
               type: 'string',
               expected: 'string',
-              received: 'undefined',
-              message: 'Invalid type: Expected string but received undefined',
+              received: '1',
+              message: 'Invalid type: Expected string but received 1',
               path: [expect.objectContaining({ key: 'foo' })],
               lang: 'en',
             }),
@@ -149,12 +150,85 @@ describe('validator', () => {
     )
   })
 
-  const cases: Record<string, string> = {
-    en: 'Invalid type: Expected string but received undefined',
-    ja: '無効な型: string を期待しましたが、 undefined を受け取りました',
-  }
+  it('スキーマ不一致の場合、BadRequestとなること (フィールドなし)', async () => {
+    const schema = v.object({
+      body: v.string(),
+      foo: v.string(),
+    })
 
+    const handler = middy()
+
+    handler.use(validatorMiddleware({ eventSchema: schema }))
+
+    // fooプロパティの型不一致
+    const event = {
+      body: JSON.stringify({ something: 'somethingelse' }),
+    }
+
+    await expect(() => handler(event, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              type: 'object',
+              expected: '"foo"',
+              received: 'undefined',
+              message: 'Invalid key: Expected "foo" but received undefined',
+              path: [expect.objectContaining({ key: 'foo' })],
+              lang: 'en',
+            }),
+          ],
+        },
+      }),
+    )
+  })
+
+  const invalidTypeCases: Record<string, string> = {
+    en: 'Invalid type: Expected string but received 1',
+    ja: '無効な型: string を期待しましたが、 1 を受け取りました',
+  }
   it.each(['en', 'ja'])('スキーマ不一致の場合、BadRequestとなること (異なる言語設定) (%s)', async (lang) => {
+    const schema = v.object({
+      body: v.string(),
+      foo: v.string(),
+    })
+
+    const handler = middy()
+
+    handler.use(validatorMiddleware({ eventSchema: schema, language: lang }))
+
+    // fooプロパティが存在しない
+    const event = {
+      body: JSON.stringify({ something: 'somethingelse' }),
+      foo: 1,
+    }
+
+    await expect(() => handler(event, mockContext())).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Event object failed validation',
+        cause: {
+          package: '@gahojin-inc/middy-valibot-validator',
+          data: [
+            expect.objectContaining({
+              message: invalidTypeCases[lang],
+              path: [expect.objectContaining({ key: 'foo' })],
+              type: 'string',
+            }),
+          ],
+        },
+      }),
+    )
+  })
+
+  const invalidKeyCases: Record<string, string> = {
+    en: 'Invalid key: Expected "foo" but received undefined',
+    ja: '無効な型: "foo" を期待しましたが、 undefined を受け取りました',
+  }
+  it.each(['en', 'ja'])('スキーマ不一致の場合、BadRequestとなること (異なる言語設定 / フィールドなし) (%s)', async (lang) => {
     const schema = v.object({
       body: v.string(),
       foo: v.string(),
@@ -177,9 +251,9 @@ describe('validator', () => {
           package: '@gahojin-inc/middy-valibot-validator',
           data: [
             expect.objectContaining({
-              message: cases[lang],
+              message: invalidKeyCases[lang],
               path: [expect.objectContaining({ key: 'foo' })],
-              type: 'string',
+              type: 'object',
             }),
           ],
         },
@@ -211,9 +285,9 @@ describe('validator', () => {
           data: [
             expect.objectContaining({
               // valibotのデフォルト言語となる
-              message: 'Invalid type: Expected string but received undefined',
+              message: 'Invalid key: Expected "foo" but received undefined',
               path: [expect.objectContaining({ key: 'foo' })],
-              type: 'string',
+              type: 'object',
             }),
           ],
         },
@@ -298,14 +372,14 @@ describe('validator', () => {
           package: '@gahojin-inc/middy-valibot-validator',
           data: [
             expect.objectContaining({
-              message: 'Invalid type: Expected Object but received undefined',
+              message: 'Invalid key: Expected "body" but received undefined',
               path: [expect.objectContaining({ key: 'body' })],
               type: 'object',
             }),
             expect.objectContaining({
-              message: 'Invalid type: Expected number but received undefined',
+              message: 'Invalid key: Expected "statusCode" but received undefined',
               path: [expect.objectContaining({ key: 'statusCode' })],
-              type: 'number',
+              type: 'object',
             }),
           ],
         },
