@@ -105,8 +105,8 @@ importers:
   packages/middy-valibot-validator:
     dependencies:
       valibot:
-        specifier: 0.42.1
-        version: 0.42.1(typescript@5.8.2)
+        specifier: 1.0.0
+        version: 1.0.0(typescript@5.8.2)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
         specifier: 2025.3.0
@@ -118,8 +118,8 @@ importers:
         specifier: 6.1.5
         version: 6.1.5
       '@valibot/i18n':
-        specifier: 0.17.0
-        version: 0.17.0(valibot@0.42.1(typescript@5.8.2))
+        specifier: 1.0.0
+        version: 1.0.0(valibot@1.0.0(typescript@5.8.2))
 
 packages:
 
@@ -712,10 +712,10 @@ packages:
   '@types/node@20.17.24':
     resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
 
-  '@valibot/i18n@0.17.0':
-    resolution: {integrity: sha512-pcgQJkI5KWE7q0/7MC+gkd7u1FFgwnyAeuEFy0SPX4KS/1OA5I73zV/e4e5MTaXdBJYD9+f2AxFjNgXJ0a1xHA==}
+  '@valibot/i18n@1.0.0':
+    resolution: {integrity: sha512-daCwLqQOHAbUAWtWm1zE2JV6Gn3lqS3Qw/Rm4s+FGbwyfrk3ljee2eiZBVACFet3oanB2TZpZeLssppH3YxfiQ==}
     peerDependencies:
-      valibot: '>=0.31.0 <1'
+      valibot: ^1.0.0
 
   '@vitest/coverage-v8@3.0.9':
     resolution: {integrity: sha512-15OACZcBtQ34keIEn19JYTVuMFTlFrClclwWjHo/IRPg/8ELpkgNTl0o7WLP9WO9XGH6+tip9CPYtEOrIDJvBA==}
@@ -1613,8 +1613,8 @@ packages:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
     engines: {node: '>=18'}
 
-  valibot@0.42.1:
-    resolution: {integrity: sha512-3keXV29Ar5b//Hqi4MbSdV7lfVp6zuYLZuA9V1PvQUsXqogr+u5lvLPLk3A4f74VUXDnf/JfWMN6sB+koJ/FFw==}
+  valibot@1.0.0:
+    resolution: {integrity: sha512-1Hc0ihzWxBar6NGeZv7fPLY0QuxFMyxwYR2sF1Blu7Wq7EnremwY2W02tit2ij2VJT8HcSkHAQqmFfl77f73Yw==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -2217,9 +2217,9 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@valibot/i18n@0.17.0(valibot@0.42.1(typescript@5.8.2))':
+  '@valibot/i18n@1.0.0(valibot@1.0.0(typescript@5.8.2))':
     dependencies:
-      valibot: 0.42.1(typescript@5.8.2)
+      valibot: 1.0.0(typescript@5.8.2)
 
   '@vitest/coverage-v8@3.0.9(vitest@3.0.9(@types/node@20.17.24)(jiti@2.4.2))':
     dependencies:
@@ -3073,7 +3073,7 @@ snapshots:
 
   unicorn-magic@0.1.0: {}
 
-  valibot@0.42.1(typescript@5.8.2):
+  valibot@1.0.0(typescript@5.8.2):
     optionalDependencies:
       typescript: 5.8.2
 
