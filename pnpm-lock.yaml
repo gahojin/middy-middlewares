@@ -42,8 +42,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       npm-check-updates:
-        specifier: 17.1.16
-        version: 17.1.16
+        specifier: 17.1.18
+        version: 17.1.18
       rimraf:
         specifier: 6.0.1
         version: 6.0.1
@@ -72,8 +72,8 @@ importers:
         specifier: 6.1.6
         version: 6.1.6
       '@types/aws-lambda':
-        specifier: 8.10.148
-        version: 8.10.148
+        specifier: 8.10.149
+        version: 8.10.149
 
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
@@ -87,8 +87,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1
       '@types/aws-lambda':
-        specifier: 8.10.148
-        version: 8.10.148
+        specifier: 8.10.149
+        version: 8.10.149
 
   packages/middy-http-signature:
     devDependencies:
@@ -607,8 +607,8 @@ packages:
     resolution: {integrity: sha512-t09vSN3MdfsyCHoFcTRCH/iUtG7OJ0CsjzB8cjAmKc/va/kIgeDI/TxsigdncE/4be734m0cvIYwNaV4i2XqAw==}
     engines: {node: '>=10'}
 
-  '@types/aws-lambda@8.10.148':
-    resolution: {integrity: sha512-JL+2cfkY9ODQeE06hOxSFNkafjNk4JRBgY837kpoq1GHDttq2U3BA9IzKOWxS4DLjKoymGB4i9uBrlCkjUl1yg==}
+  '@types/aws-lambda@8.10.149':
+    resolution: {integrity: sha512-NXSZIhfJjnXqJgtS7IwutqIF/SOy1Wz5Px4gUY1RWITp3AYTyuJS4xaXr/bIJY1v15XMzrJ5soGnPM+7uigZjA==}
 
   '@types/conventional-commits-parser@5.0.1':
     resolution: {integrity: sha512-7uz5EHdzz2TqoMfV7ee61Egf5y6NkcO4FB/1iCCQnbeiI1F3xzv3vK5dBCXUCLQgGYS+mUeigK1iKQzvED+QnQ==}
@@ -1176,8 +1176,8 @@ packages:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
     engines: {node: '>=18'}
 
-  npm-check-updates@17.1.16:
-    resolution: {integrity: sha512-9nohkfjLRzLfsLVGbO34eXBejvrOOTuw5tvNammH73KEFG5XlFoi3G2TgjTExHtnrKWCbZ+mTT+dbNeSjASIPw==}
+  npm-check-updates@17.1.18:
+    resolution: {integrity: sha512-bkUy2g4v1i+3FeUf5fXMLbxmV95eG4/sS7lYE32GrUeVgQRfQEk39gpskksFunyaxQgTIdrvYbnuNbO/pSUSqw==}
     engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
     hasBin: true
 
@@ -2054,7 +2054,7 @@ snapshots:
 
   '@sindresorhus/is@4.6.0': {}
 
-  '@types/aws-lambda@8.10.148': {}
+  '@types/aws-lambda@8.10.149': {}
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
@@ -2601,7 +2601,7 @@ snapshots:
       emojilib: 2.4.0
       skin-tone: 2.0.0
 
-  npm-check-updates@17.1.16: {}
+  npm-check-updates@17.1.18: {}
 
   object-assign@4.1.1: {}
 
