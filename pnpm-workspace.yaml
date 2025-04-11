@@ -1,2 +1,13 @@
 packages:
-  - 'packages/**'
+  - packages/**
+
+overrides:
+  esbuild: $esbuild
+
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+
+ignoredBuiltDependencies:
+  - '@biomejs/biome'
+  - '@gahojin-inc/aws-lambda-mock-context'
