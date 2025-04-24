@@ -28,10 +28,10 @@
     "esbuild": "0.25.3",
     "jest-extended": "4.0.2",
     "lefthook": "1.11.11",
-    "npm-check-updates": "18.0.0",
+    "npm-check-updates": "18.0.1",
     "rimraf": "6.0.1",
     "tsup": "8.4.0",
-    "turbo": "2.5.0",
+    "turbo": "2.5.1",
     "typescript": "5.8.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.1.2"
