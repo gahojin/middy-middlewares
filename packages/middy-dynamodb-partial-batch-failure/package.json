@@ -19,7 +19,8 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "build": "tsup",
+    "prebuild": "rimraf dist",
+    "build": "rolldown -c",
     "prepublish": "pnpm run build",
     "lint": "biome check --write .",
     "check": "tsc --noEmit",
@@ -27,18 +28,19 @@
     "test": "vitest --watch",
     "test:unit": "vitest --passWithNoTests --run --coverage"
   },
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
+        "types": "./dist/index.d.mts",
         "default": "./dist/index.mjs"
       },
       "require": {
-        "types": "./dist/cjs/index.d.cts",
-        "default": "./dist/cjs/index.cjs"
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
       }
     }
   },

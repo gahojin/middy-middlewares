@@ -1,11 +1,7 @@
 packages:
   - packages/**
 
-overrides:
-  esbuild: $esbuild
-
 onlyBuiltDependencies:
-  - esbuild
   - lefthook
 
 ignoredBuiltDependencies:

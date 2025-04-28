@@ -1,7 +1,7 @@
 import type crypto from 'node:crypto'
-import { calcMessageMAC } from '@/mac'
 import type middy from '@middy/core'
 import { createError, normalizeHttpResponse } from '@middy/util'
+import { calcMessageMAC } from './mac'
 
 type KeyType = crypto.BinaryLike | crypto.KeyObject
 
