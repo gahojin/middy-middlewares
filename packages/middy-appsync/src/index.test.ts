@@ -1,7 +1,7 @@
-import appSync, { AppSyncError, type AppSyncResolverEvents, type BuildResponseFn } from '@/index'
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import middy from '@middy/core'
 import type { AppSyncResolverEvent } from 'aws-lambda'
+import appSync, { AppSyncError, type AppSyncResolverEvents, type BuildResponseFn } from './index'
 
 type TestAppSyncArgument = {
   field1: string
