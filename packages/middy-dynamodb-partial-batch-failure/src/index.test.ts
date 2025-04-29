@@ -1,8 +1,8 @@
-import dynamodbPartialBatchFailure from '@/index'
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import middy from '@middy/core'
 import createEvent from '@serverless/event-mocks'
 import type { DynamoDBStreamEvent } from 'aws-lambda'
+import dynamodbPartialBatchFailure from './index'
 
 const lambdaHandler = async (event: DynamoDBStreamEvent) => {
   // biome-ignore lint/suspicious/useAwait:

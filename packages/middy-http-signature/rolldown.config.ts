@@ -4,7 +4,7 @@ import IsolatedDecl from 'unplugin-isolated-decl/rolldown'
 export default defineConfig([
   {
     platform: 'node',
-    external: ['@middy/core', '@middy/util', 'node:crypto'],
+    external: [/^node:/, /^@middy\//, 'aws-lambda'],
     treeshake: true,
     input: 'src/index.ts',
     output: [

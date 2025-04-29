@@ -4,7 +4,7 @@ import IsolatedDecl from 'unplugin-isolated-decl/rolldown'
 export default defineConfig([
   {
     platform: 'node',
-    external: ['valibot', '@middy/core', '@middy/util'],
+    external: [/^node:/, /^@middy\//, 'aws-lambda', 'valibot'],
     treeshake: true,
     input: 'src/index.ts',
     output: [

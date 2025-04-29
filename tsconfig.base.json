@@ -6,6 +6,7 @@
     "moduleResolution": "bundler",
     "lib": ["ES2023"],
     "declaration": true,
+    "isolatedDeclarations": true,
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -24,10 +25,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "newLine": "lf",
-    "types": ["@types/node", "vitest/globals", "jest-extended"],
-    "paths": {
-      "@/*": ["./src/*"],
-      "~/*": ["./*"]
-    }
+    "types": ["@types/node", "vitest/globals", "jest-extended"]
   }
 }
