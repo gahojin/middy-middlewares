@@ -63,8 +63,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.0
-        version: 2025.4.0
+        specifier: 2025.4.1
+        version: 2025.4.1
       '@middy/core':
         specifier: 6.1.6
         version: 6.1.6
@@ -75,8 +75,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.0
-        version: 2025.4.0
+        specifier: 2025.4.1
+        version: 2025.4.1
       '@middy/core':
         specifier: 6.1.6
         version: 6.1.6
@@ -90,8 +90,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.0
-        version: 2025.4.0
+        specifier: 2025.4.1
+        version: 2025.4.1
       '@middy/core':
         specifier: 6.1.6
         version: 6.1.6
@@ -106,8 +106,8 @@ importers:
         version: 1.0.0(typescript@5.8.3)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.0
-        version: 2025.4.0
+        specifier: 2025.4.1
+        version: 2025.4.1
       '@middy/core':
         specifier: 6.1.6
         version: 6.1.6
@@ -454,8 +454,8 @@ packages:
     peerDependencies:
       vitest: ^1 || ^2 || ^3
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.4.0':
-    resolution: {integrity: sha512-kP2Jkf/WuWqVtxLpowJF6yDcAGZJW3uaRxTZzLlVRGUNO3woHSzgBotzw+Yumxwxc0Yqgjp6y/f1NWh3XEnFiQ==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.4.1':
+    resolution: {integrity: sha512-tGxGDVPn6aUvQgfKC/4WENKambOBLA5QXYwp8sAdyhYOTtbJ+xILTdmFjjE/pBKLEiXDPCWUiNXGi7cAdRLKSg==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
 
   '@isaacs/cliui@8.0.2':
@@ -2151,7 +2151,7 @@ snapshots:
       fast-check: 4.1.1
       vitest: 3.1.2(@types/node@20.17.32)(jiti@2.4.2)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.4.0': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.4.1': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:

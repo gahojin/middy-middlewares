@@ -45,7 +45,7 @@
     }
   },
   "devDependencies": {
-    "@gahojin-inc/aws-lambda-mock-context": "2025.4.0",
+    "@gahojin-inc/aws-lambda-mock-context": "2025.4.1",
     "@middy/core": "6.1.6",
     "@middy/util": "6.1.6"
   },
