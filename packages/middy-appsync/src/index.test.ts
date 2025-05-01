@@ -250,7 +250,7 @@ describe('middleware', () => {
   })
 })
 
-const customBuildResponseFn: BuildResponseFn<TestAppSyncArgument> = (response: TestAppSyncArgument | Error) => {
+const customBuildResponseFn: BuildResponseFn<TestAppSyncArgument> = (response: TestAppSyncArgument | Error | null) => {
   if (response instanceof AppSyncError) {
     return {
       data: {
