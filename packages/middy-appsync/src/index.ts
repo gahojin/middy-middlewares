@@ -20,16 +20,15 @@ export type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | nu
   | AppSyncResolverEvent<TArguments, TSource>
   | AppSyncResolverEvent<TArguments, TSource>[]
 
-export type BuildResponseFn<TResponse = any> = (
-  response: TResponse | Error | null,
-  batchInvoke: boolean,
-) => AppSyncBatchResponse<TResponse> | TResponse | Error | null
+export type AppSyncResponse<TData> = AppSyncBatchResponse<TData> | TData | Error | null
 
-type Options<TResponse = any> = {
-  buildResponse?: BuildResponseFn<TResponse>
+export type BuildResponseFn<TData = any> = (response: TData | Error | null, batchInvoke: boolean) => AppSyncResponse<TData>
+
+type Options<TData = any> = {
+  buildResponse?: BuildResponseFn<TData>
 }
 
-const defaultBuildResponse: BuildResponseFn = <TResponse>(response: TResponse | Error, batchInvoke: boolean) => {
+const defaultBuildResponse = <TData>(response: TData | Error | null, batchInvoke: boolean): AppSyncResponse<TData> => {
   if (batchInvoke) {
     if (response instanceof AppSyncError) {
       return {
@@ -51,8 +50,10 @@ const defaultBuildResponse: BuildResponseFn = <TResponse>(response: TResponse | 
   return response
 }
 
-export default <TArguments = any, TResponse = any>(opts: Options<TResponse> = {}): middy.MiddlewareObj<AppSyncResolverEvents<TArguments>> => {
-  const buildResponse: BuildResponseFn<TResponse> = opts.buildResponse ?? defaultBuildResponse
+export default <TArguments = any, TData = any>(
+  opts: Options<TData> = {},
+): middy.MiddlewareObj<AppSyncResolverEvents<TArguments>, AppSyncResponse<TData>> => {
+  const buildResponse: BuildResponseFn<TData> = opts.buildResponse ?? defaultBuildResponse
 
   const afterFn: middy.MiddlewareFn = (request) => {
     const { event, response } = request

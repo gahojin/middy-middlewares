@@ -63,20 +63,20 @@ describe('httpSignature', () => {
     const body = 'Middy Response data'
     const mac = calcMessageMAC('sha256', 'secret key', body)
 
-    const handler = middy(() => {
-      return {
+    const handler = middy()
+      .use(
+        httpSignatureMiddleware({
+          output: {
+            algorithm: 'sha256',
+            key: 'secret key',
+            headerName: 'signature',
+          },
+        }),
+      )
+      .handler(() => ({
         body,
         statusCode: 200,
-      }
-    }).use(
-      httpSignatureMiddleware({
-        output: {
-          algorithm: 'sha256',
-          key: 'secret key',
-          headerName: 'signature',
-        },
-      }),
-    )
+      }))
     const response = await handler({}, mockContext())
     expect(response).toEqual({
       statusCode: 200,
@@ -86,20 +86,20 @@ describe('httpSignature', () => {
   })
 
   it('レスポンスが文字列ではない場合、何も行わない', async () => {
-    const handler = middy(() => {
-      return {
+    const handler = middy()
+      .use(
+        httpSignatureMiddleware({
+          output: {
+            algorithm: 'sha256',
+            key: 'secret key',
+            headerName: 'signature',
+          },
+        }),
+      )
+      .handler(() => ({
         body: { dummy: 'dummy' },
         statusCode: 200,
-      }
-    }).use(
-      httpSignatureMiddleware({
-        output: {
-          algorithm: 'sha256',
-          key: 'secret key',
-          headerName: 'signature',
-        },
-      }),
-    )
+      }))
     const response = await handler({}, mockContext())
     expect(response).toEqual({
       statusCode: 200,
