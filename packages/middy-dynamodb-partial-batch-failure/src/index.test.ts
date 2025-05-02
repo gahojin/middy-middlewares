@@ -31,7 +31,7 @@ describe('middleware', () => {
     })
     const logger = vi.fn()
 
-    const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
+    const handler = middy().use(dynamodbPartialBatchFailure({ logger })).handler(lambdaHandler)
 
     const response = await handler(event, mockContext())
     expect(response).toEqual({
@@ -55,7 +55,7 @@ describe('middleware', () => {
     })
     const logger = vi.fn()
 
-    const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
+    const handler = middy().use(dynamodbPartialBatchFailure({ logger })).handler(lambdaHandler)
 
     const response = await handler(event, mockContext())
     expect(response).toEqual({ batchItemFailures: [] })
@@ -85,7 +85,7 @@ describe('middleware', () => {
     })
     const logger = vi.fn()
 
-    const handler = middy(lambdaHandler).use(dynamodbPartialBatchFailure({ logger }))
+    const handler = middy().use(dynamodbPartialBatchFailure({ logger })).handler(lambdaHandler)
 
     const response = await handler(event, mockContext())
     expect(response).toEqual({
@@ -117,11 +117,12 @@ describe('middleware', () => {
     })
     const logger = vi.fn()
 
-    const handler = middy(lambdaHandler)
+    const handler = middy()
       .before(() => {
         throw new Error('before')
       })
       .use(dynamodbPartialBatchFailure({ logger }))
+      .handler(lambdaHandler)
 
     const response = await handler(event, mockContext())
     expect(response).toEqual({

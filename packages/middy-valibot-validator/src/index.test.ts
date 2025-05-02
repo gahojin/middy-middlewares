@@ -333,12 +333,10 @@ describe('validator', () => {
   })
 
   it('レスポンスオブジェクトのバリデーションが動作すること', async () => {
-    const handler = middy(() => {
-      return {
-        body: 'Hello world',
-        statusCode: 200,
-      }
-    })
+    const handler = middy().handler(() => ({
+      body: 'Hello world',
+      statusCode: 200,
+    }))
 
     const schema = v.object({
       body: v.string(),
@@ -358,9 +356,7 @@ describe('validator', () => {
       statusCode: v.number(),
     })
 
-    const handler = middy(() => {
-      return {} as v.InferOutput<typeof schema>
-    })
+    const handler = middy().handler(() => ({}) as v.InferOutput<typeof schema>)
 
     handler.use(validatorMiddleware({ responseSchema: schema }))
 
