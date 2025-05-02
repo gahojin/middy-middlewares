@@ -47,7 +47,7 @@ const lambdaHandler = (event: AppSyncResolverEvents<TestAppSyncArgument>) => {
 
 describe('middleware', () => {
   it('レスポンスにデータがそのまま格納されること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     const response = await handler(dummyEvent, mockContext())
     expect(response).toEqual({
@@ -57,7 +57,7 @@ describe('middleware', () => {
   })
 
   it('レスポンスがAppSyncErrorの時は、例外が派生すること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     await expect(async () => {
       await handler({ ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 123 } }, mockContext())
@@ -69,7 +69,7 @@ describe('middleware', () => {
       .before(() => {
         throw new AppSyncError('before', 'ERROR')
       })
-      .use(appSync())
+      .use(appSync<TestAppSyncArgument>())
       .handler(lambdaHandler)
 
     await expect(async () => {
@@ -78,7 +78,7 @@ describe('middleware', () => {
   })
 
   it('レスポンスがErrorの時は、例外が派生すること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     await expect(async () => {
       await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 123 } }, mockContext())
@@ -90,7 +90,7 @@ describe('middleware', () => {
       .before(() => {
         throw new Error('before')
       })
-      .use(appSync())
+      .use(appSync<TestAppSyncArgument>())
       .handler(lambdaHandler)
 
     await expect(async () => {
@@ -99,7 +99,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスが、dataフィールドに格納され、配列になること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'dummy', field2: 456 } }], mockContext())
     expect(response).toEqual([
@@ -123,7 +123,7 @@ describe('middleware', () => {
       .before(() => {
         throw new AppSyncError('before', 'ERROR')
       })
-      .use(appSync())
+      .use(appSync<TestAppSyncArgument>())
       .handler(lambdaHandler)
 
     const response = await handler([dummyEvent, dummyEvent], mockContext())
@@ -142,7 +142,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスがAppSyncErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'rejectAppSync', field2: 456 } }], mockContext())
     expect(response).toEqual([
@@ -165,7 +165,7 @@ describe('middleware', () => {
       .before(() => {
         throw new Error('before')
       })
-      .use(appSync())
+      .use(appSync<TestAppSyncArgument>())
       .handler(lambdaHandler)
 
     const response = await handler([dummyEvent, dummyEvent], mockContext())
@@ -182,7 +182,7 @@ describe('middleware', () => {
   })
 
   it('バッチイベント時のレスポンスがErrorの時は、エラーフィールドが格納されること', async () => {
-    const handler = middy().use(appSync()).handler(lambdaHandler)
+    const handler = middy().use(appSync<TestAppSyncArgument>()).handler(lambdaHandler)
 
     const response = await handler([dummyEvent, { ...dummyEvent, arguments: { field1: 'reject', field2: 456 } }], mockContext())
     expect(response).toEqual([
@@ -202,7 +202,7 @@ describe('middleware', () => {
   it('buildResponseカスタム', async () => {
     const handler = middy()
       .use(
-        appSync({
+        appSync<TestAppSyncArgument>({
           // 常にdataフィールドに格納するカスタム関数
           buildResponse: customBuildResponseFn,
         }),
@@ -227,7 +227,7 @@ describe('middleware', () => {
   it('buildResponseカスタム バッチイベント', async () => {
     const handler = middy()
       .use(
-        appSync({
+        appSync<TestAppSyncArgument>({
           // 常にdataフィールドに格納するカスタム関数
           buildResponse: customBuildResponseFn,
         }),
