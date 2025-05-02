@@ -46,8 +46,8 @@
   },
   "devDependencies": {
     "@gahojin-inc/aws-lambda-mock-context": "2025.4.1",
-    "@middy/core": "6.2.1",
-    "@middy/util": "6.2.1"
+    "@middy/core": "6.2.2",
+    "@middy/util": "6.2.2"
   },
   "peerDependencies": {
     "@middy/util": "^5 || ^6"
