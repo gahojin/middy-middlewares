@@ -1,9 +1,14 @@
 import type { BodyParser } from '../index'
 
+const invalidMessage = 'Invalid or malformed JSON was provided'
+
 const jsonParser: BodyParser = {
   contentType: /^application\/(.+\+)?json($|;.+)/,
-  parse: (body) => JSON.parse(body),
-  invalidMessage: 'Invalid or malformed JSON was provided',
+  parse: (body) => {
+    return JSON.parse(body)
+  },
+  invalidMessage,
+  errorWhenUndefined: true,
 }
 
 export default jsonParser

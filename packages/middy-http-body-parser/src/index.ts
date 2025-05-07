@@ -10,7 +10,15 @@ type BodyParser<TResult = any> = {
   contentType: RegExp
   parse: BodyParseFn<TResult>
   invalidMessage: string
-}
+} & (
+  | {
+      errorWhenUndefined: true
+    }
+  | {
+      errorWhenUndefined: false
+      responseWhenUndefined: any
+    }
+)
 
 type Options = {
   parsers: BodyParser[]
@@ -45,9 +53,13 @@ const parser = (options: Partial<Options> = {}): middy.MiddlewareObj<RequestEven
     }
 
     if (typeof body === 'undefined' || body === null) {
-      throw createError(415, parser.invalidMessage, {
-        cause: { package: '@gahojin-inc/middy-http-body-parser', data: body },
-      })
+      if (parser.errorWhenUndefined === true) {
+        throw createError(415, parser.invalidMessage, {
+          cause: { package: '@gahojin-inc/middy-http-body-parser', data: body },
+        })
+      }
+      request.event.body = parser.responseWhenUndefined
+      return
     }
 
     try {

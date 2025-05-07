@@ -1,7 +1,7 @@
 {
   "name": "@gahojin-inc/middy-http-body-parser",
   "version": "2025.5.5",
-  "description": "Middy valibot validator",
+  "description": "Middy HTTP body parser",
   "author": "GAHOJIN, Inc.",
   "license": "Apache-2.0",
   "type": "module",
@@ -73,6 +73,6 @@
   "peerDependencies": {
     "@middy/core": "^5 || ^6",
     "@middy/util": "^5 || ^6",
-    "@types/aws-lambda": "8.10.149"
+    "@types/aws-lambda": "^8"
   }
 }

@@ -12,6 +12,8 @@ const urlencodeParser: BodyParser = {
     return ret
   },
   invalidMessage,
+  errorWhenUndefined: false,
+  responseWhenUndefined: {},
 }
 
 export default urlencodeParser
