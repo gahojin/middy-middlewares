@@ -3,20 +3,24 @@ import { createError } from '@middy/util'
 import * as v from 'valibot'
 import type { GenericSchema } from 'valibot'
 
-type Options = {
-  eventSchema?: GenericSchema
-  contextSchema?: GenericSchema
-  responseSchema?: GenericSchema
+type Options<TEvent extends GenericSchema, TResponse extends GenericSchema, TContext extends GenericSchema> = {
+  eventSchema?: TEvent
+  responseSchema?: TResponse
+  contextSchema?: TContext
   language?: string
   errorResponse?: (statusCode: number, message: string, issues?: [v.BaseIssue<unknown>, ...v.BaseIssue<unknown>[]]) => any
 }
 
-const defaults: Options = {
-  language: 'en',
-}
+type ParserOutput<TSchema extends GenericSchema> = v.InferOutput<TSchema>
 
-export default (options: Options = {}): middy.MiddlewareObj => {
-  const opts = { ...defaults, ...options }
+const validator = <TEvent extends GenericSchema, TResponse extends GenericSchema, TContext extends GenericSchema, TErr extends Error = Error>(
+  options: Options<TEvent, TResponse, TContext> = {},
+): middy.MiddlewareObj<
+  undefined extends TEvent ? unknown : ParserOutput<TEvent>,
+  undefined extends TResponse ? any : ParserOutput<TResponse>,
+  TErr
+> => {
+  const opts = { language: 'en', ...options }
   const { eventSchema, contextSchema, responseSchema, language } = opts
 
   const errorResponse =
@@ -65,3 +69,5 @@ export default (options: Options = {}): middy.MiddlewareObj => {
     after: responseSchema ? afterFn : undefined,
   }
 }
+
+export default validator

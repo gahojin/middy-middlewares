@@ -100,10 +100,6 @@ importers:
         version: 6.2.2
 
   packages/middy-valibot-validator:
-    dependencies:
-      valibot:
-        specifier: 1.1.0
-        version: 1.1.0(typescript@5.8.3)
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
         specifier: 2025.4.1
@@ -117,6 +113,9 @@ importers:
       '@valibot/i18n':
         specifier: 1.0.0
         version: 1.0.0(valibot@1.1.0(typescript@5.8.3))
+      valibot:
+        specifier: 1.1.0
+        version: 1.1.0(typescript@5.8.3)
 
 packages:
 
@@ -148,8 +147,8 @@ packages:
     resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/parser@7.27.1':
-    resolution: {integrity: sha512-I0dZ3ZpCrJ1c04OqlNsQcKiZlsrXf/kkE4FXzID9rIOYICsAbA8mMDzhW/luRNAHdCNt7os/u8wenklZDlUVUQ==}
+  '@babel/parser@7.27.2':
+    resolution: {integrity: sha512-QYLs8299NA7WM/bZAdp+CviYYkVoYXlDW2rzliy3chxd1PQjej7JORuMJDJXJUb9g0TT+B99EwaVLKmX+sPXWw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -1902,7 +1901,7 @@ snapshots:
 
   '@babel/helper-validator-identifier@7.27.1': {}
 
-  '@babel/parser@7.27.1':
+  '@babel/parser@7.27.2':
     dependencies:
       '@babel/types': 7.27.1
 
@@ -2914,7 +2913,7 @@ snapshots:
 
   magicast@0.3.5:
     dependencies:
-      '@babel/parser': 7.27.1
+      '@babel/parser': 7.27.2
       '@babel/types': 7.27.1
       source-map-js: 1.2.1
 
