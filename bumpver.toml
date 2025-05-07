@@ -17,6 +17,9 @@ push = false
 "packages/middy-dynamodb-partial-batch-failure/package.json" = [
     '"version": "{pep440_version}"',
 ]
+"packages/middy-http-body-parser/package.json" = [
+    '"version": "{pep440_version}"',
+]
 "packages/middy-http-signature/package.json" = [
     '"version": "{pep440_version}"',
 ]
