@@ -195,7 +195,7 @@ describe('parser(urlencode)', () => {
     expect(body).toEqual({ 'a[b][c][d]': 'i' })
   })
 
-  it('undefinedの場合、エラーが発生すること', async () => {
+  it('undefinedの場合、エラーが発生しないこと', async () => {
     const handler = middy((event: any) => event.body)
 
     handler.use(parserMiddleware())
@@ -204,19 +204,10 @@ describe('parser(urlencode)', () => {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       },
-      body: undefined,
     }
 
-    await expect(handler(event, mockContext())).rejects.toThrowError(
-      expect.objectContaining({
-        message: 'Invalid or malformed URL encoded form was provided',
-        status: 415,
-        cause: {
-          data: undefined,
-          package: '@gahojin-inc/middy-http-body-parser',
-        },
-      }),
-    )
+    const body = await handler(event, mockContext())
+    expect(body).toEqual({})
   })
 
   it('ヘッダーが渡されない場合、処理されないこと (エラー処理無効)', async () => {
