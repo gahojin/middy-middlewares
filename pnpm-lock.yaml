@@ -87,6 +87,21 @@ importers:
         specifier: 8.10.149
         version: 8.10.149
 
+  packages/middy-http-body-parser:
+    devDependencies:
+      '@gahojin-inc/aws-lambda-mock-context':
+        specifier: 2025.4.1
+        version: 2025.4.1
+      '@middy/core':
+        specifier: 6.2.3
+        version: 6.2.3
+      '@middy/util':
+        specifier: 6.2.3
+        version: 6.2.3
+      '@types/aws-lambda':
+        specifier: 8.10.149
+        version: 8.10.149
+
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':

@@ -1,0 +1,78 @@
+{
+  "name": "@gahojin-inc/middy-http-body-parser",
+  "version": "2025.5.3",
+  "description": "Middy valibot validator",
+  "author": "GAHOJIN, Inc.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gahojin/middy-middlewares.git",
+    "directory": "packages/middy-http-body-parser"
+  },
+  "files": ["dist"],
+  "keywords": ["middy", "lambda", "aws"],
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "rimraf dist",
+    "build": "rolldown -c",
+    "prepublish": "pnpm run build",
+    "lint": "biome check --write .",
+    "check": "tsc --noEmit",
+    "check:packagejson": "attw --pack --profile node16 .",
+    "test": "vitest --watch",
+    "test:unit": "vitest --passWithNoTests --run --coverage"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./parser/json": {
+      "import": {
+        "types": "./dist/parser/json.d.mts",
+        "default": "./dist/parser/json.mjs"
+      },
+      "require": {
+        "types": "./dist/parser/json.d.cts",
+        "default": "./dist/parser/json.cjs"
+      }
+    },
+    "./parser/urlencode": {
+      "import": {
+        "types": "./dist/parser/urlencode.d.mts",
+        "default": "./dist/parser/json.mjs"
+      },
+      "require": {
+        "types": "./dist/parser/json.d.cts",
+        "default": "./dist/parser/urlencode.cjs"
+      }
+    }
+  },
+  "devDependencies": {
+    "@gahojin-inc/aws-lambda-mock-context": "2025.4.1",
+    "@middy/core": "6.2.3",
+    "@middy/util": "6.2.3",
+    "@types/aws-lambda": "8.10.149"
+  },
+  "peerDependencies": {
+    "@middy/core": "^5 || ^6",
+    "@middy/util": "^5 || ^6",
+    "@types/aws-lambda": "8.10.149"
+  }
+}
