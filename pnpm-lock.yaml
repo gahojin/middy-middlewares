@@ -63,11 +63,11 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.1
-        version: 2025.4.1
+        specifier: 2025.5.0
+        version: 2025.5.0
       '@middy/core':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@types/aws-lambda':
         specifier: 8.10.149
         version: 8.10.149
@@ -75,11 +75,11 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.1
-        version: 2025.4.1
+        specifier: 2025.5.0
+        version: 2025.5.0
       '@middy/core':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@serverless/event-mocks':
         specifier: 1.1.1
         version: 1.1.1
@@ -90,14 +90,14 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.1
-        version: 2025.4.1
+        specifier: 2025.5.0
+        version: 2025.5.0
       '@middy/core':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@middy/util':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@types/aws-lambda':
         specifier: 8.10.149
         version: 8.10.149
@@ -105,26 +105,26 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.1
-        version: 2025.4.1
+        specifier: 2025.5.0
+        version: 2025.5.0
       '@middy/core':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@middy/util':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
 
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.4.1
-        version: 2025.4.1
+        specifier: 2025.5.0
+        version: 2025.5.0
       '@middy/core':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@middy/util':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.3.1
+        version: 6.3.1
       '@valibot/i18n':
         specifier: 1.0.0
         version: 1.0.0(valibot@1.1.0(typescript@5.8.3))
@@ -468,8 +468,8 @@ packages:
     peerDependencies:
       vitest: ^1 || ^2 || ^3
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.4.1':
-    resolution: {integrity: sha512-tGxGDVPn6aUvQgfKC/4WENKambOBLA5QXYwp8sAdyhYOTtbJ+xILTdmFjjE/pBKLEiXDPCWUiNXGi7cAdRLKSg==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.5.0':
+    resolution: {integrity: sha512-p16fAt9jbqNOYE5hPv8SHao0Ms9R7lL56iwtzVEye0V6nfdPpHT9DmC27MLuEfwAtGkQWVXcb7ut7aQKLh9I/Q==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
 
   '@isaacs/cliui@8.0.2':
@@ -505,12 +505,12 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@middy/core@6.3.0':
-    resolution: {integrity: sha512-QwF3XGax3gzoXmiz6FmO/ACU4q8g6/+D6WxxVzK67EOO81z6yybrrk7lLUQEjGRS5Oyf4KQrfjX8IULWoIInjg==}
+  '@middy/core@6.3.1':
+    resolution: {integrity: sha512-Cl6AxFbG3qVD93L+vAl1/D00SwyGkgyoJhM2gL3CFSKfrDHT8tTGB6bUQUI5gOnksN3E7avcewl9WQydJRHvXA==}
     engines: {node: '>=20'}
 
-  '@middy/util@6.3.0':
-    resolution: {integrity: sha512-LayDZuchdJ8KuHq3glV/l4ruYlYGCzoLy/JOkr/EuyhOmae5pbigOIRpZjeqVoPCtt80241XphM/4vjGHyeSHg==}
+  '@middy/util@6.3.1':
+    resolution: {integrity: sha512-5Qkd+ntJtHIXaWn6pEa5qFn10jlrR6jUwY/AD4BhcdAG8KvszRMEkIeqYq1Uk027aoU988ZugdxGR32EWeVMhg==}
     engines: {node: '>=20'}
 
   '@napi-rs/wasm-runtime@0.2.10':
@@ -2213,7 +2213,7 @@ snapshots:
       fast-check: 4.1.1
       vitest: 3.1.4(@types/node@20.17.55)(jiti@2.4.2)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.4.1': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.5.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -2251,9 +2251,9 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.1
 
-  '@middy/core@6.3.0': {}
+  '@middy/core@6.3.1': {}
 
-  '@middy/util@6.3.0': {}
+  '@middy/util@6.3.1': {}
 
   '@napi-rs/wasm-runtime@0.2.10':
     dependencies:
