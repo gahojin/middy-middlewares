@@ -29,14 +29,14 @@
     "lefthook": "1.11.13",
     "npm-check-updates": "18.0.1",
     "rimraf": "6.0.1",
-    "rolldown": "1.0.0-beta.14",
+    "rolldown": "1.0.0-beta.15",
     "turbo": "2.5.4",
     "typescript": "5.8.3",
     "unplugin-isolated-decl": "0.14.3",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.2.3"
   },
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.1",
   "engines": {
     "node": ">=18.x",
     "npm": "use pnpm",
