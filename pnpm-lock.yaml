@@ -63,8 +63,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.5.0
-        version: 2025.5.0
+        specifier: 2025.6.0
+        version: 2025.6.0
       '@middy/core':
         specifier: 6.3.1
         version: 6.3.1
@@ -75,8 +75,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.5.0
-        version: 2025.5.0
+        specifier: 2025.6.0
+        version: 2025.6.0
       '@middy/core':
         specifier: 6.3.1
         version: 6.3.1
@@ -90,8 +90,8 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.5.0
-        version: 2025.5.0
+        specifier: 2025.6.0
+        version: 2025.6.0
       '@middy/core':
         specifier: 6.3.1
         version: 6.3.1
@@ -105,8 +105,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.5.0
-        version: 2025.5.0
+        specifier: 2025.6.0
+        version: 2025.6.0
       '@middy/core':
         specifier: 6.3.1
         version: 6.3.1
@@ -117,8 +117,8 @@ importers:
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.5.0
-        version: 2025.5.0
+        specifier: 2025.6.0
+        version: 2025.6.0
       '@middy/core':
         specifier: 6.3.1
         version: 6.3.1
@@ -468,8 +468,8 @@ packages:
     peerDependencies:
       vitest: ^1 || ^2 || ^3
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.5.0':
-    resolution: {integrity: sha512-p16fAt9jbqNOYE5hPv8SHao0Ms9R7lL56iwtzVEye0V6nfdPpHT9DmC27MLuEfwAtGkQWVXcb7ut7aQKLh9I/Q==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.6.0':
+    resolution: {integrity: sha512-ezmR5NV6jb1AUVxPNtfdbUb8iQKnPPusz0Wj6SBXIkkh3Mc6SnsSlu8PWm+M0PDwNg77aZwx3tcDrcZ6fnEIMA==}
     engines: {node: '>=18.x', npm: use pnpm, pnpm: '>=9.x', yarn: use pnpm}
 
   '@isaacs/cliui@8.0.2':
@@ -2237,7 +2237,7 @@ snapshots:
       fast-check: 4.1.1
       vitest: 3.2.3(@types/node@20.19.0)(jiti@2.4.2)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.5.0': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.6.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:
