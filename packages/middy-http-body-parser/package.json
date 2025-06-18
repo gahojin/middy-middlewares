@@ -11,8 +11,14 @@
     "url": "https://github.com/gahojin/middy-middlewares.git",
     "directory": "packages/middy-http-body-parser"
   },
-  "files": ["dist"],
-  "keywords": ["middy", "lambda", "aws"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "middy",
+    "lambda",
+    "aws"
+  ],
   "publishConfig": {
     "access": "public",
     "provenance": true

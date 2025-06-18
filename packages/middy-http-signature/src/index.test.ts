@@ -141,7 +141,6 @@ describe('httpSignature', () => {
       httpSignatureMiddleware({
         input: {
           algorithm: 'sha256',
-          // biome-ignore lint/suspicious/useAwait: <explanation>
           key: async (request) => {
             const { headers } = request.event
             return `${headers.type} key`
