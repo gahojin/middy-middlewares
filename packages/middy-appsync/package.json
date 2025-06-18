@@ -11,8 +11,15 @@
     "url": "https://github.com/gahojin/middy-middlewares.git",
     "directory": "packages/middy-appsync"
   },
-  "files": ["dist"],
-  "keywords": ["middy", "appsync", "lambda", "aws"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "middy",
+    "appsync",
+    "lambda",
+    "aws"
+  ],
   "publishConfig": {
     "access": "public",
     "provenance": true

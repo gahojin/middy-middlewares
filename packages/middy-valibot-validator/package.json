@@ -11,8 +11,15 @@
     "url": "https://github.com/gahojin/middy-middlewares.git",
     "directory": "packages/middy-valibot-validator"
   },
-  "files": ["dist"],
-  "keywords": ["middy", "valibot", "lambda", "aws"],
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "middy",
+    "valibot",
+    "lambda",
+    "aws"
+  ],
   "publishConfig": {
     "access": "public",
     "provenance": true

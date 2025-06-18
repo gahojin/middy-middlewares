@@ -1,7 +1,7 @@
 import type middy from '@middy/core'
 import { createError } from '@middy/util'
-import * as v from 'valibot'
 import type { GenericSchema } from 'valibot'
+import * as v from 'valibot'
 
 type Options<TEvent extends GenericSchema, TResponse extends GenericSchema, TContext extends GenericSchema> = {
   eventSchema?: TEvent

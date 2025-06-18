@@ -5,7 +5,6 @@ import type { DynamoDBStreamEvent } from 'aws-lambda'
 import dynamodbPartialBatchFailure from './index'
 
 const lambdaHandler = async (event: DynamoDBStreamEvent) => {
-  // biome-ignore lint/suspicious/useAwait:
   const processedRecords = event.Records.map(async (record) => {
     if (record.dynamodb?.NewImage?.resolveOrReject.S === 'resolve') {
       return
