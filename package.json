@@ -29,10 +29,10 @@
     "lefthook": "1.11.14",
     "npm-check-updates": "18.0.1",
     "rimraf": "6.0.1",
-    "rolldown": "1.0.0-beta.19",
+    "rolldown": "1.0.0-beta.20",
     "turbo": "2.5.4",
     "typescript": "5.8.3",
-    "unplugin-isolated-decl": "0.14.3",
+    "unplugin-isolated-decl": "0.14.4",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.2.4"
   },
