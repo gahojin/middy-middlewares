@@ -66,8 +66,8 @@ importers:
         specifier: 2025.6.1
         version: 2025.6.1
       '@middy/core':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@types/aws-lambda':
         specifier: 8.10.150
         version: 8.10.150
@@ -78,8 +78,8 @@ importers:
         specifier: 2025.6.1
         version: 2025.6.1
       '@middy/core':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@serverless/event-mocks':
         specifier: 1.1.1
         version: 1.1.1
@@ -93,11 +93,11 @@ importers:
         specifier: 2025.6.1
         version: 2025.6.1
       '@middy/core':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@middy/util':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@types/aws-lambda':
         specifier: 8.10.150
         version: 8.10.150
@@ -108,11 +108,11 @@ importers:
         specifier: 2025.6.1
         version: 2025.6.1
       '@middy/core':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@middy/util':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
 
   packages/middy-valibot-validator:
     devDependencies:
@@ -120,11 +120,11 @@ importers:
         specifier: 2025.6.1
         version: 2025.6.1
       '@middy/core':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@middy/util':
-        specifier: 6.3.2
-        version: 6.3.2
+        specifier: 6.4.1
+        version: 6.4.1
       '@valibot/i18n':
         specifier: 1.0.0
         version: 1.0.0(valibot@1.1.0(typescript@5.8.3))
@@ -513,12 +513,12 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@middy/core@6.3.2':
-    resolution: {integrity: sha512-2mzUPFCIIN5CvD2NC/upFCqx9S3Y1kT+3YEIUnqgHJgrPW2Kw7Oj+HNwpFS1DRr/2Vlx6pFZfwEWDA6EJqXQ9w==}
+  '@middy/core@6.4.1':
+    resolution: {integrity: sha512-NaKLoLUSkoxite0hkw5Tsa3DmuWyhRkZBbhD1tvr7FCWmj+MaQapNEvKMOSVNx/ET4ifY3KnKp0Zm0Q141Xcmg==}
     engines: {node: '>=20'}
 
-  '@middy/util@6.3.2':
-    resolution: {integrity: sha512-wM5/zjI6PNKkNxj0GcRyr1DNWNlt4rzBwAT7OmP36f/vDjpD5a0VOaqjmyOQbRcnSsa+jtfbekKHyEav6bOGSQ==}
+  '@middy/util@6.4.1':
+    resolution: {integrity: sha512-/re+VOjVo/UrGbUmFDW5ty4H7YNUor76SWo+tjtEOj1950luXSvdfb1xQUz850SQs0HVUfBCfJaGYZ5hy/o2Vg==}
     engines: {node: '>=20'}
 
   '@napi-rs/wasm-runtime@0.2.12':
@@ -2303,9 +2303,9 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.1
 
-  '@middy/core@6.3.2': {}
+  '@middy/core@6.4.1': {}
 
-  '@middy/util@6.3.2': {}
+  '@middy/util@6.4.1': {}
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
