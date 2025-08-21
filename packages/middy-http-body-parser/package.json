@@ -1,6 +1,6 @@
 {
   "name": "@gahojin-inc/middy-http-body-parser",
-  "version": "2025.6.1",
+  "version": "2025.8.0",
   "description": "Middy HTTP body parser",
   "author": "GAHOJIN, Inc.",
   "license": "Apache-2.0",
