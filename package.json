@@ -29,7 +29,7 @@
     "lefthook": "1.12.4",
     "npm-check-updates": "18.1.0",
     "rimraf": "6.0.1",
-    "rolldown": "1.0.0-beta.35",
+    "rolldown": "1.0.0-beta.36",
     "turbo": "2.5.6",
     "typescript": "5.9.2",
     "unplugin-isolated-decl": "0.15.1",
