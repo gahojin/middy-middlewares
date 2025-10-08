@@ -15,8 +15,8 @@ importers:
         specifier: 2.2.4
         version: 2.2.4
       '@commitlint/cli':
-        specifier: 20.0.0
-        version: 20.0.0(@types/node@22.18.1)(typescript@5.9.2)
+        specifier: 20.1.0
+        version: 20.1.0(@types/node@22.18.1)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: 20.0.0
         version: 20.0.0
@@ -31,10 +31,10 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@22.18.1)(jiti@2.6.1))
       jest-extended:
         specifier: 6.0.0
-        version: 6.0.0(typescript@5.9.2)
+        version: 6.0.0(typescript@5.9.3)
       lefthook:
-        specifier: 1.13.5
-        version: 1.13.5
+        specifier: 1.13.6
+        version: 1.13.6
       npm-check-updates:
         specifier: 19.0.0
         version: 19.0.0
@@ -48,14 +48,14 @@ importers:
         specifier: 2.5.8
         version: 2.5.8
       typescript:
-        specifier: 5.9.2
-        version: 5.9.2
+        specifier: 5.9.3
+        version: 5.9.3
       unplugin-isolated-decl:
         specifier: 0.15.2
-        version: 0.15.2(typescript@5.9.2)
+        version: 0.15.2(typescript@5.9.3)
       vite-tsconfig-paths:
         specifier: 5.1.4
-        version: 5.1.4(typescript@5.9.2)(vite@7.1.5(@types/node@22.18.1)(jiti@2.6.1))
+        version: 5.1.4(typescript@5.9.3)(vite@7.1.5(@types/node@22.18.1)(jiti@2.6.1))
       vitest:
         specifier: 3.2.4
         version: 3.2.4(@types/node@22.18.1)(jiti@2.6.1)
@@ -69,8 +69,8 @@ importers:
         specifier: 6.4.5
         version: 6.4.5
       '@types/aws-lambda':
-        specifier: 8.10.152
-        version: 8.10.152
+        specifier: 8.10.153
+        version: 8.10.153
 
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
@@ -84,8 +84,8 @@ importers:
         specifier: 1.1.1
         version: 1.1.1
       '@types/aws-lambda':
-        specifier: 8.10.152
-        version: 8.10.152
+        specifier: 8.10.153
+        version: 8.10.153
 
   packages/middy-http-body-parser:
     devDependencies:
@@ -99,8 +99,8 @@ importers:
         specifier: 6.4.5
         version: 6.4.5
       '@types/aws-lambda':
-        specifier: 8.10.152
-        version: 8.10.152
+        specifier: 8.10.153
+        version: 8.10.153
 
   packages/middy-http-signature:
     devDependencies:
@@ -127,10 +127,10 @@ importers:
         version: 6.4.5
       '@valibot/i18n':
         specifier: 1.0.0
-        version: 1.0.0(valibot@1.1.0(typescript@5.9.2))
+        version: 1.0.0(valibot@1.1.0(typescript@5.9.3))
       valibot:
         specifier: 1.1.0
-        version: 1.1.0(typescript@5.9.2)
+        version: 1.1.0(typescript@5.9.3)
 
 packages:
 
@@ -235,8 +235,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@commitlint/cli@20.0.0':
-    resolution: {integrity: sha512-I3D7Yldq8ZhOB3qEaTvXWIgib6tSZhbCpRObfFQ/aYI0J9AH8NMwT07Ak+bpE3n6Yn7EtbqEhQUkJZ/jZ5kCeQ==}
+  '@commitlint/cli@20.1.0':
+    resolution: {integrity: sha512-pW5ujjrOovhq5RcYv5xCpb4GkZxkO2+GtOdBW2/qrr0Ll9tl3PX0aBBobGQl3mdZUbOBgwAexEQLeH6uxL0VYg==}
     engines: {node: '>=v18'}
     hasBin: true
 
@@ -923,8 +923,8 @@ packages:
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
 
-  '@types/aws-lambda@8.10.152':
-    resolution: {integrity: sha512-soT/c2gYBnT5ygwiHPmd9a1bftj462NWVk2tKCc1PYHSIacB2UwbTS2zYG4jzag1mRDuzg/OjtxQjQ2NKRB6Rw==}
+  '@types/aws-lambda@8.10.153':
+    resolution: {integrity: sha512-j5zuETAQtPKuU8ZeqtcLdqLxQeNffX1Dd1Sr3tP56rYZD21Ph49iIqWbiHHqwLXugsMPSsgX/bAZI29Patlbbw==}
 
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
@@ -1384,58 +1384,58 @@ packages:
     resolution: {integrity: sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==}
     engines: {'0': node >= 0.2.0}
 
-  lefthook-darwin-arm64@1.13.5:
-    resolution: {integrity: sha512-BYt5CnAOXasVCS6i+A4ljUo9xru/B5uMFD6EWHhs3R26jGF7mBSDxM3ErzXTUaJRTP0kQI/XBmgqBryBqoqZOQ==}
+  lefthook-darwin-arm64@1.13.6:
+    resolution: {integrity: sha512-m6Lb77VGc84/Qo21Lhq576pEvcgFCnvloEiP02HbAHcIXD0RTLy9u2yAInrixqZeaz13HYtdDaI7OBYAAdVt8A==}
     cpu: [arm64]
     os: [darwin]
 
-  lefthook-darwin-x64@1.13.5:
-    resolution: {integrity: sha512-ZDtLBzvI5e26C/RZ4irOHpELTd22x9lDTgF2+eCYcnrBWOkB7800V8tuAvBybsLGvg6JwKjFxn+NTRNZnCC2hw==}
+  lefthook-darwin-x64@1.13.6:
+    resolution: {integrity: sha512-CoRpdzanu9RK3oXR1vbEJA5LN7iB+c7hP+sONeQJzoOXuq4PNKVtEaN84Gl1BrVtCNLHWFAvCQaZPPiiXSy8qg==}
     cpu: [x64]
     os: [darwin]
 
-  lefthook-freebsd-arm64@1.13.5:
-    resolution: {integrity: sha512-uQ/kQZSSedw74aGCpsfOPN4yVt3klg8grOP6gHQOCRUMv5oK/Lj3pe1PylpTuuhxWORWRzkauPMot26J0OZZdA==}
+  lefthook-freebsd-arm64@1.13.6:
+    resolution: {integrity: sha512-X4A7yfvAJ68CoHTqP+XvQzdKbyd935sYy0bQT6Ajz7FL1g7hFiro8dqHSdPdkwei9hs8hXeV7feyTXbYmfjKQQ==}
     cpu: [arm64]
     os: [freebsd]
 
-  lefthook-freebsd-x64@1.13.5:
-    resolution: {integrity: sha512-6czek8XagVrI7ExURawkfrfX40Qjc/wktc8bLq/iXfRlmdvKDMrx2FrA82mDfEVCAEz+tTvkteK1TfR3icYF3Q==}
+  lefthook-freebsd-x64@1.13.6:
+    resolution: {integrity: sha512-ai2m+Sj2kGdY46USfBrCqLKe9GYhzeq01nuyDYCrdGISePeZ6udOlD1k3lQKJGQCHb0bRz4St0r5nKDSh1x/2A==}
     cpu: [x64]
     os: [freebsd]
 
-  lefthook-linux-arm64@1.13.5:
-    resolution: {integrity: sha512-MjWtiuW1br+rpTtgG1KGV53mSGtL5MWQwgafYzrFleJ89fKb86F4TD/4mVNzk5thmZ+HVPZw9bRZGUHFBnNJWg==}
+  lefthook-linux-arm64@1.13.6:
+    resolution: {integrity: sha512-cbo4Wtdq81GTABvikLORJsAWPKAJXE8Q5RXsICFUVznh5PHigS9dFW/4NXywo0+jfFPCT6SYds2zz4tCx6DA0Q==}
     cpu: [arm64]
     os: [linux]
 
-  lefthook-linux-x64@1.13.5:
-    resolution: {integrity: sha512-TIm+AYCanBR/+BVbBuIY3EMp3Z5lcJh+dovB52gHiuUjiauAptFXvntezyR5wAbyptLpYsb4WDmpSR8O2eln+w==}
+  lefthook-linux-x64@1.13.6:
+    resolution: {integrity: sha512-uJl9vjCIIBTBvMZkemxCE+3zrZHlRO7Oc+nZJ+o9Oea3fu+W82jwX7a7clw8jqNfaeBS+8+ZEQgiMHWCloTsGw==}
     cpu: [x64]
     os: [linux]
 
-  lefthook-openbsd-arm64@1.13.5:
-    resolution: {integrity: sha512-lYXrWf0/hBrwtG8ceaHq886bcqRKh3Lfv+jZJs+ykMLB6L/kaqk8tA4V2NHWydQ5h56o45ugs/580nMz36ZdRg==}
+  lefthook-openbsd-arm64@1.13.6:
+    resolution: {integrity: sha512-7r153dxrNRQ9ytRs2PmGKKkYdvZYFPre7My7XToSTiRu5jNCq++++eAKVkoyWPduk97dGIA+YWiEr5Noe0TK2A==}
     cpu: [arm64]
     os: [openbsd]
 
-  lefthook-openbsd-x64@1.13.5:
-    resolution: {integrity: sha512-Ba1JrsRbfan4WKd8Q7gUhTxCUuppXzirDObd3JxpLRSLxA47yxhjMv7KByDunRDTvzTgsXoykZI6mPupkc1JiQ==}
+  lefthook-openbsd-x64@1.13.6:
+    resolution: {integrity: sha512-Z+UhLlcg1xrXOidK3aLLpgH7KrwNyWYE3yb7ITYnzJSEV8qXnePtVu8lvMBHs/myzemjBzeIr/U/+ipjclR06g==}
     cpu: [x64]
     os: [openbsd]
 
-  lefthook-windows-arm64@1.13.5:
-    resolution: {integrity: sha512-Y/CpmEIb0hlFe+kTT/efWgX6+/gUTp5NItTF+gmUrY1/G/bTLIxdIRS7WpodVM0MEN24sOrQVTSi9DN9FvGoGg==}
+  lefthook-windows-arm64@1.13.6:
+    resolution: {integrity: sha512-Uxef6qoDxCmUNQwk8eBvddYJKSBFglfwAY9Y9+NnnmiHpWTjjYiObE9gT2mvGVpEgZRJVAatBXc+Ha5oDD/OgQ==}
     cpu: [arm64]
     os: [win32]
 
-  lefthook-windows-x64@1.13.5:
-    resolution: {integrity: sha512-WJBqGNBlFJnunRwy12QyaDHdGULtostPqpYSZSS4boFJDY0lP5qtz9lAGmJ49aA5GQ19jrnDjGLwVPFiwIqksQ==}
+  lefthook-windows-x64@1.13.6:
+    resolution: {integrity: sha512-mOZoM3FQh3o08M8PQ/b3IYuL5oo36D9ehczIw1dAgp1Ly+Tr4fJ96A+4SEJrQuYeRD4mex9bR7Ps56I73sBSZA==}
     cpu: [x64]
     os: [win32]
 
-  lefthook@1.13.5:
-    resolution: {integrity: sha512-tpDfEviaODCNcvLohh8vKwo5dCAa6m/KX6ECsiCPYsp4H+XDATuy9S9o6G1We5MuQwz1cFAYv+LQRtWd7eoSow==}
+  lefthook@1.13.6:
+    resolution: {integrity: sha512-ojj4/4IJ29Xn4drd5emqVgilegAPN3Kf0FQM2p/9+lwSTpU+SZ1v4Ig++NF+9MOa99UKY8bElmVrLhnUUNFh5g==}
     hasBin: true
 
   lines-and-columns@1.2.4:
@@ -1665,6 +1665,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.3:
+    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   shebang-command@2.0.0:
     resolution: {integrity: sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==}
     engines: {node: '>=8'}
@@ -1820,8 +1825,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  typescript@5.9.2:
-    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2085,11 +2090,11 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@commitlint/cli@20.0.0(@types/node@22.18.1)(typescript@5.9.2)':
+  '@commitlint/cli@20.1.0(@types/node@22.18.1)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.0.0
       '@commitlint/lint': 20.0.0
-      '@commitlint/load': 20.1.0(@types/node@22.18.1)(typescript@5.9.2)
+      '@commitlint/load': 20.1.0(@types/node@22.18.1)(typescript@5.9.3)
       '@commitlint/read': 20.0.0
       '@commitlint/types': 20.0.0
       tinyexec: 1.0.1
@@ -2127,7 +2132,7 @@ snapshots:
   '@commitlint/is-ignored@20.0.0':
     dependencies:
       '@commitlint/types': 20.0.0
-      semver: 7.7.2
+      semver: 7.7.3
 
   '@commitlint/lint@20.0.0':
     dependencies:
@@ -2136,15 +2141,15 @@ snapshots:
       '@commitlint/rules': 20.0.0
       '@commitlint/types': 20.0.0
 
-  '@commitlint/load@20.1.0(@types/node@22.18.1)(typescript@5.9.2)':
+  '@commitlint/load@20.1.0(@types/node@22.18.1)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.0.0
       '@commitlint/execute-rule': 20.0.0
       '@commitlint/resolve-extends': 20.1.0
       '@commitlint/types': 20.0.0
       chalk: 5.6.2
-      cosmiconfig: 9.0.0(typescript@5.9.2)
-      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.18.1)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.1.0(@types/node@22.18.1)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2580,7 +2585,7 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@types/aws-lambda@8.10.152': {}
+  '@types/aws-lambda@8.10.153': {}
 
   '@types/chai@5.2.2':
     dependencies:
@@ -2600,9 +2605,9 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@valibot/i18n@1.0.0(valibot@1.1.0(typescript@5.9.2))':
+  '@valibot/i18n@1.0.0(valibot@1.1.0(typescript@5.9.3))':
     dependencies:
-      valibot: 1.1.0(typescript@5.9.2)
+      valibot: 1.1.0(typescript@5.9.3)
 
   '@vitest/coverage-v8@3.2.4(vitest@3.2.4(@types/node@22.18.1)(jiti@2.6.1))':
     dependencies:
@@ -2797,21 +2802,21 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@6.1.0(@types/node@22.18.1)(cosmiconfig@9.0.0(typescript@5.9.2))(typescript@5.9.2):
+  cosmiconfig-typescript-loader@6.1.0(@types/node@22.18.1)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
       '@types/node': 22.18.1
-      cosmiconfig: 9.0.0(typescript@5.9.2)
+      cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
-      typescript: 5.9.2
+      typescript: 5.9.3
 
-  cosmiconfig@9.0.0(typescript@5.9.2):
+  cosmiconfig@9.0.0(typescript@5.9.3):
     dependencies:
       env-paths: 2.2.1
       import-fresh: 3.3.1
       js-yaml: 4.1.0
       parse-json: 5.2.0
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -3017,10 +3022,10 @@ snapshots:
       jest-get-type: 29.6.3
       pretty-format: 29.7.0
 
-  jest-extended@6.0.0(typescript@5.9.2):
+  jest-extended@6.0.0(typescript@5.9.3):
     dependencies:
       jest-diff: 29.7.0
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   jest-get-type@29.6.3: {}
 
@@ -3040,48 +3045,48 @@ snapshots:
 
   jsonparse@1.3.1: {}
 
-  lefthook-darwin-arm64@1.13.5:
+  lefthook-darwin-arm64@1.13.6:
     optional: true
 
-  lefthook-darwin-x64@1.13.5:
+  lefthook-darwin-x64@1.13.6:
     optional: true
 
-  lefthook-freebsd-arm64@1.13.5:
+  lefthook-freebsd-arm64@1.13.6:
     optional: true
 
-  lefthook-freebsd-x64@1.13.5:
+  lefthook-freebsd-x64@1.13.6:
     optional: true
 
-  lefthook-linux-arm64@1.13.5:
+  lefthook-linux-arm64@1.13.6:
     optional: true
 
-  lefthook-linux-x64@1.13.5:
+  lefthook-linux-x64@1.13.6:
     optional: true
 
-  lefthook-openbsd-arm64@1.13.5:
+  lefthook-openbsd-arm64@1.13.6:
     optional: true
 
-  lefthook-openbsd-x64@1.13.5:
+  lefthook-openbsd-x64@1.13.6:
     optional: true
 
-  lefthook-windows-arm64@1.13.5:
+  lefthook-windows-arm64@1.13.6:
     optional: true
 
-  lefthook-windows-x64@1.13.5:
+  lefthook-windows-x64@1.13.6:
     optional: true
 
-  lefthook@1.13.5:
+  lefthook@1.13.6:
     optionalDependencies:
-      lefthook-darwin-arm64: 1.13.5
-      lefthook-darwin-x64: 1.13.5
-      lefthook-freebsd-arm64: 1.13.5
-      lefthook-freebsd-x64: 1.13.5
-      lefthook-linux-arm64: 1.13.5
-      lefthook-linux-x64: 1.13.5
-      lefthook-openbsd-arm64: 1.13.5
-      lefthook-openbsd-x64: 1.13.5
-      lefthook-windows-arm64: 1.13.5
-      lefthook-windows-x64: 1.13.5
+      lefthook-darwin-arm64: 1.13.6
+      lefthook-darwin-x64: 1.13.6
+      lefthook-freebsd-arm64: 1.13.6
+      lefthook-freebsd-x64: 1.13.6
+      lefthook-linux-arm64: 1.13.6
+      lefthook-linux-x64: 1.13.6
+      lefthook-openbsd-arm64: 1.13.6
+      lefthook-openbsd-x64: 1.13.6
+      lefthook-windows-arm64: 1.13.6
+      lefthook-windows-x64: 1.13.6
 
   lines-and-columns@1.2.4: {}
 
@@ -3345,6 +3350,8 @@ snapshots:
 
   semver@7.7.2: {}
 
+  semver@7.7.3: {}
+
   shebang-command@2.0.0:
     dependencies:
       shebang-regex: 3.0.0
@@ -3435,9 +3442,9 @@ snapshots:
 
   tinyspy@4.0.3: {}
 
-  tsconfck@3.1.6(typescript@5.9.2):
+  tsconfck@3.1.6(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   tslib@2.8.1:
     optional: true
@@ -3471,7 +3478,7 @@ snapshots:
 
   typescript@5.6.1-rc: {}
 
-  typescript@5.9.2: {}
+  typescript@5.9.3: {}
 
   undici-types@6.21.0: {}
 
@@ -3479,7 +3486,7 @@ snapshots:
 
   unicorn-magic@0.1.0: {}
 
-  unplugin-isolated-decl@0.15.2(typescript@5.9.2):
+  unplugin-isolated-decl@0.15.2(typescript@5.9.3):
     dependencies:
       debug: 4.4.3
       magic-string: 0.30.19
@@ -3488,7 +3495,7 @@ snapshots:
       unplugin: 2.3.10
       unplugin-utils: 0.3.0
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
@@ -3504,9 +3511,9 @@ snapshots:
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
-  valibot@1.1.0(typescript@5.9.2):
+  valibot@1.1.0(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   validate-npm-package-name@5.0.1: {}
 
@@ -3531,11 +3538,11 @@ snapshots:
       - tsx
       - yaml
 
-  vite-tsconfig-paths@5.1.4(typescript@5.9.2)(vite@7.1.5(@types/node@22.18.1)(jiti@2.6.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.1.5(@types/node@22.18.1)(jiti@2.6.1)):
     dependencies:
       debug: 4.4.1
       globrex: 0.1.2
-      tsconfck: 3.1.6(typescript@5.9.2)
+      tsconfck: 3.1.6(typescript@5.9.3)
     optionalDependencies:
       vite: 7.1.5(@types/node@22.18.1)(jiti@2.6.1)
     transitivePeerDependencies:
