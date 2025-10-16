@@ -1,9 +1,2 @@
 packages:
   - packages/**
-
-onlyBuiltDependencies:
-  - lefthook
-
-ignoredBuiltDependencies:
-  - '@biomejs/biome'
-  - '@gahojin-inc/aws-lambda-mock-context'

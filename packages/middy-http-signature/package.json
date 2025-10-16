@@ -28,7 +28,7 @@
     "clean": "rimraf dist",
     "prebuild": "rimraf dist",
     "build": "rolldown -c",
-    "prepublish": "pnpm run build",
+    "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",
     "check": "tsc --noEmit",
     "check:packagejson": "attw --pack .",
@@ -52,7 +52,7 @@
     }
   },
   "devDependencies": {
-    "@gahojin-inc/aws-lambda-mock-context": "2025.6.1",
+    "@gahojin-inc/aws-lambda-mock-context": "2025.10.0",
     "@middy/core": "6.4.5",
     "@middy/util": "6.4.5"
   },
