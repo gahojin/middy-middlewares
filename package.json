@@ -8,7 +8,6 @@
     "url": "https://github.com/gahojin/middy-middlewares.git"
   },
   "scripts": {
-    "preinstall": "pnpm dlx only-allow pnpm",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "check": "turbo run check",
