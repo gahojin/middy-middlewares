@@ -22,7 +22,7 @@
     "@commitlint/cli": "20.1.0",
     "@commitlint/config-conventional": "20.0.0",
     "@fast-check/vitest": "0.2.2",
-    "@types/node": "22.18.12",
+    "@types/node": "24.9.2",
     "@vitest/coverage-v8": "4.0.1",
     "jest-extended": "6.0.0",
     "lefthook": "2.0.1",
