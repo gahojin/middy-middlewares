@@ -55,7 +55,7 @@
     "@gahojin-inc/aws-lambda-mock-context": "2025.10.1",
     "@middy/core": "6.4.5",
     "@serverless/event-mocks": "1.1.1",
-    "@types/aws-lambda": "8.10.156"
+    "@types/aws-lambda": "8.10.157"
   },
   "peerDependencies": {
     "@middy/core": "^5 || ^6"
