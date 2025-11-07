@@ -30,6 +30,7 @@
     "build": "rolldown -c",
     "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",
+    "lint:ci": "biome ci .",
     "check": "tsc --noEmit",
     "check:packagejson": "attw --pack .",
     "test": "vitest --watch",
@@ -52,7 +53,7 @@
     }
   },
   "devDependencies": {
-    "@gahojin-inc/aws-lambda-mock-context": "2025.10.1",
+    "@gahojin-inc/aws-lambda-mock-context": "2025.10.2",
     "@middy/core": "6.4.5",
     "@middy/util": "6.4.5"
   },
