@@ -10,6 +10,7 @@
   "scripts": {
     "build": "turbo run build",
     "lint": "turbo run lint",
+    "lint:ci": "turbo run lint:ci",
     "check": "turbo run check",
     "check:packagejson": "turbo run check:packagejson",
     "test": "turbo run test:unit",

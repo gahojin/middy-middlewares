@@ -18,6 +18,10 @@
       "cache": false,
       "dependsOn": ["^lint"]
     },
+    "lint:ci": {
+      "cache": false,
+      "dependsOn": ["^lint:ci"]
+    },
     "test:unit": {
       "cache": true,
       "dependsOn": ["^test:unit"]

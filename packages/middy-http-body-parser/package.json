@@ -29,6 +29,7 @@
     "build": "rolldown -c",
     "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",
+    "lint:ci": "biome ci .",
     "check": "tsc --noEmit",
     "check:packagejson": "attw --pack --profile node16 .",
     "test": "vitest --watch",
