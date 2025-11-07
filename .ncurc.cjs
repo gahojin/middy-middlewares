@@ -7,5 +7,7 @@ module.exports = defineConfig({
     }
     return 'newest'
   },
-  cooldown: 7,
+  cooldown: (name) => {
+    return name.startsWith('@gahojin-inc/') ? 0 : 7
+  },
 })
