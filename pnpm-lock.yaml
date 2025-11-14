@@ -54,11 +54,11 @@ importers:
         specifier: 0.15.3
         version: 0.15.3(typescript@5.9.3)
       vite:
-        specifier: 7.2.1
-        version: 7.2.1(@types/node@24.10.0)(jiti@2.6.1)
+        specifier: 7.2.2
+        version: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)
       vite-tsconfig-paths:
         specifier: 5.1.4
-        version: 5.1.4(typescript@5.9.3)(vite@7.2.1(@types/node@24.10.0)(jiti@2.6.1))
+        version: 5.1.4(typescript@5.9.3)(vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1))
       vitest:
         specifier: 4.0.7
         version: 4.0.7(@types/node@24.10.0)(jiti@2.6.1)
@@ -66,8 +66,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.10.2
-        version: 2025.10.2
+        specifier: 2025.11.0
+        version: 2025.11.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -78,8 +78,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.10.2
-        version: 2025.10.2
+        specifier: 2025.11.0
+        version: 2025.11.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -93,8 +93,8 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.10.2
-        version: 2025.10.2
+        specifier: 2025.11.0
+        version: 2025.11.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -108,8 +108,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.10.2
-        version: 2025.10.2
+        specifier: 2025.11.0
+        version: 2025.11.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -120,8 +120,8 @@ importers:
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.10.2
-        version: 2025.10.2
+        specifier: 2025.11.0
+        version: 2025.11.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -473,8 +473,8 @@ packages:
     peerDependencies:
       vitest: ^1 || ^2 || ^3 || ^4
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.10.2':
-    resolution: {integrity: sha512-gz2M06Co+V3YzDWuoHXT0p2K8C4vDlIIA89YWviBng25OZ5s57pO1l1Z8eYDwwVqd7Jb6infoC4maiI3H22Drg==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.11.0':
+    resolution: {integrity: sha512-qr9sLGC8dFdJBCCfvM4WkdGnb6G4CrHFpNX+n8K9bYpJzalkeBcjr2onELgQH1UCfAPUy1hn7Aug9+bf98hmeg==}
 
   '@isaacs/balanced-match@4.0.1':
     resolution: {integrity: sha512-yzMTt9lEb8Gv7zRioUilSglI0c0smZ9k5D65677DLWLtWJaXIS3CqcGyUFByYKlnUj6TkjLVs54fBl6+TiGQDQ==}
@@ -1800,8 +1800,8 @@ packages:
       vite:
         optional: true
 
-  vite@7.2.1:
-    resolution: {integrity: sha512-qTl3VF7BvOupTR85Zc561sPEgxyUSNSvTQ9fit7DEMP7yPgvvIGm5Zfa1dOM+kOwWGNviK9uFM9ra77+OjK7lQ==}
+  vite@7.2.2:
+    resolution: {integrity: sha512-BxAKBWmIbrDgrokdGZH1IgkIk/5mMHDreLDmCJ0qpyJaAteP8NvMhkwr/ZCQNqNH97bw/dANTE9PDzqwJghfMQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -2214,7 +2214,7 @@ snapshots:
       fast-check: 4.3.0
       vitest: 4.0.7(@types/node@24.10.0)(jiti@2.6.1)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.10.2': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.11.0': {}
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -2550,13 +2550,13 @@ snapshots:
       chai: 6.2.1
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.7(vite@7.2.1(@types/node@24.10.0)(jiti@2.6.1))':
+  '@vitest/mocker@4.0.7(vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1))':
     dependencies:
       '@vitest/spy': 4.0.7
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.1(@types/node@24.10.0)(jiti@2.6.1)
+      vite: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)
 
   '@vitest/pretty-format@4.0.7':
     dependencies:
@@ -3353,18 +3353,18 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.1(@types/node@24.10.0)(jiti@2.6.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.3)
     optionalDependencies:
-      vite: 7.2.1(@types/node@24.10.0)(jiti@2.6.1)
+      vite: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@7.2.1(@types/node@24.10.0)(jiti@2.6.1):
+  vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -3380,7 +3380,7 @@ snapshots:
   vitest@4.0.7(@types/node@24.10.0)(jiti@2.6.1):
     dependencies:
       '@vitest/expect': 4.0.7
-      '@vitest/mocker': 4.0.7(vite@7.2.1(@types/node@24.10.0)(jiti@2.6.1))
+      '@vitest/mocker': 4.0.7(vite@7.2.2(@types/node@24.10.0)(jiti@2.6.1))
       '@vitest/pretty-format': 4.0.7
       '@vitest/runner': 4.0.7
       '@vitest/snapshot': 4.0.7
@@ -3397,7 +3397,7 @@ snapshots:
       tinyexec: 0.3.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.2.1(@types/node@24.10.0)(jiti@2.6.1)
+      vite: 7.2.2(@types/node@24.10.0)(jiti@2.6.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.10.0
