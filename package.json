@@ -14,7 +14,6 @@
     "check": "turbo run check",
     "check:packagejson": "turbo run check:packagejson",
     "test": "turbo run test:unit",
-    "clean": "pnpm -r --parallel exec rimraf dist .turbo *.log",
     "ncu": "npm-check-updates -u -w"
   },
   "dependencies": {
@@ -28,7 +27,6 @@
     "jest-extended": "7.0.0",
     "lefthook": "2.0.2",
     "npm-check-updates": "19.1.2",
-    "rimraf": "6.1.0",
     "rolldown": "1.0.0-beta.47",
     "turbo": "2.6.0",
     "typescript": "5.9.3",

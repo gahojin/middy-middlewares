@@ -24,8 +24,6 @@
     "provenance": true
   },
   "scripts": {
-    "clean": "rimraf dist",
-    "prebuild": "rimraf dist",
     "build": "rolldown -c",
     "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",

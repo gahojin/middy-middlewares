@@ -17,8 +17,8 @@ export default defineConfig([
     treeshake: true,
     input: Object.fromEntries(inputIndexFiles),
     output: [
-      { format: 'esm', entryFileNames: '[name].mjs', sourcemap: true },
-      { format: 'cjs', entryFileNames: '[name].cjs', sourcemap: true, exports: 'named' },
+      { dir: 'dist', format: 'esm', entryFileNames: '[name].mjs', sourcemap: true, cleanDir: true },
+      { dir: 'dist', format: 'cjs', entryFileNames: '[name].cjs', sourcemap: true, exports: 'named' },
     ],
     plugins: [IsolatedDecl()],
   },
