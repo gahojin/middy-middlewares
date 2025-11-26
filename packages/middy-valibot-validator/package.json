@@ -55,7 +55,7 @@
     "@middy/core": "6.4.5",
     "@middy/util": "6.4.5",
     "@valibot/i18n": "1.0.0",
-    "valibot": "1.1.0"
+    "valibot": "1.2.0"
   },
   "peerDependencies": {
     "@middy/core": "^5 || ^6",
