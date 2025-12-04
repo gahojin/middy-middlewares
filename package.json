@@ -27,7 +27,7 @@
     "jest-extended": "7.0.0",
     "lefthook": "2.0.4",
     "npm-check-updates": "19.1.2",
-    "rolldown": "1.0.0-beta.51",
+    "rolldown": "1.0.0-beta.52",
     "turbo": "2.6.1",
     "typescript": "5.9.3",
     "unplugin-isolated-decl": "0.15.6",
