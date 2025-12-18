@@ -16,19 +16,19 @@ importers:
         version: 2.3.8
       '@commitlint/cli':
         specifier: 20.2.0
-        version: 20.2.0(@types/node@24.10.2)(typescript@5.9.3)
+        version: 20.2.0(@types/node@24.10.3)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: 20.2.0
         version: 20.2.0
       '@fast-check/vitest':
         specifier: 0.2.4
-        version: 0.2.4(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1))
+        version: 0.2.4(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1))
       '@types/node':
-        specifier: 24.10.2
-        version: 24.10.2
+        specifier: 24.10.3
+        version: 24.10.3
       '@vitest/coverage-v8':
         specifier: 4.0.15
-        version: 4.0.15(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1))
+        version: 4.0.15(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1))
       jest-extended:
         specifier: 7.0.0
         version: 7.0.0(typescript@5.9.3)
@@ -36,8 +36,8 @@ importers:
         specifier: 2.0.9
         version: 2.0.9
       npm-check-updates:
-        specifier: 19.1.2
-        version: 19.1.2
+        specifier: 19.2.0
+        version: 19.2.0
       rolldown:
         specifier: 1.0.0-beta.53
         version: 1.0.0-beta.53
@@ -52,19 +52,19 @@ importers:
         version: 0.15.6(typescript@5.9.3)
       vite:
         specifier: 7.2.7
-        version: 7.2.7(@types/node@24.10.2)(jiti@2.6.1)
+        version: 7.2.7(@types/node@24.10.3)(jiti@2.6.1)
       vite-tsconfig-paths:
         specifier: 5.1.4
-        version: 5.1.4(typescript@5.9.3)(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1))
+        version: 5.1.4(typescript@5.9.3)(vite@7.2.7(@types/node@24.10.3)(jiti@2.6.1))
       vitest:
         specifier: 4.0.15
-        version: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)
+        version: 4.0.15(@types/node@24.10.3)(jiti@2.6.1)
 
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.11.2
-        version: 2025.11.2
+        specifier: 2025.12.0
+        version: 2025.12.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -75,8 +75,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.11.2
-        version: 2025.11.2
+        specifier: 2025.12.0
+        version: 2025.12.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -90,8 +90,8 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.11.2
-        version: 2025.11.2
+        specifier: 2025.12.0
+        version: 2025.12.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -105,8 +105,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.11.2
-        version: 2025.11.2
+        specifier: 2025.12.0
+        version: 2025.12.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -117,8 +117,8 @@ importers:
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2025.11.2
-        version: 2025.11.2
+        specifier: 2025.12.0
+        version: 2025.12.0
       '@middy/core':
         specifier: 6.4.5
         version: 6.4.5
@@ -470,8 +470,8 @@ packages:
     peerDependencies:
       vitest: ^1 || ^2 || ^3 || ^4
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.11.2':
-    resolution: {integrity: sha512-80jbLb4MYsa+9QUh6WAUicBSF0eGOwMSSRKVEvDGI4CyfLQa5TxONyT+ZdON2UX6OO2YbOtOCzmNZQLbLhXKqA==}
+  '@gahojin-inc/aws-lambda-mock-context@2025.12.0':
+    resolution: {integrity: sha512-A3nuA321gSYaeS37wQciPqtv52aT/ztiF0MjsvlJXPoZsHjwPZz7xFppLDnjyLGe603wZ/qrkkgeRPT3f+YKfg==}
 
   '@jest/diff-sequences@30.0.1':
     resolution: {integrity: sha512-n5H8QLDJ47QqbCNn5SuFjCRDrOLEZ0h8vAHCK5RL9Ls7Xa8AQLa/YxAc9UjFqoEDM48muwtBGjtMY5cr0PLDCw==}
@@ -923,8 +923,8 @@ packages:
   '@types/lodash@4.17.20':
     resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
 
-  '@types/node@24.10.2':
-    resolution: {integrity: sha512-WOhQTZ4G8xZ1tjJTvKOpyEVSGgOTvJAfDK3FNFgELyaTpzhdgHVHeqW8V+UJvzF5BT+/B54T/1S2K6gd9c7bbA==}
+  '@types/node@24.10.3':
+    resolution: {integrity: sha512-gqkrWUsS8hcm0r44yn7/xZeV1ERva/nLgrLxFRUGb7aoNMIJfZJ3AC261zDQuOAKC7MiXai1WCpYc48jAHoShQ==}
 
   '@valibot/i18n@1.0.0':
     resolution: {integrity: sha512-daCwLqQOHAbUAWtWm1zE2JV6Gn3lqS3Qw/Rm4s+FGbwyfrk3ljee2eiZBVACFet3oanB2TZpZeLssppH3YxfiQ==}
@@ -1428,8 +1428,8 @@ packages:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
     engines: {node: '>=18'}
 
-  npm-check-updates@19.1.2:
-    resolution: {integrity: sha512-FNeFCVgPOj0fz89hOpGtxP2rnnRHR7hD2E8qNU8SMWfkyDZXA/xpgjsL3UMLSo3F/K13QvJDnbxPngulNDDo/g==}
+  npm-check-updates@19.2.0:
+    resolution: {integrity: sha512-XSIuL0FNgzXPDZa4lje7+OwHjiyEt84qQm6QMsQRbixNY5EHEM9nhgOjxjlK9jIbN+ysvSqOV8DKNS0zydwbdg==}
     engines: {node: '>=20.0.0', npm: '>=8.12.1'}
     hasBin: true
 
@@ -1905,11 +1905,11 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@commitlint/cli@20.2.0(@types/node@24.10.2)(typescript@5.9.3)':
+  '@commitlint/cli@20.2.0(@types/node@24.10.3)(typescript@5.9.3)':
     dependencies:
       '@commitlint/format': 20.2.0
       '@commitlint/lint': 20.2.0
-      '@commitlint/load': 20.2.0(@types/node@24.10.2)(typescript@5.9.3)
+      '@commitlint/load': 20.2.0(@types/node@24.10.3)(typescript@5.9.3)
       '@commitlint/read': 20.2.0
       '@commitlint/types': 20.2.0
       tinyexec: 1.0.2
@@ -1956,7 +1956,7 @@ snapshots:
       '@commitlint/rules': 20.2.0
       '@commitlint/types': 20.2.0
 
-  '@commitlint/load@20.2.0(@types/node@24.10.2)(typescript@5.9.3)':
+  '@commitlint/load@20.2.0(@types/node@24.10.3)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 20.2.0
       '@commitlint/execute-rule': 20.0.0
@@ -1964,7 +1964,7 @@ snapshots:
       '@commitlint/types': 20.2.0
       chalk: 5.6.2
       cosmiconfig: 9.0.0(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.10.2)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.10.3)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -2109,12 +2109,12 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@fast-check/vitest@0.2.4(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1))':
+  '@fast-check/vitest@0.2.4(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1))':
     dependencies:
       fast-check: 4.4.0
-      vitest: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)
+      vitest: 4.0.15(@types/node@24.10.3)(jiti@2.6.1)
 
-  '@gahojin-inc/aws-lambda-mock-context@2025.11.2': {}
+  '@gahojin-inc/aws-lambda-mock-context@2025.12.0': {}
 
   '@jest/diff-sequences@30.0.1': {}
 
@@ -2390,7 +2390,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.2':
     dependencies:
-      '@types/node': 24.10.2
+      '@types/node': 24.10.3
 
   '@types/deep-eql@4.0.2': {}
 
@@ -2398,7 +2398,7 @@ snapshots:
 
   '@types/lodash@4.17.20': {}
 
-  '@types/node@24.10.2':
+  '@types/node@24.10.3':
     dependencies:
       undici-types: 7.16.0
 
@@ -2406,7 +2406,7 @@ snapshots:
     dependencies:
       valibot: 1.2.0(typescript@5.9.3)
 
-  '@vitest/coverage-v8@4.0.15(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1))':
+  '@vitest/coverage-v8@4.0.15(vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.15
@@ -2419,7 +2419,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)
+      vitest: 4.0.15(@types/node@24.10.3)(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2432,13 +2432,13 @@ snapshots:
       chai: 6.2.1
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.15(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1))':
+  '@vitest/mocker@4.0.15(vite@7.2.7(@types/node@24.10.3)(jiti@2.6.1))':
     dependencies:
       '@vitest/spy': 4.0.15
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.2.7(@types/node@24.10.2)(jiti@2.6.1)
+      vite: 7.2.7(@types/node@24.10.3)(jiti@2.6.1)
 
   '@vitest/pretty-format@4.0.15':
     dependencies:
@@ -2574,9 +2574,9 @@ snapshots:
       meow: 12.1.1
       split2: 4.2.0
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@24.10.2)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@24.10.3)(cosmiconfig@9.0.0(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 24.10.2
+      '@types/node': 24.10.3
       cosmiconfig: 9.0.0(typescript@5.9.3)
       jiti: 2.6.1
       typescript: 5.9.3
@@ -2881,7 +2881,7 @@ snapshots:
       emojilib: 2.4.0
       skin-tone: 2.0.0
 
-  npm-check-updates@19.1.2: {}
+  npm-check-updates@19.2.0: {}
 
   object-assign@4.1.1: {}
 
@@ -3164,18 +3164,18 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.7(@types/node@24.10.3)(jiti@2.6.1)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.3)
     optionalDependencies:
-      vite: 7.2.7(@types/node@24.10.2)(jiti@2.6.1)
+      vite: 7.2.7(@types/node@24.10.3)(jiti@2.6.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1):
+  vite@7.2.7(@types/node@24.10.3)(jiti@2.6.1):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.3)
@@ -3184,14 +3184,14 @@ snapshots:
       rollup: 4.53.3
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.10.2
+      '@types/node': 24.10.3
       fsevents: 2.3.3
       jiti: 2.6.1
 
-  vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1):
+  vitest@4.0.15(@types/node@24.10.3)(jiti@2.6.1):
     dependencies:
       '@vitest/expect': 4.0.15
-      '@vitest/mocker': 4.0.15(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1))
+      '@vitest/mocker': 4.0.15(vite@7.2.7(@types/node@24.10.3)(jiti@2.6.1))
       '@vitest/pretty-format': 4.0.15
       '@vitest/runner': 4.0.15
       '@vitest/snapshot': 4.0.15
@@ -3208,10 +3208,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.2.7(@types/node@24.10.2)(jiti@2.6.1)
+      vite: 7.2.7(@types/node@24.10.3)(jiti@2.6.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.10.2
+      '@types/node': 24.10.3
     transitivePeerDependencies:
       - jiti
       - less
