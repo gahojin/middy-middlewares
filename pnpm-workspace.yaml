@@ -3,6 +3,3 @@ packages:
 
 ignoredBuiltDependencies:
   - esbuild
-
-onlyBuiltDependencies:
-  - lefthook
