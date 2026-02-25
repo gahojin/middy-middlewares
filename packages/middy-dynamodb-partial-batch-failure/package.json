@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@gahojin-inc/aws-lambda-mock-context": "2026.1.0",
-    "@middy/core": "7.0.2",
+    "@middy/core": "7.0.3",
     "@serverless/event-mocks": "1.1.1",
     "@types/aws-lambda": "8.10.160"
   },
