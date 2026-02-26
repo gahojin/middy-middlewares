@@ -15,19 +15,17 @@
     "check": "turbo run check",
     "check:packagejson": "turbo run check:packagejson",
     "test": "turbo run test:unit",
-    "ncu": "npm-check-updates -u -w"
+    "ncu": "mise run ncu"
   },
   "dependencies": {
     "@arethetypeswrong/cli": "0.18.2",
-    "@biomejs/biome": "2.4.2",
+    "@biomejs/biome": "2.4.4",
     "@fast-check/vitest": "0.2.4",
     "@types/node": "24.10.13",
     "@vitest/coverage-v8": "4.0.18",
     "jest-extended": "7.0.0",
-    "npm-check-updates": "19.3.2",
     "rolldown": "1.0.0-rc.4",
     "turbo": "2.8.9",
-    "typescript": "5.9.3",
     "unplugin-isolated-decl": "0.15.7",
     "vite": "7.3.1",
     "vite-tsconfig-paths": "6.1.1",
