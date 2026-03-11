@@ -25,7 +25,7 @@
     "@vitest/coverage-v8": "4.0.18",
     "jest-extended": "7.0.0",
     "rolldown": "1.0.0-rc.6",
-    "turbo": "2.8.12",
+    "turbo": "2.8.13",
     "unplugin-isolated-decl": "0.15.7",
     "vite": "7.3.1",
     "vite-tsconfig-paths": "6.1.1",
