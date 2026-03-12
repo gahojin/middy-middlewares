@@ -129,12 +129,10 @@ describe('middleware', () => {
     const response = await handler([dummyEvent, dummyEvent], mockContext())
     expect(response).toEqual([
       {
-        data: null,
         errorMessage: 'before',
         errorType: 'ERROR',
       },
       {
-        data: null,
         errorMessage: 'before',
         errorType: 'ERROR',
       },
@@ -153,7 +151,6 @@ describe('middleware', () => {
         },
       },
       {
-        data: null,
         errorMessage: 'appsyncError',
         errorType: 'type',
       },
@@ -171,11 +168,9 @@ describe('middleware', () => {
     const response = await handler([dummyEvent, dummyEvent], mockContext())
     expect(response).toEqual([
       {
-        data: null,
         errorMessage: 'before',
       },
       {
-        data: null,
         errorMessage: 'before',
       },
     ])
@@ -193,7 +188,6 @@ describe('middleware', () => {
         },
       },
       {
-        data: null,
         errorMessage: 'reject',
       },
     ])
@@ -219,7 +213,6 @@ describe('middleware', () => {
 
     response = await handler({ ...dummyEvent, arguments: { field1: 'reject', field2: 456 } }, mockContext())
     expect(response).toEqual({
-      data: null,
       errorMessage: 'reject',
     })
   })
@@ -243,14 +236,13 @@ describe('middleware', () => {
         },
       },
       {
-        data: null,
         errorMessage: 'reject',
       },
     ])
   })
 })
 
-const customBuildResponseFn: BuildResponseFn<TestAppSyncArgument> = (response: TestAppSyncArgument | Error | null) => {
+const customBuildResponseFn: BuildResponseFn<TestAppSyncArgument> = (response: TestAppSyncArgument | Error | undefined) => {
   if (response instanceof AppSyncError) {
     return {
       data: {
@@ -263,7 +255,6 @@ const customBuildResponseFn: BuildResponseFn<TestAppSyncArgument> = (response: T
   }
   if (response instanceof Error) {
     return {
-      data: null,
       errorMessage: response.message,
     }
   }

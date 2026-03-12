@@ -25,22 +25,25 @@ importers:
         version: 4.0.18(vitest@4.0.18(@types/node@24.11.0))
       jest-extended:
         specifier: 7.0.0
-        version: 7.0.0(typescript@5.6.1-rc)
+        version: 7.0.0(typescript@5.9.3)
       rolldown:
         specifier: 1.0.0-rc.6
         version: 1.0.0-rc.6
       turbo:
-        specifier: 2.8.12
-        version: 2.8.12
+        specifier: 2.8.13
+        version: 2.8.13
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
       unplugin-isolated-decl:
         specifier: 0.15.7
-        version: 0.15.7(typescript@5.6.1-rc)
+        version: 0.15.7(typescript@5.9.3)
       vite:
         specifier: 7.3.1
         version: 7.3.1(@types/node@24.11.0)
       vite-tsconfig-paths:
         specifier: 6.1.1
-        version: 6.1.1(typescript@5.6.1-rc)(vite@7.3.1(@types/node@24.11.0))
+        version: 6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@24.11.0))
       vitest:
         specifier: 4.0.18
         version: 4.0.18(@types/node@24.11.0)
@@ -51,8 +54,8 @@ importers:
         specifier: 2026.2.0
         version: 2026.2.0
       '@middy/core':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@types/aws-lambda':
         specifier: 8.10.161
         version: 8.10.161
@@ -63,8 +66,8 @@ importers:
         specifier: 2026.2.0
         version: 2026.2.0
       '@middy/core':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@serverless/event-mocks':
         specifier: 1.1.1
         version: 1.1.1
@@ -78,11 +81,11 @@ importers:
         specifier: 2026.2.0
         version: 2026.2.0
       '@middy/core':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@middy/util':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@types/aws-lambda':
         specifier: 8.10.161
         version: 8.10.161
@@ -93,11 +96,11 @@ importers:
         specifier: 2026.2.0
         version: 2026.2.0
       '@middy/core':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@middy/util':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
 
   packages/middy-valibot-validator:
     devDependencies:
@@ -105,17 +108,17 @@ importers:
         specifier: 2026.2.0
         version: 2026.2.0
       '@middy/core':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@middy/util':
-        specifier: 7.1.2
-        version: 7.1.2
+        specifier: 7.1.3
+        version: 7.1.3
       '@valibot/i18n':
         specifier: 1.0.0
-        version: 1.0.0(valibot@1.2.0(typescript@5.6.1-rc))
+        version: 1.0.0(valibot@1.2.0(typescript@5.9.3))
       valibot:
         specifier: 1.2.0
-        version: 1.2.0(typescript@5.6.1-rc)
+        version: 1.2.0(typescript@5.9.3)
 
 packages:
 
@@ -420,8 +423,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@middy/core@7.1.2':
-    resolution: {integrity: sha512-gXB0Quhnu9x6a6EaknY2B3gRb82mbJD0ylgBbPTXLaD3Dd9E8pfPvIqTMUGshj0hm1OkIzvpJXJzfaVDGiW96Q==}
+  '@middy/core@7.1.3':
+    resolution: {integrity: sha512-3/9phW/TWstBSEeMRJqgtCFcyN9xt2DyIZujs4RRn41ucK99937XuC38aDxMtGouqFPlqUzULoLOmA+Qtwktfw==}
     engines: {node: '>=22'}
     peerDependencies:
       '@aws/durable-execution-sdk-js': ^1.0.0
@@ -429,8 +432,8 @@ packages:
       '@aws/durable-execution-sdk-js':
         optional: true
 
-  '@middy/util@7.1.2':
-    resolution: {integrity: sha512-nEKukkUTjwmgib22MjQ93qad+1ECCya3/rmcLzxb06xghuABK1e3L4RRExtkrDZCY0/5YCXMQ4+SOkOmIKk6gQ==}
+  '@middy/util@7.1.3':
+    resolution: {integrity: sha512-NohE0mOz6JvoGTpOScH47uoowC25EkDGVH8sBpqmzHAWXUOf/2gtbFHL4LPa/CGy/Adz+A/K9NxAI3LyK+fynQ==}
     engines: {node: '>=22'}
 
   '@napi-rs/wasm-runtime@1.1.1':
@@ -1356,42 +1359,47 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  turbo-darwin-64@2.8.12:
-    resolution: {integrity: sha512-EiHJmW2MeQQx+21x8hjMHw/uPhXt9PIxvDrxzOtyVwrXzL0tQmsxtO4qHf2l7uA+K6PUJ4+TjY1MHZDuCvWXrw==}
+  turbo-darwin-64@2.8.13:
+    resolution: {integrity: sha512-PmOvodQNiOj77+Zwoqku70vwVjKzL34RTNxxoARjp5RU5FOj/CGiC6vcDQhNtFPUOWSAaogHF5qIka9TBhX4XA==}
     cpu: [x64]
     os: [darwin]
 
-  turbo-darwin-arm64@2.8.12:
-    resolution: {integrity: sha512-cbqqGN0vd7ly2TeuaM8k9AK9u1CABO4kBA5KPSqovTiLL3sORccn/mZzJSbvQf0EsYRfU34MgW5FotfwW3kx8Q==}
+  turbo-darwin-arm64@2.8.13:
+    resolution: {integrity: sha512-kI+anKcLIM4L8h+NsM7mtAUpElkCOxv5LgiQVQR8BASyDFfc8Efj5kCk3cqxuxOvIqx0sLfCX7atrHQ2kwuNJQ==}
     cpu: [arm64]
     os: [darwin]
 
-  turbo-linux-64@2.8.12:
-    resolution: {integrity: sha512-jXKw9j4r4q6s0goSXuKI3aKbQK2qiNeP25lGGEnq018TM6SWRW1CCpPMxyG91aCKrub7wDm/K45sGNT4ZFBcFQ==}
+  turbo-linux-64@2.8.13:
+    resolution: {integrity: sha512-j29KnQhHyzdzgCykBFeBqUPS4Wj7lWMnZ8CHqytlYDap4Jy70l4RNG46pOL9+lGu6DepK2s1rE86zQfo0IOdPw==}
     cpu: [x64]
     os: [linux]
 
-  turbo-linux-arm64@2.8.12:
-    resolution: {integrity: sha512-BRJCMdyXjyBoL0GYpvj9d2WNfMHwc3tKmJG5ATn2Efvil9LsiOsd/93/NxDqW0jACtHFNVOPnd/CBwXRPiRbwA==}
+  turbo-linux-arm64@2.8.13:
+    resolution: {integrity: sha512-OEl1YocXGZDRDh28doOUn49QwNe82kXljO1HXApjU0LapkDiGpfl3jkAlPKxEkGDSYWc8MH5Ll8S16Rf5tEBYg==}
     cpu: [arm64]
     os: [linux]
 
-  turbo-windows-64@2.8.12:
-    resolution: {integrity: sha512-vyFOlpFFzQFkikvSVhVkESEfzIopgs2J7J1rYvtSwSHQ4zmHxkC95Q8Kjkus8gg+8X2mZyP1GS5jirmaypGiPw==}
+  turbo-windows-64@2.8.13:
+    resolution: {integrity: sha512-717bVk1+Pn2Jody7OmWludhEirEe0okoj1NpRbSm5kVZz/yNN/jfjbxWC6ilimXMz7xoMT3IDfQFJsFR3PMANA==}
     cpu: [x64]
     os: [win32]
 
-  turbo-windows-arm64@2.8.12:
-    resolution: {integrity: sha512-9nRnlw5DF0LkJClkIws1evaIF36dmmMEO84J5Uj4oQ8C0QTHwlH7DNe5Kq2Jdmu8GXESCNDNuUYG8Cx6W/vm3g==}
+  turbo-windows-arm64@2.8.13:
+    resolution: {integrity: sha512-R819HShLIT0Wj6zWVnIsYvSNtRNj1q9VIyaUz0P24SMcLCbQZIm1sV09F4SDbg+KCCumqD2lcaR2UViQ8SnUJA==}
     cpu: [arm64]
     os: [win32]
 
-  turbo@2.8.12:
-    resolution: {integrity: sha512-auUAMLmi0eJhxDhQrxzvuhfEbICnVt0CTiYQYY8WyRJ5nwCDZxD0JG8bCSxT4nusI2CwJzmZAay5BfF6LmK7Hw==}
+  turbo@2.8.13:
+    resolution: {integrity: sha512-nyM99hwFB9/DHaFyKEqatdayGjsMNYsQ/XBNO6MITc7roncZetKb97MpHxWf3uiU+LB9c9HUlU3Jp2Ixei2k1A==}
     hasBin: true
 
   typescript@5.6.1-rc:
     resolution: {integrity: sha512-E3b2+1zEFu84jB0YQi9BORDjz9+jGbwwy1Zi3G0LUNw7a7cePUrHMRNy8aPh53nXpkFGVHSxIZo5vKTfYaFiBQ==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1749,9 +1757,11 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@middy/core@7.1.2': {}
+  '@middy/core@7.1.3':
+    dependencies:
+      '@middy/util': 7.1.3
 
-  '@middy/util@7.1.2': {}
+  '@middy/util@7.1.3': {}
 
   '@napi-rs/wasm-runtime@1.1.1':
     dependencies:
@@ -2037,9 +2047,9 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@valibot/i18n@1.0.0(valibot@1.2.0(typescript@5.6.1-rc))':
+  '@valibot/i18n@1.0.0(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
-      valibot: 1.2.0(typescript@5.6.1-rc)
+      valibot: 1.2.0(typescript@5.9.3)
 
   '@vitest/coverage-v8@4.0.18(vitest@4.0.18(@types/node@24.11.0))':
     dependencies:
@@ -2256,10 +2266,10 @@ snapshots:
       chalk: 4.1.2
       pretty-format: 30.2.0
 
-  jest-extended@7.0.0(typescript@5.6.1-rc):
+  jest-extended@7.0.0(typescript@5.9.3):
     dependencies:
       jest-diff: 30.2.0
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   js-tokens@10.0.0: {}
 
@@ -2497,47 +2507,49 @@ snapshots:
 
   tinyrainbow@3.0.3: {}
 
-  tsconfck@3.1.6(typescript@5.6.1-rc):
+  tsconfck@3.1.6(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   tslib@2.8.1:
     optional: true
 
-  turbo-darwin-64@2.8.12:
+  turbo-darwin-64@2.8.13:
     optional: true
 
-  turbo-darwin-arm64@2.8.12:
+  turbo-darwin-arm64@2.8.13:
     optional: true
 
-  turbo-linux-64@2.8.12:
+  turbo-linux-64@2.8.13:
     optional: true
 
-  turbo-linux-arm64@2.8.12:
+  turbo-linux-arm64@2.8.13:
     optional: true
 
-  turbo-windows-64@2.8.12:
+  turbo-windows-64@2.8.13:
     optional: true
 
-  turbo-windows-arm64@2.8.12:
+  turbo-windows-arm64@2.8.13:
     optional: true
 
-  turbo@2.8.12:
+  turbo@2.8.13:
     optionalDependencies:
-      turbo-darwin-64: 2.8.12
-      turbo-darwin-arm64: 2.8.12
-      turbo-linux-64: 2.8.12
-      turbo-linux-arm64: 2.8.12
-      turbo-windows-64: 2.8.12
-      turbo-windows-arm64: 2.8.12
+      turbo-darwin-64: 2.8.13
+      turbo-darwin-arm64: 2.8.13
+      turbo-linux-64: 2.8.13
+      turbo-linux-arm64: 2.8.13
+      turbo-windows-64: 2.8.13
+      turbo-windows-arm64: 2.8.13
 
   typescript@5.6.1-rc: {}
+
+  typescript@5.9.3: {}
 
   undici-types@7.16.0: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
-  unplugin-isolated-decl@0.15.7(typescript@5.6.1-rc):
+  unplugin-isolated-decl@0.15.7(typescript@5.9.3):
     dependencies:
       magic-string: 0.30.21
       obug: 2.1.1
@@ -2546,7 +2558,7 @@ snapshots:
       unplugin: 2.3.11
       unplugin-utils: 0.3.1
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   unplugin-utils@0.3.1:
     dependencies:
@@ -2560,17 +2572,17 @@ snapshots:
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
-  valibot@1.2.0(typescript@5.6.1-rc):
+  valibot@1.2.0(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-tsconfig-paths@6.1.1(typescript@5.6.1-rc)(vite@7.3.1(@types/node@24.11.0)):
+  vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@24.11.0)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
-      tsconfck: 3.1.6(typescript@5.6.1-rc)
+      tsconfck: 3.1.6(typescript@5.9.3)
       vite: 7.3.1(@types/node@24.11.0)
     transitivePeerDependencies:
       - supports-color
