@@ -25,22 +25,25 @@ importers:
         version: 4.0.18(vitest@4.0.18(@types/node@24.11.0))
       jest-extended:
         specifier: 7.0.0
-        version: 7.0.0(typescript@5.6.1-rc)
+        version: 7.0.0(typescript@5.9.3)
       rolldown:
         specifier: 1.0.0-rc.6
         version: 1.0.0-rc.6
       turbo:
         specifier: 2.8.13
         version: 2.8.13
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
       unplugin-isolated-decl:
         specifier: 0.15.7
-        version: 0.15.7(typescript@5.6.1-rc)
+        version: 0.15.7(typescript@5.9.3)
       vite:
         specifier: 7.3.1
         version: 7.3.1(@types/node@24.11.0)
       vite-tsconfig-paths:
         specifier: 6.1.1
-        version: 6.1.1(typescript@5.6.1-rc)(vite@7.3.1(@types/node@24.11.0))
+        version: 6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@24.11.0))
       vitest:
         specifier: 4.0.18
         version: 4.0.18(@types/node@24.11.0)
@@ -112,10 +115,10 @@ importers:
         version: 7.1.3
       '@valibot/i18n':
         specifier: 1.0.0
-        version: 1.0.0(valibot@1.2.0(typescript@5.6.1-rc))
+        version: 1.0.0(valibot@1.2.0(typescript@5.9.3))
       valibot:
         specifier: 1.2.0
-        version: 1.2.0(typescript@5.6.1-rc)
+        version: 1.2.0(typescript@5.9.3)
 
 packages:
 
@@ -1395,6 +1398,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
 
@@ -2039,9 +2047,9 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@valibot/i18n@1.0.0(valibot@1.2.0(typescript@5.6.1-rc))':
+  '@valibot/i18n@1.0.0(valibot@1.2.0(typescript@5.9.3))':
     dependencies:
-      valibot: 1.2.0(typescript@5.6.1-rc)
+      valibot: 1.2.0(typescript@5.9.3)
 
   '@vitest/coverage-v8@4.0.18(vitest@4.0.18(@types/node@24.11.0))':
     dependencies:
@@ -2258,10 +2266,10 @@ snapshots:
       chalk: 4.1.2
       pretty-format: 30.2.0
 
-  jest-extended@7.0.0(typescript@5.6.1-rc):
+  jest-extended@7.0.0(typescript@5.9.3):
     dependencies:
       jest-diff: 30.2.0
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   js-tokens@10.0.0: {}
 
@@ -2499,9 +2507,9 @@ snapshots:
 
   tinyrainbow@3.0.3: {}
 
-  tsconfck@3.1.6(typescript@5.6.1-rc):
+  tsconfck@3.1.6(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   tslib@2.8.1:
     optional: true
@@ -2535,11 +2543,13 @@ snapshots:
 
   typescript@5.6.1-rc: {}
 
+  typescript@5.9.3: {}
+
   undici-types@7.16.0: {}
 
   unicode-emoji-modifier-base@1.0.0: {}
 
-  unplugin-isolated-decl@0.15.7(typescript@5.6.1-rc):
+  unplugin-isolated-decl@0.15.7(typescript@5.9.3):
     dependencies:
       magic-string: 0.30.21
       obug: 2.1.1
@@ -2548,7 +2558,7 @@ snapshots:
       unplugin: 2.3.11
       unplugin-utils: 0.3.1
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   unplugin-utils@0.3.1:
     dependencies:
@@ -2562,17 +2572,17 @@ snapshots:
       picomatch: 4.0.3
       webpack-virtual-modules: 0.6.2
 
-  valibot@1.2.0(typescript@5.6.1-rc):
+  valibot@1.2.0(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.6.1-rc
+      typescript: 5.9.3
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-tsconfig-paths@6.1.1(typescript@5.6.1-rc)(vite@7.3.1(@types/node@24.11.0)):
+  vite-tsconfig-paths@6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@24.11.0)):
     dependencies:
       debug: 4.4.3
       globrex: 0.1.2
-      tsconfck: 3.1.6(typescript@5.6.1-rc)
+      tsconfck: 3.1.6(typescript@5.9.3)
       vite: 7.3.1(@types/node@24.11.0)
     transitivePeerDependencies:
       - supports-color

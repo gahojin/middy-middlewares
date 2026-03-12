@@ -7,7 +7,7 @@ import crypto from 'node:crypto'
  * @param body リクエスト/レスポンスメッセージ
  * @returns MAC値
  */
-const calcMessageMAC = (algorithm: string, key: crypto.BinaryLike | crypto.KeyObject, body: string): string | null => {
+const calcMessageMAC = (algorithm: string, key: crypto.BinaryLike | crypto.KeyObject, body: string): string => {
   const hmac = crypto.createHmac(algorithm, key)
   hmac.update(body)
   return hmac.digest('base64')

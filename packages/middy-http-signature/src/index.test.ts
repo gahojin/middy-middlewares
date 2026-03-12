@@ -77,7 +77,7 @@ describe('httpSignature', () => {
         body,
         statusCode: 200,
       }))
-    const response = await handler({}, mockContext())
+    const response = await handler({ body: '', headers: {} }, mockContext())
     expect(response).toEqual({
       statusCode: 200,
       body,
@@ -100,7 +100,7 @@ describe('httpSignature', () => {
         body: { dummy: 'dummy' },
         statusCode: 200,
       }))
-    const response = await handler({}, mockContext())
+    const response = await handler({ body: '', headers: {} }, mockContext())
     expect(response).toEqual({
       statusCode: 200,
       body: { dummy: 'dummy' },

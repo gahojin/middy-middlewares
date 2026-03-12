@@ -17,7 +17,7 @@ const validator = <TEvent extends GenericSchema, TResponse extends GenericSchema
   options: Options<TEvent, TResponse, TContext> = {},
 ): middy.MiddlewareObj<
   undefined extends TEvent ? unknown : ParserOutput<TEvent>,
-  undefined extends TResponse ? any : ParserOutput<TResponse>,
+  undefined extends TResponse ? unknown : ParserOutput<TResponse>,
   TErr
 > => {
   const opts = { language: 'en', ...options }
@@ -34,11 +34,15 @@ const validator = <TEvent extends GenericSchema, TResponse extends GenericSchema
       })
     })
 
-  const beforeFn: middy.MiddlewareFn = async (request) => {
+  const beforeFn: middy.MiddlewareFn<
+    undefined extends TEvent ? unknown : ParserOutput<TEvent>,
+    undefined extends TResponse ? unknown : ParserOutput<TResponse>,
+    TErr
+  > = async (request) => {
     if (eventSchema) {
       const validEvent = await v.safeParseAsync(eventSchema, request.event, { lang: language })
       if (validEvent.success) {
-        Object.assign(request.event, validEvent.output)
+        request.event = validEvent.output
       } else {
         return errorResponse(400, 'Event object failed validation', validEvent.issues)
       }
@@ -54,11 +58,16 @@ const validator = <TEvent extends GenericSchema, TResponse extends GenericSchema
     }
   }
 
-  const afterFn: middy.MiddlewareFn = async (request) => {
+  const afterFn: middy.MiddlewareFn<
+    undefined extends TEvent ? unknown : ParserOutput<TEvent>,
+    undefined extends TResponse ? unknown : ParserOutput<TResponse>,
+    TErr
+  > = async (request) => {
     if (responseSchema) {
-      const validResponse = await v.safeParseAsync(responseSchema, request.response, { lang: language })
+      const actualRespose = request.response
+      const validResponse = await v.safeParseAsync(responseSchema, actualRespose, { lang: language })
       if (validResponse.success) {
-        Object.assign(request.response, validResponse.output)
+        request.response = validResponse.output
       } else {
         return errorResponse(400, 'Response object failed validation', validResponse.issues)
       }

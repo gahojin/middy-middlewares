@@ -59,14 +59,19 @@ describe('validator', () => {
 
     const handler = middy()
 
-    handler.use(
-      validatorMiddleware({
-        eventSchema: schema,
-      }),
-    )
+    handler
+      .use(
+        validatorMiddleware({
+          eventSchema: schema,
+        }),
+      )
+      .handler((event) => {
+        return event.body
+      })
 
     const event = {
       body: {
+        dummy: 'dummy',
         string: JSON.stringify({ foo: 'bar' }),
         boolean: 'true',
         integer: '0',
@@ -75,7 +80,12 @@ describe('validator', () => {
     }
 
     const response = await handler(event, mockContext())
-    expect(response).toBeUndefined()
+    expect(response).toEqual({
+      boolean: true,
+      integer: 0,
+      number: 0.1,
+      string: '{"foo":"bar"}',
+    })
   })
 
   it('イベントオブジェクトのフォーマットがチェックされること', async () => {
@@ -96,6 +106,7 @@ describe('validator', () => {
 
     const event = {
       body: {
+        dummy: 'dummy',
         date: '2000-01-01',
         time: '00:00:00',
         'date-time': '2000-01-01T00:00:00.000Z',
@@ -107,10 +118,21 @@ describe('validator', () => {
       },
     }
 
-    handler.use(validatorMiddleware({ eventSchema: schema }))
+    handler.use(validatorMiddleware({ eventSchema: schema })).handler((event) => {
+      return event.body
+    })
 
     const response = await handler(event, mockContext())
-    expect(response).toBeUndefined()
+    expect(response).toEqual({
+      date: '2000-01-01',
+      time: '00:00:00',
+      'date-time': '2000-01-01T00:00:00.000Z',
+      uri: 'https://example.org',
+      email: 'username@example.org',
+      ipv4: '127.0.0.1',
+      ipv6: '2001:0db8:0000:0000:0000:ff00:0042:8329',
+      uuid: '123e4567-e89b-12d3-a456-426614174000',
+    })
   })
 
   it('スキーマ不一致の場合、BadRequestとなること', async () => {
@@ -298,10 +320,12 @@ describe('validator', () => {
   it('contextオブジェクトのバリデーションが動作すること', async () => {
     const handler = middy()
 
-    handler.use(validatorMiddleware({ contextSchema: contextSchema }))
+    handler.use(validatorMiddleware({ contextSchema: contextSchema })).handler((_, context) => {
+      return context
+    })
 
-    const response = await handler({}, mockContext())
-    expect(response).toBeUndefined()
+    const response = await handler({}, mockContext(undefined, { dummy: 'dummy' }))
+    expect(response).toHaveProperty('dummy')
   })
 
   it('誤ったcontextオブジェクトの場合、BadRequestとなること', async () => {
@@ -336,6 +360,7 @@ describe('validator', () => {
     const handler = middy().handler(() => ({
       body: 'Hello world',
       statusCode: 200,
+      dummy: 'dummy',
     }))
 
     const schema = v.object({
@@ -346,8 +371,10 @@ describe('validator', () => {
     handler.use(validatorMiddleware({ responseSchema: schema }))
 
     const response = await handler({}, mockContext())
-    expect(response.statusCode).toEqual(200)
-    expect(response.body).toEqual('Hello world')
+    expect(response).toEqual({
+      body: 'Hello world',
+      statusCode: 200,
+    })
   })
 
   it('誤ったレスポンスオブジェクトの場合、BadRequestとなること', async () => {
