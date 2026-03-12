@@ -24,7 +24,7 @@
     "@types/node": "24.11.0",
     "@vitest/coverage-v8": "4.0.18",
     "jest-extended": "7.0.0",
-    "rolldown": "1.0.0-rc.6",
+    "rolldown": "1.0.0-rc.7",
     "turbo": "2.8.13",
     "typescript": "5.9.3",
     "unplugin-isolated-decl": "0.15.7",
