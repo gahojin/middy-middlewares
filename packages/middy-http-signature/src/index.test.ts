@@ -59,6 +59,37 @@ describe('httpSignature', () => {
     )
   })
 
+  it('リクエストに署名が存在しない時、エラーが起きないこと', async () => {
+    const body = 'Middy Response data'
+
+    const handler = middy().use(
+      httpSignatureMiddleware({
+        input: {
+          algorithm: 'sha256',
+          key: 'secret key',
+          headerName: 'signature',
+        },
+      }),
+    )
+    await expect(() =>
+      handler(
+        {
+          headers: {},
+          body,
+        },
+        mockContext(),
+      ),
+    ).rejects.toThrowError(
+      expect.objectContaining({
+        statusCode: 400,
+        message: 'Bad signature',
+        cause: {
+          package: '@gahojin-inc/middy-http-signature',
+        },
+      }),
+    )
+  })
+
   it('レスポンスに署名されること', async () => {
     const body = 'Middy Response data'
     const mac = calcMessageMAC('sha256', 'secret key', body)
