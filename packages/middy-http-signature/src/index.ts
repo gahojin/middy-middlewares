@@ -4,13 +4,13 @@ import { createError, normalizeHttpResponse } from '@middy/util'
 import { calcMessageMAC } from './mac'
 
 type Event = {
-  headers: Record<string, string>
+  headers: Partial<Record<string, string>>
   isBase64Encoded?: boolean
-  body: string
+  body?: string
 }
 
 type Result = {
-  headers: Record<string, string>
+  headers: Partial<Record<string, string>>
   body: unknown
 }
 
@@ -42,22 +42,23 @@ export default (options: Options): middy.MiddlewareObj<Event, Result, Error> => 
     const { headers, body } = request.event
 
     // Base64エンコードされている場合、デコードする
-    const data = request.event.isBase64Encoded ? Buffer.from(body, 'base64').toString() : body
+    const data = body && request.event.isBase64Encoded ? Buffer.from(body, 'base64').toString() : body
     request.event.body = data
     request.event.isBase64Encoded = false
 
     const signature = headers[headerName]
-    if (signature) {
+    if (signature && data) {
       const macKey = await generateKey(request, key)
       const mac = calcMessageMAC(algorithm, macKey, data)
-      if (mac !== signature) {
-        throw createError(400, 'Bad signature', {
-          cause: {
-            package: '@gahojin-inc/middy-http-signature',
-          },
-        })
+      if (mac === signature) {
+        return
       }
     }
+    throw createError(400, 'Bad signature', {
+      cause: {
+        package: '@gahojin-inc/middy-http-signature',
+      },
+    })
   }
 
   const afterFn: middy.MiddlewareFn<Event, Result, Error> = async (request) => {
