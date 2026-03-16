@@ -11,7 +11,7 @@ export class AppSyncError extends Error {
 }
 
 export type AppSyncBatchResponse<TData = any> = {
-  data?: TData
+  data?: TData | null
   errorMessage?: string
   errorType?: string
 }
@@ -20,15 +20,15 @@ export type AppSyncResolverEvents<TArguments, TSource = Record<string, any> | nu
   | AppSyncResolverEvent<TArguments, TSource>
   | AppSyncResolverEvent<TArguments, TSource>[]
 
-export type AppSyncResponse<TData> = AppSyncBatchResponse<TData> | TData | Error | undefined
+export type AppSyncResponse<TData> = AppSyncBatchResponse<TData> | TData | Error | null | undefined
 
-export type BuildResponseFn<TData = any> = (response: TData | Error | undefined, batchInvoke: boolean) => AppSyncResponse<TData>
+export type BuildResponseFn<TData = any> = (response: TData | Error | null | undefined, batchInvoke: boolean) => AppSyncResponse<TData>
 
 type Options<TData = any> = {
   buildResponse?: BuildResponseFn<TData>
 }
 
-const defaultBuildResponse = <TData>(response: TData | Error | undefined, batchInvoke: boolean): AppSyncResponse<TData> => {
+const defaultBuildResponse = <TData>(response: TData | Error | null | undefined, batchInvoke: boolean): AppSyncResponse<TData> => {
   if (batchInvoke) {
     if (response instanceof AppSyncError) {
       return {
