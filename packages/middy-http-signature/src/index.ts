@@ -16,22 +16,25 @@ type Result = {
 
 type KeyType = crypto.BinaryLike | crypto.KeyObject
 
-type SignatureOption<TEvent extends Event = Event> = {
+type SignatureOption<TEvent extends Event> = {
   headerName: string
   algorithm: string
   key: KeyType | ((request: middy.Request<TEvent, unknown, Error>) => KeyType | PromiseLike<KeyType>)
 }
 
-type Options<TEvent extends Event = Event> = {
+type Options<TEvent extends Event> = {
   input?: SignatureOption<TEvent>
   output?: SignatureOption<TEvent>
 }
 
-const generateKey = async (request: middy.Request<Event, unknown, Error>, key: SignatureOption['key']): Promise<KeyType> => {
+const generateKey = async <TEvent extends Event>(
+  request: middy.Request<TEvent, unknown, Error>,
+  key: SignatureOption<TEvent>['key'],
+): Promise<KeyType> => {
   return typeof key === 'function' ? await key(request) : key
 }
 
-export default <TEvent extends Event = Event>(options: Options): middy.MiddlewareObj<TEvent, Result, Error> => {
+export default <TEvent extends Event = Event>(options: Options<TEvent>): middy.MiddlewareObj<TEvent, Result, Error> => {
   const { input, output } = options
 
   const beforeFn: middy.MiddlewareFn<TEvent> = async (request) => {
@@ -61,7 +64,7 @@ export default <TEvent extends Event = Event>(options: Options): middy.Middlewar
     })
   }
 
-  const afterFn: middy.MiddlewareFn<TEvent, Result, Error> = async (request) => {
+  const afterFn: middy.MiddlewareFn<TEvent, Result> = async (request) => {
     if (!output) {
       return
     }
