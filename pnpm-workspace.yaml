@@ -4,4 +4,6 @@ packages:
 ignoredBuiltDependencies:
   - esbuild
 
-minimumReleaseAge: 1440
+# リリースから一定時間経過していないか、信頼性低下したパッケージはインストールしない
+minimumReleaseAge: 2880
+trustPolicy: no-downgrade
