@@ -1,5 +1,5 @@
 import { defineConfig } from 'rolldown'
-import IsolatedDecl from 'unplugin-isolated-decl/rolldown'
+import { dts } from 'rolldown-plugin-dts'
 
 export default defineConfig([
   {
@@ -7,10 +7,7 @@ export default defineConfig([
     external: [/^node:/, /^@middy\//, 'aws-lambda'],
     treeshake: true,
     input: 'src/index.ts',
-    output: [
-      { dir: 'dist', format: 'esm', entryFileNames: '[name].mjs', sourcemap: true, cleanDir: true },
-      { dir: 'dist', format: 'cjs', entryFileNames: '[name].cjs', sourcemap: true, exports: 'named' },
-    ],
-    plugins: [IsolatedDecl()],
+    output: [{ dir: 'dist', format: 'es', sourcemap: true, cleanDir: true }],
+    plugins: [dts()],
   },
 ])

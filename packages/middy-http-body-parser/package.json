@@ -29,43 +29,31 @@
     "lint": "biome check --write .",
     "lint:ci": "biome ci .",
     "check": "tsc --noEmit",
-    "check:packagejson": "attw --pack --profile node16 .",
+    "check:packagejson": "attw --pack --profile esm-only .",
     "test": "vitest --watch",
     "test:unit": "vitest --passWithNoTests --run --coverage"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     },
     "./parser/json": {
       "import": {
-        "types": "./dist/parser/json.d.mts",
-        "default": "./dist/parser/json.mjs"
-      },
-      "require": {
-        "types": "./dist/parser/json.d.cts",
-        "default": "./dist/parser/json.cjs"
+        "types": "./dist/parser/json.d.ts",
+        "default": "./dist/parser/json.js"
       }
     },
     "./parser/urlencode": {
       "import": {
-        "types": "./dist/parser/urlencode.d.mts",
-        "default": "./dist/parser/json.mjs"
-      },
-      "require": {
-        "types": "./dist/parser/json.d.cts",
-        "default": "./dist/parser/urlencode.cjs"
+        "types": "./dist/parser/urlencode.d.ts",
+        "default": "./dist/parser/urlencode.js"
       }
     }
   },
