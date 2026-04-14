@@ -48,8 +48,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.2.0
-        version: 2026.2.0
+        specifier: 2026.4.0
+        version: 2026.4.0
       '@middy/core':
         specifier: 7.2.1
         version: 7.2.1
@@ -60,8 +60,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.2.0
-        version: 2026.2.0
+        specifier: 2026.4.0
+        version: 2026.4.0
       '@middy/core':
         specifier: 7.2.1
         version: 7.2.1
@@ -75,8 +75,8 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.2.0
-        version: 2026.2.0
+        specifier: 2026.4.0
+        version: 2026.4.0
       '@middy/core':
         specifier: 7.2.1
         version: 7.2.1
@@ -90,8 +90,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.2.0
-        version: 2026.2.0
+        specifier: 2026.4.0
+        version: 2026.4.0
       '@middy/core':
         specifier: 7.2.1
         version: 7.2.1
@@ -102,8 +102,8 @@ importers:
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.2.0
-        version: 2026.2.0
+        specifier: 2026.4.0
+        version: 2026.4.0
       '@middy/core':
         specifier: 7.2.1
         version: 7.2.1
@@ -251,8 +251,8 @@ packages:
     peerDependencies:
       vitest: ^4.1.0
 
-  '@gahojin-inc/aws-lambda-mock-context@2026.2.0':
-    resolution: {integrity: sha512-gHZ+HTsSx6cVH84ZzhR3kqFXqdVlQIZSh1aRwDAUISYY7Cc97FwcokAFDSnqIHafj5ACQImI/W8gG3auV+kNnA==}
+  '@gahojin-inc/aws-lambda-mock-context@2026.4.0':
+    resolution: {integrity: sha512-RtHYDO29JiOqNgtUWPLzhbMRo4nXeykUBuXYGGXwL9xWjFq9nmc5rnrdfoKJEeya8Ztv4qXdRo/h7uMeWnK38w==}
 
   '@jest/diff-sequences@30.3.0':
     resolution: {integrity: sha512-cG51MVnLq1ecVUaQ3fr6YuuAOitHK1S4WUJHnsPFE/quQr33ADUx1FfrTCpMCRxvy0Yr9BThKpDjSlcTi91tMA==}
@@ -1316,7 +1316,7 @@ snapshots:
       fast-check: 4.6.0
       vitest: 4.1.2(@types/node@24.12.2)(vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@types/node@24.12.2))
 
-  '@gahojin-inc/aws-lambda-mock-context@2026.2.0': {}
+  '@gahojin-inc/aws-lambda-mock-context@2026.4.0': {}
 
   '@jest/diff-sequences@30.3.0': {}
 
