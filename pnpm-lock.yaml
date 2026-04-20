@@ -33,8 +33,8 @@ importers:
         specifier: 0.23.2
         version: 0.23.2(rolldown@1.0.0-rc.15)(typescript@6.0.2)
       turbo:
-        specifier: 2.9.5
-        version: 2.9.5
+        specifier: 2.9.6
+        version: 2.9.6
       typescript:
         specifier: 6.0.2
         version: 6.0.2
@@ -51,8 +51,8 @@ importers:
         specifier: 2026.4.0
         version: 2026.4.0
       '@middy/core':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@types/aws-lambda':
         specifier: 8.10.161
         version: 8.10.161
@@ -63,8 +63,8 @@ importers:
         specifier: 2026.4.0
         version: 2026.4.0
       '@middy/core':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@serverless/event-mocks':
         specifier: 1.1.1
         version: 1.1.1
@@ -78,11 +78,11 @@ importers:
         specifier: 2026.4.0
         version: 2026.4.0
       '@middy/core':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@middy/util':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@types/aws-lambda':
         specifier: 8.10.161
         version: 8.10.161
@@ -93,11 +93,11 @@ importers:
         specifier: 2026.4.0
         version: 2026.4.0
       '@middy/core':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@middy/util':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
 
   packages/middy-valibot-validator:
     devDependencies:
@@ -105,11 +105,11 @@ importers:
         specifier: 2026.4.0
         version: 2026.4.0
       '@middy/core':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@middy/util':
-        specifier: 7.2.1
-        version: 7.2.1
+        specifier: 7.2.2
+        version: 7.2.2
       '@valibot/i18n':
         specifier: 1.1.0
         version: 1.1.0(valibot@1.3.1(typescript@6.0.2))
@@ -282,8 +282,8 @@ packages:
   '@loaderkit/resolve@1.0.4':
     resolution: {integrity: sha512-rJzYKVcV4dxJv+vW6jlvagF8zvGxHJ2+HTr1e2qOejfmGhAApgJHl8Aog4mMszxceTRiKTTbnpgmTO1bEZHV/A==}
 
-  '@middy/core@7.2.1':
-    resolution: {integrity: sha512-KFtxLUhHQcBezrusBt5F2VKYY/p3Po2rM2OByyeZsqpzSY9D8iapsmJGaiHFgXbfuEUS5B0BxTXixFcxjChLUg==}
+  '@middy/core@7.2.2':
+    resolution: {integrity: sha512-UO1skdDb0ZRrbOlD4h0+FnOUqhT0YuA8ppuzNhaQGzz6CnQ3uYdKMrfgfoMChQ5HReNFhzejUa/LhRPX2CPvdA==}
     engines: {node: '>=22'}
     peerDependencies:
       '@aws/durable-execution-sdk-js': ^1.0.0
@@ -291,8 +291,8 @@ packages:
       '@aws/durable-execution-sdk-js':
         optional: true
 
-  '@middy/util@7.2.1':
-    resolution: {integrity: sha512-vwtRPxQ5stQFR8Ulfsuqt8GgPJX6iXrF/9SiOTsJzw2nliNu/aPcZ8DR6sPj+gFar/QdUJuym6iyjevfeMNiFA==}
+  '@middy/util@7.2.2':
+    resolution: {integrity: sha512-f9oCObbYpKf7uhYP3tl+NKrOBg5sHNIVxxIM+wiMETb4jExpGUkssn1pXj81lqx8LsIYj0Z47wz73ibMIkIJNg==}
     engines: {node: '>=22'}
 
   '@napi-rs/wasm-runtime@1.1.3':
@@ -415,33 +415,33 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@turbo/darwin-64@2.9.5':
-    resolution: {integrity: sha512-qPxhKsLMQP+9+dsmPgAGidi5uNifD4AoAOnEnljab3Qgn0QZRR31Hp+/CgW3Ia5AanWj6JuLLTBYvuQj4mqTWg==}
+  '@turbo/darwin-64@2.9.6':
+    resolution: {integrity: sha512-X/56SnVXIQZBLKwniGTwEQTGmtE5brSACnKMBWpY3YafuxVYefrC2acamfjgxP7BG5w3I+6jf0UrLoSzgPcSJg==}
     cpu: [x64]
     os: [darwin]
 
-  '@turbo/darwin-arm64@2.9.5':
-    resolution: {integrity: sha512-vkF/9F/l3aWd4bHxTui5Hh0F5xrTZ4e3rbBsc57zA6O8gNbmHN3B6eZ5psAIP2CnJRZ8ZxRjV3WZHeNXMXkPBw==}
+  '@turbo/darwin-arm64@2.9.6':
+    resolution: {integrity: sha512-aalBeSl4agT/QtYGDyf/XLajedWzUC9Vg/pm/YO6QQ93vkQ91Vz5uK1ta5RbVRDozQSz4njxUNqRNmOXDzW+qw==}
     cpu: [arm64]
     os: [darwin]
 
-  '@turbo/linux-64@2.9.5':
-    resolution: {integrity: sha512-z/Get5NUaUxm5HSGFqVMICDRjFNsCUhSc4wnFa/PP1QD0NXCjr7bu9a2EM6md/KMCBW0Qe393Ac+UM7/ryDDTw==}
+  '@turbo/linux-64@2.9.6':
+    resolution: {integrity: sha512-YKi05jnNHaD7vevgYwahpzGwbsNNTwzU2c7VZdmdFm7+cGDP4oREUWSsainiMfRqjRuolQxBwRn8wf1jmu+YZA==}
     cpu: [x64]
     os: [linux]
 
-  '@turbo/linux-arm64@2.9.5':
-    resolution: {integrity: sha512-jyBifaNoI5/NheyswomiZXJvjdAdvT7hDRYzQ4meP0DKGvpXUjnqsD+4/J2YSDQ34OHxFkL30FnSCUIVOh2PHw==}
+  '@turbo/linux-arm64@2.9.6':
+    resolution: {integrity: sha512-02o/ZS69cOYEDczXvOB2xmyrtzjQ2hVFtWZK1iqxXUfzMmTjZK4UumrfNnjckSg+gqeBfnPRHa0NstA173Ik3g==}
     cpu: [arm64]
     os: [linux]
 
-  '@turbo/windows-64@2.9.5':
-    resolution: {integrity: sha512-ph24K5uPtvo7UfuyDXnBiB/8XvrO+RQWbbw5zkA/bVNoy9HDiNoIJJj3s62MxT9tjEb6DnPje5PXSz1UR7QAyg==}
+  '@turbo/windows-64@2.9.6':
+    resolution: {integrity: sha512-wVdQjvnBI15wB6JrA+43CtUtagjIMmX6XYO758oZHAsCNSxqRlJtdyujih0D8OCnwCRWiGWGI63zAxR0hO6s9g==}
     cpu: [x64]
     os: [win32]
 
-  '@turbo/windows-arm64@2.9.5':
-    resolution: {integrity: sha512-6c5RccT/+iR39SdT1G5HyZaD2n57W77o+l0TTfxG/cVlhV94Acyg2gTQW7zUOhW1BeQpBjHzu9x8yVBZwrHh7g==}
+  '@turbo/windows-arm64@2.9.6':
+    resolution: {integrity: sha512-1XUUyWW0W6FTSqGEhU8RHVqb2wP1SPkr7hIvBlMEwH9jr+sJQK5kqeosLJ/QaUv4ecSAd1ZhIrLoW7qslAzT4A==}
     cpu: [arm64]
     os: [win32]
 
@@ -955,8 +955,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  turbo@2.9.5:
-    resolution: {integrity: sha512-JXNkRe6H6MjSlk5UQRTjyoKX5YN2zlc2632xcSlSFBao5yvbMWTpv9SNolOZlZmUlcDOHuszPLItbKrvcXnnZA==}
+  turbo@2.9.6:
+    resolution: {integrity: sha512-+v2QJey7ZUeUiuigkU+uFfklvNUyPI2VO2vBpMYJA+a1hKFLFiKtUYlRHdb3P9CrAvMzi0upbjI4WT+zKtqkBg==}
     hasBin: true
 
   typescript@5.6.1-rc:
@@ -1244,11 +1244,11 @@ snapshots:
     dependencies:
       '@braidai/lang': 1.1.2
 
-  '@middy/core@7.2.1':
+  '@middy/core@7.2.2':
     dependencies:
-      '@middy/util': 7.2.1
+      '@middy/util': 7.2.2
 
-  '@middy/util@7.2.1': {}
+  '@middy/util@7.2.2': {}
 
   '@napi-rs/wasm-runtime@1.1.3(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
     dependencies:
@@ -1321,22 +1321,22 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@turbo/darwin-64@2.9.5':
+  '@turbo/darwin-64@2.9.6':
     optional: true
 
-  '@turbo/darwin-arm64@2.9.5':
+  '@turbo/darwin-arm64@2.9.6':
     optional: true
 
-  '@turbo/linux-64@2.9.5':
+  '@turbo/linux-64@2.9.6':
     optional: true
 
-  '@turbo/linux-arm64@2.9.5':
+  '@turbo/linux-arm64@2.9.6':
     optional: true
 
-  '@turbo/windows-64@2.9.5':
+  '@turbo/windows-64@2.9.6':
     optional: true
 
-  '@turbo/windows-arm64@2.9.5':
+  '@turbo/windows-arm64@2.9.6':
     optional: true
 
   '@tybys/wasm-util@0.10.1':
@@ -1801,14 +1801,14 @@ snapshots:
   tslib@2.8.1:
     optional: true
 
-  turbo@2.9.5:
+  turbo@2.9.6:
     optionalDependencies:
-      '@turbo/darwin-64': 2.9.5
-      '@turbo/darwin-arm64': 2.9.5
-      '@turbo/linux-64': 2.9.5
-      '@turbo/linux-arm64': 2.9.5
-      '@turbo/windows-64': 2.9.5
-      '@turbo/windows-arm64': 2.9.5
+      '@turbo/darwin-64': 2.9.6
+      '@turbo/darwin-arm64': 2.9.6
+      '@turbo/linux-64': 2.9.6
+      '@turbo/linux-arm64': 2.9.6
+      '@turbo/windows-64': 2.9.6
+      '@turbo/windows-arm64': 2.9.6
 
   typescript@5.6.1-rc: {}
 
