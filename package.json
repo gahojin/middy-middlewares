@@ -28,7 +28,7 @@
     "rolldown-plugin-dts": "0.23.2",
     "turbo": "2.9.6",
     "typescript": "6.0.3",
-    "vite": "8.0.8",
+    "vite": "8.0.9",
     "vitest": "4.1.4"
   },
   "packageManager": "pnpm@10.33.0"
