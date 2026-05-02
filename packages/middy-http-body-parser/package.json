@@ -24,7 +24,7 @@
     "provenance": true
   },
   "scripts": {
-    "build": "rolldown -c",
+    "build": "vite build",
     "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",
     "lint:ci": "biome ci .",
