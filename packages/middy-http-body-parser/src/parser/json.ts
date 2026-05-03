@@ -1,4 +1,4 @@
-import type { BodyParser } from '../index'
+import type { BodyParser } from '../index.js'
 
 const invalidMessage = 'Invalid or malformed JSON was provided'
 

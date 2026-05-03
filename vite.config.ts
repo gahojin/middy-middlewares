@@ -4,18 +4,13 @@ import { defineConfig } from 'vitest/config'
 export default defineConfig({
   plugins: [
     dts({
-      exclude: ['src/**/*.test.ts'],
+      exclude: ['src/**/*.test.ts', 'src/**/*.bench.ts'],
     }),
   ],
   resolve: {
     tsconfigPaths: true,
   },
   build: {
-    ssr: true,
-    lib: {
-      entry: ['src/index.ts'],
-      formats: ['es'],
-    },
     minify: false,
     sourcemap: true,
     rolldownOptions: {
@@ -25,8 +20,6 @@ export default defineConfig({
         comments: false,
         preserveModules: true,
       },
-      platform: 'node',
-      external: [/^node:/, /^@middy\//, 'aws-lambda'],
       optimization: {
         inlineConst: { mode: 'all', pass: 5 },
       },

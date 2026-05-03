@@ -1,8 +1,8 @@
 import type middy from '@middy/core'
 import { createError } from '@middy/util'
 import type { ALBEvent, APIGatewayEvent, APIGatewayProxyEventV2 } from 'aws-lambda'
-import jsonParser from './parser/json'
-import urlencodeParser from './parser/urlencode'
+import jsonParser from './parser/json.js'
+import urlencodeParser from './parser/urlencode.js'
 
 type BodyParseFn<TResult = any> = (body: string, rawBody: string) => TResult
 

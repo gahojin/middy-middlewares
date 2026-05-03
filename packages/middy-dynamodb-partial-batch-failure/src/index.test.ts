@@ -1,8 +1,10 @@
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import middy from '@middy/core'
-import createEvent from '@serverless/event-mocks'
+import { default as createEventNs } from '@serverless/event-mocks'
 import type { DynamoDBStreamEvent } from 'aws-lambda'
-import dynamodbPartialBatchFailure from './index'
+import dynamodbPartialBatchFailure from './index.js'
+
+const createEvent = createEventNs.default || createEventNs
 
 const lambdaHandler = async (event: DynamoDBStreamEvent) => {
   const processedRecords = event.Records.map(async (record) => {
@@ -36,7 +38,7 @@ describe('middleware', () => {
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }],
     })
-    expect(logger).toBeCalledTimes(1)
+    expect(logger).toHaveBeenCalledTimes(1)
   })
 
   it('実行にしたレコードのみが返されること', async () => {
@@ -58,7 +60,7 @@ describe('middleware', () => {
 
     const response = await handler(event, mockContext())
     expect(response).toEqual({ batchItemFailures: [] })
-    expect(logger).not.toBeCalled()
+    expect(logger).not.toHaveBeenCalled()
   })
 
   it('失敗したレコードのシーケンス番号のみが返されること', async () => {
@@ -90,7 +92,7 @@ describe('middleware', () => {
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }],
     })
-    expect(logger).toBeCalledTimes(1)
+    expect(logger).toHaveBeenCalledTimes(1)
   })
 
   it('エラーがスローされた場合、全てのシーケンス番号が返されること', async () => {
@@ -127,6 +129,6 @@ describe('middleware', () => {
     expect(response).toEqual({
       batchItemFailures: [{ itemIdentifier: '111' }, { itemIdentifier: '222' }],
     })
-    expect(logger).toBeCalledTimes(2)
+    expect(logger).toHaveBeenCalledTimes(2)
   })
 })

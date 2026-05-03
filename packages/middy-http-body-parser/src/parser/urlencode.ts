@@ -1,5 +1,5 @@
 import querystring from 'node:querystring'
-import type { BodyParser } from '../index'
+import type { BodyParser } from '../index.js'
 
 const invalidMessage = 'Invalid or malformed URL encoded form was provided'
 const urlencodeParser: BodyParser = {
