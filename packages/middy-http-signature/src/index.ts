@@ -1,7 +1,7 @@
 import type crypto from 'node:crypto'
 import type middy from '@middy/core'
 import { createError, normalizeHttpResponse } from '@middy/util'
-import { calcMessageMAC } from './mac'
+import { calcMessageMAC } from './mac.js'
 
 type Event = {
   headers: Partial<Record<string, string>>

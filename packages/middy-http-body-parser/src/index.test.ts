@@ -1,6 +1,6 @@
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import middy from '@middy/core'
-import parserMiddleware from './index'
+import parserMiddleware from './index.js'
 
 const unexpectedTokenRegex = /^Unexpected token/
 

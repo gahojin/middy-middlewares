@@ -1,5 +1,5 @@
 import middy from '@middy/core'
-import validatorMiddleware from './index'
+import validatorMiddleware from './index.js'
 import '@valibot/i18n/ja'
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import * as v from 'valibot'

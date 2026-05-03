@@ -1,7 +1,7 @@
 import mockContext from '@gahojin-inc/aws-lambda-mock-context'
 import middy from '@middy/core'
-import httpSignatureMiddleware from './index'
-import { calcMessageMAC } from './mac'
+import httpSignatureMiddleware from './index.js'
+import { calcMessageMAC } from './mac.js'
 
 describe('httpSignature', () => {
   it('リクエストの署名が一致した時、エラーが起きないこと', async () => {
