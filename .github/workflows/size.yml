@@ -13,9 +13,7 @@ on:
       - 'package.json'
       - 'pnpm-lock.yaml'
 
-permissions:
-  contents: read
-  pull-requests: write
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -26,6 +24,10 @@ jobs:
     timeout-minutes: 10
     runs-on: ubuntu-latest
     if: contains(github.event.head_commit.message, '[skip build]') == false
+
+    permissions:
+      contents: read
+      pull-requests: write
 
     strategy:
       matrix:
@@ -55,6 +57,6 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check size and Comment PR
-        uses: preactjs/compressed-size-action@66325aad6443cb7cf89c4bfcd414aea2367cda94 # v2.9.1
+        uses: preactjs/compressed-size-action@66325aad6443cb7cf89c4bfcd414aea2367cda94 # 2.9.1
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
