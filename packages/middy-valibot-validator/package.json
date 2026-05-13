@@ -50,8 +50,8 @@
     "@gahojin-inc/aws-lambda-mock-context": "2026.4.0",
     "@middy/core": "7.4.0",
     "@middy/util": "7.4.0",
-    "@valibot/i18n": "1.1.0",
-    "valibot": "1.3.1"
+    "@valibot/i18n": "1.2.0",
+    "valibot": "1.4.0"
   },
   "peerDependencies": {
     "@middy/core": "^5 || ^6 || ^7",
