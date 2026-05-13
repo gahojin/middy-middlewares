@@ -2,6 +2,7 @@ lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
+  dedupePeers: true
   excludeLinksFromLockfile: false
 
 importers:
@@ -34,13 +35,13 @@ importers:
         version: 6.0.3
       unplugin-dts:
         specifier: 1.0.0
-        version: 1.0.0(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2))
+        version: 1.0.0(typescript@6.0.3)(vite@8.0.10)
       vite:
         specifier: 8.0.10
         version: 8.0.10(@types/node@24.12.2)
       vitest:
         specifier: 4.1.5
-        version: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10(@types/node@24.12.2))
+        version: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10)
 
   packages/middy-appsync:
     devDependencies:
@@ -109,7 +110,7 @@ importers:
         version: 7.4.0
       '@valibot/i18n':
         specifier: 1.2.0
-        version: 1.2.0(valibot@1.4.0(typescript@6.0.3))
+        version: 1.2.0(valibot@1.4.0)
       valibot:
         specifier: 1.4.0
         version: 1.4.0(typescript@6.0.3)
@@ -1240,7 +1241,7 @@ snapshots:
   '@fast-check/vitest@0.4.1(vitest@4.1.5)':
     dependencies:
       fast-check: 4.7.0
-      vitest: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10(@types/node@24.12.2))
+      vitest: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10)
 
   '@gahojin-inc/aws-lambda-mock-context@2026.4.0': {}
 
@@ -1398,7 +1399,7 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@valibot/i18n@1.2.0(valibot@1.4.0(typescript@6.0.3))':
+  '@valibot/i18n@1.2.0(valibot@1.4.0)':
     dependencies:
       valibot: 1.4.0(typescript@6.0.3)
 
@@ -1414,7 +1415,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10(@types/node@24.12.2))
+      vitest: 4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10)
 
   '@vitest/expect@4.1.5':
     dependencies:
@@ -1425,7 +1426,7 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.5(vite@8.0.10(@types/node@24.12.2))':
+  '@vitest/mocker@4.1.5(vite@8.0.10)':
     dependencies:
       '@vitest/spy': 4.1.5
       estree-walker: 3.0.3
@@ -1883,7 +1884,7 @@ snapshots:
 
   unicode-emoji-modifier-base@1.0.0: {}
 
-  unplugin-dts@1.0.0(typescript@6.0.3)(vite@8.0.10(@types/node@24.12.2)):
+  unplugin-dts@1.0.0(typescript@6.0.3)(vite@8.0.10):
     dependencies:
       '@rollup/pluginutils': 5.3.0
       '@volar/typescript': 2.4.28
@@ -1923,10 +1924,10 @@ snapshots:
       '@types/node': 24.12.2
       fsevents: 2.3.3
 
-  vitest@4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10(@types/node@24.12.2)):
+  vitest@4.1.5(@types/node@24.12.2)(@vitest/coverage-v8@4.1.5)(vite@8.0.10):
     dependencies:
       '@vitest/expect': 4.1.5
-      '@vitest/mocker': 4.1.5(vite@8.0.10(@types/node@24.12.2))
+      '@vitest/mocker': 4.1.5(vite@8.0.10)
       '@vitest/pretty-format': 4.1.5
       '@vitest/runner': 4.1.5
       '@vitest/snapshot': 4.1.5
