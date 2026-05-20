@@ -46,8 +46,8 @@ importers:
   packages/middy-appsync:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.4.0
-        version: 2026.4.0
+        specifier: 2026.5.1
+        version: 2026.5.1
       '@middy/core':
         specifier: 7.5.0
         version: 7.5.0
@@ -58,8 +58,8 @@ importers:
   packages/middy-dynamodb-partial-batch-failure:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.4.0
-        version: 2026.4.0
+        specifier: 2026.5.1
+        version: 2026.5.1
       '@middy/core':
         specifier: 7.5.0
         version: 7.5.0
@@ -73,8 +73,8 @@ importers:
   packages/middy-http-body-parser:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.4.0
-        version: 2026.4.0
+        specifier: 2026.5.1
+        version: 2026.5.1
       '@middy/core':
         specifier: 7.5.0
         version: 7.5.0
@@ -88,8 +88,8 @@ importers:
   packages/middy-http-signature:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.4.0
-        version: 2026.4.0
+        specifier: 2026.5.1
+        version: 2026.5.1
       '@middy/core':
         specifier: 7.5.0
         version: 7.5.0
@@ -100,8 +100,8 @@ importers:
   packages/middy-valibot-validator:
     devDependencies:
       '@gahojin-inc/aws-lambda-mock-context':
-        specifier: 2026.4.0
-        version: 2026.4.0
+        specifier: 2026.5.1
+        version: 2026.5.1
       '@middy/core':
         specifier: 7.5.0
         version: 7.5.0
@@ -228,8 +228,8 @@ packages:
     peerDependencies:
       vitest: ^4.1.0
 
-  '@gahojin-inc/aws-lambda-mock-context@2026.4.0':
-    resolution: {integrity: sha512-RtHYDO29JiOqNgtUWPLzhbMRo4nXeykUBuXYGGXwL9xWjFq9nmc5rnrdfoKJEeya8Ztv4qXdRo/h7uMeWnK38w==}
+  '@gahojin-inc/aws-lambda-mock-context@2026.5.1':
+    resolution: {integrity: sha512-8Y/1Ij7WS8AYxNVhWGzowqWarEWeaz33iz1PjtNRAptVmUJBT5u+KSD1dOGg1wx6wSrPE7eMofjds2Jlb5M4+w==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1200,7 +1200,7 @@ snapshots:
       fast-check: 4.8.0
       vitest: 4.1.6(@types/node@24.12.4)(@vitest/coverage-v8@4.1.6)(vite@8.0.12)
 
-  '@gahojin-inc/aws-lambda-mock-context@2026.4.0': {}
+  '@gahojin-inc/aws-lambda-mock-context@2026.5.1': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
