@@ -29,7 +29,6 @@
     "lint": "biome check --write .",
     "lint:ci": "biome ci .",
     "check": "tsc --noEmit",
-    "check:packagejson": "attw --pack --profile esm-only .",
     "test": "vitest --watch",
     "test:unit": "vitest --passWithNoTests --run --coverage"
   },

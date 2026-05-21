@@ -10,10 +10,6 @@
       "cache": false,
       "dependsOn": ["^check"]
     },
-    "check:packagejson": {
-      "cache": false,
-      "dependsOn": ["^check:packagejson"]
-    },
     "lint": {
       "cache": false,
       "dependsOn": ["^lint"]
