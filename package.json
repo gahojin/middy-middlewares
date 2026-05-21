@@ -8,17 +8,15 @@
     "url": "https://github.com/gahojin/middy-middlewares.git"
   },
   "scripts": {
-    "postinstall": "biome migrate --write",
+    "prepare": "biome migrate --write",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "lint:ci": "turbo run lint:ci",
     "check": "turbo run check",
-    "check:packagejson": "turbo run check:packagejson",
     "test": "turbo run test:unit",
     "ncu": "mise run ncu"
   },
   "dependencies": {
-    "@arethetypeswrong/cli": "0.18.2",
     "@biomejs/biome": "2.4.15",
     "@fast-check/vitest": "0.4.1",
     "@types/node": "24.12.4",
