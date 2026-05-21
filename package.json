@@ -8,7 +8,7 @@
     "url": "https://github.com/gahojin/middy-middlewares.git"
   },
   "scripts": {
-    "postinstall": "biome migrate --write",
+    "prepare": "biome migrate --write",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "lint:ci": "turbo run lint:ci",
