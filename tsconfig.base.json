@@ -4,7 +4,6 @@
     "target": "es2022",
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "lib": ["ES2023"],
     "declaration": true,
     "isolatedDeclarations": true,
     "sourceMap": true,
