@@ -47,8 +47,8 @@
   },
   "devDependencies": {
     "@gahojin-inc/aws-lambda-mock-context": "2026.5.1",
-    "@middy/core": "7.6.5",
-    "@middy/util": "7.6.5",
+    "@middy/core": "7.7.0",
+    "@middy/util": "7.7.0",
     "@valibot/i18n": "1.2.0",
     "valibot": "1.4.1"
   },
