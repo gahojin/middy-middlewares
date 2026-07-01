@@ -17,15 +17,15 @@
     "ncu": "mise run ncu"
   },
   "dependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@biomejs/biome": "2.5.1",
     "@fast-check/vitest": "0.4.1",
-    "@types/node": "25.9.1",
-    "@vitest/coverage-v8": "4.1.6",
-    "turbo": "2.9.14",
+    "@types/node": "25.9.4",
+    "@vitest/coverage-v8": "4.1.9",
+    "turbo": "2.9.18",
     "typescript": "6.0.3",
-    "unplugin-dts": "1.0.1",
-    "vite": "8.0.16",
-    "vitest": "4.1.7"
+    "unplugin-dts": "1.0.3",
+    "vite": "8.1.0",
+    "vitest": "4.1.9"
   },
   "packageManager": "pnpm@11.6.0"
 }
