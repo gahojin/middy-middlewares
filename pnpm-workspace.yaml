@@ -4,6 +4,24 @@ packages:
 # 重複排除
 dedupePeers: true
 
+catalog:
+  turbo: 2.9.18
+  typescript: 6.0.3
+  unplugin-dts: 1.0.3
+  valibot: 1.4.1
+  vite: 8.1.0
+  vitest: &vitest_ver 4.1.9
+  '@biomejs/biome': 2.5.1
+  '@fast-check/vitest': 0.4.1
+  '@gahojin-inc/aws-lambda-mock-context': 2026.5.1
+  '@middy/core': &middy_ver 7.7.0
+  '@middy/util': *middy_ver
+  '@serverless/event-mocks': 1.1.1
+  '@types/aws-lambda': 8.10.162
+  '@types/node': 25.9.4
+  '@valibot/i18n': 1.2.0
+  '@vitest/coverage-v8': *vitest_ver
+
 # リリースから一定時間経過していないか、信頼性低下したパッケージはインストールしない
 minimumReleaseAge: 2880 # 2d
 minimumReleaseAgeIgnoreMissingTime: false
