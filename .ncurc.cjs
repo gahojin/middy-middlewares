@@ -7,6 +7,6 @@ module.exports = {
     return 'newest'
   },
   cooldown: (name) => {
-    return name.startsWith('@gahojin-inc/') ? 0 : 7
+    return name.startsWith('@gahojin-inc/') ? 2 : 7
   },
 }

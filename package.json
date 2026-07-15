@@ -21,11 +21,11 @@
     "@fast-check/vitest": "catalog:",
     "@types/node": "catalog:",
     "@vitest/coverage-v8": "catalog:",
+    "rolldown": "catalog:",
+    "rolldown-plugin-dts": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:",
-    "unplugin-dts": "catalog:",
-    "vite": "catalog:",
     "vitest": "catalog:"
   },
-  "packageManager": "pnpm@11.6.0"
+  "packageManager": "pnpm@11.10.0"
 }
