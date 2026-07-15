@@ -25,7 +25,7 @@
     "provenance": true
   },
   "scripts": {
-    "build": "vite build",
+    "build": "rolldown -c",
     "prepublishOnly": "pnpm run build",
     "lint": "biome check --write .",
     "lint:ci": "biome ci .",
@@ -46,11 +46,11 @@
     }
   },
   "devDependencies": {
-    "@gahojin-inc/aws-lambda-mock-context": "2026.5.1",
-    "@middy/core": "7.7.0",
-    "@middy/util": "7.7.0",
-    "@valibot/i18n": "1.2.0",
-    "valibot": "1.4.1"
+    "@gahojin-inc/aws-lambda-mock-context": "catalog:",
+    "@middy/core": "catalog:",
+    "@middy/util": "catalog:",
+    "@valibot/i18n": "catalog:",
+    "valibot": "catalog:"
   },
   "peerDependencies": {
     "@middy/core": "^5 || ^6 || ^7",
