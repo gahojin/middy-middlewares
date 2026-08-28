@@ -5,13 +5,13 @@ packages:
 dedupePeers: true
 
 catalog:
-  rolldown: 1.2.3
-  rolldown-plugin-dts: 0.28.0
-  turbo: 2.10.9
+  rolldown: 1.2.5
+  rolldown-plugin-dts: 0.28.2
+  turbo: 2.10.11
   typescript: 7.0.2
   valibot: 1.4.2
-  vitest: &vitest_ver 4.1.10
-  '@biomejs/biome': 2.5.8
+  vitest: &vitest_ver 4.1.11
+  '@biomejs/biome': 2.5.9
   '@fast-check/vitest': 0.4.1
   '@gahojin-inc/aws-lambda-mock-context': 2026.7.3
   '@middy/core': &middy_ver 7.7.2
