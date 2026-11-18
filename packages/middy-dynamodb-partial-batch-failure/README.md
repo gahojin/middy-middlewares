@@ -5,7 +5,6 @@
 
 Lambda ミドルウェア middy の DynamoDBストリーム 部分バッチ失敗
 
-
 ## ライセンス
 
 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
