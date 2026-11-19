@@ -5,7 +5,6 @@
 
 Lambda ミドルウェア middy の HTTPメッセージ署名の検証・署名
 
-
 ## ライセンス
 
 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)
